@@ -182,8 +182,9 @@ if (isset($_POST["submit"])) {
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xl-8">
+
+                <div class="row flex-column-reverse flex-xl-row">
+                    <div class="col-xl-8  ">
                         <!--=== Place Content Wrap ===-->
                         <div class="place-content-wrap pt-45 wow fadeInUp">
                             <h3 class="title">Explore Tour Package</h3>
@@ -198,7 +199,7 @@ if (isset($_POST["submit"])) {
                                         <li><i class="fas fa-badge-check"></i>Eco-Conscious Tours</li>
                                     </ul>
                                 </div>
-                                <div class="col-lg-7">
+                                <div class="col-lg-7 ">
                                     <img src="assets/images/Experiential/Trip to Sigiriya.jpg" class="mb-20 w-100" alt="place image" width="470px" height="365px">
                                 </div>
                             </div>
@@ -364,59 +365,6 @@ if (isset($_POST["submit"])) {
                             </div>
                         </div>
 
-                        <!--=== Reviews Area ===-->
-                        <!-- <div class="reviews-wrapper mb-60 wow fadeInUp">
-                            <div class="reviews-inner-box">
-                                <div class="rating-value">
-                                    <h4>Clients Reviews</h4>
-                                    <div class="rate-score">4.9</div>
-                                    <ul class="ratings">
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><a href="#">(4.9)</a></li>
-                                    </ul>
-                                    <span class="reviews">3k Reviews</span>
-                                </div>
-                                <div class="reviews-progress">
-                                    <div class="single-progress-bar">
-                                        <div class="progress-title">
-                                            <h6>Quality <span class="rate">4.8</span></h6>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar wow slideInLeft" style="width: 85%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="single-progress-bar">
-                                        <div class="progress-title">
-                                            <h6>Team Member<span class="rate">4.6</span></h6>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar wow slideInLeft" style="width: 75%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="single-progress-bar">
-                                        <div class="progress-title">
-                                            <h6>Locations<span class="rate">4.7</span></h6>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar wow slideInLeft" style="width: 90%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="single-progress-bar">
-                                        <div class="progress-title">
-                                            <h6>Cost<span class="rate">4.9</span></h6>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar wow slideInLeft" style="width: 95%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-
                         <!--===  Comments Form  ===-->
                         <div class="comments-respond mb-30 wow fadeInUp">
                             <h3 class="comments-heading" style="margin-bottom: 15px;">Leave a Comments</h3>
@@ -490,7 +438,7 @@ if (isset($_POST["submit"])) {
                         </div>
                     </div>
 
-                    <div class="col-xl-4">
+                    <div class="col-xl-4 col-lg-6">
                         <!--=== Sidebar Widget Area ===-->
                         <div class="sidebar-widget-area pt-60 pl-lg-30">
                             <!--=== Booking Widget ===-->
@@ -514,7 +462,7 @@ if (isset($_POST["submit"])) {
                                     </div>
                                     <div class="booking-item mb-20">
                                         <div class="form-group">
-                                            <select class="form-select" id="select_option" name="activity">
+                                            <select class="bk-item" id="select_option" name="activity">
                                                 <option value="">Select an option</option>
                                                 <option value="Day trip to Ella">Day trip to Ella</option>
                                                 <option value="Day trip to Sigirya">Day trip to Sigirya</option>
