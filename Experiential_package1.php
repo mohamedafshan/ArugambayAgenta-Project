@@ -502,12 +502,12 @@ if (isset($_POST["submit"])) {
 
                                     <div class="booking-item mb-20">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="email_address" placeholder="Number of Adults" name="no_adults">
+                                            <input type="text" class="form-control" id="no_adults" placeholder="Number of Adults" name="no_adults" onchange="calculate_adult_amount(this.value)">
                                         </div>
                                     </div>
                                     <div class="booking-item mb-20">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="Number_of_pax" placeholder="Number of Kids" name="no_kids">
+                                            <input type="text" class="form-control" id="no_kids" placeholder="Number of Kids" name="no_kids" onchange="calculate_kid_amount(this.value)" >
                                         </div>
                                     </div>
                                     <div class="booking-item mb-20">
@@ -520,7 +520,24 @@ if (isset($_POST["submit"])) {
                                             <input type="text" class="form-control" id="Number_of_pax" placeholder="Need further assists? write us below" name="needassist">
                                         </div>
                                     </div>
-                                    <div class="booking-date-time mb-20">
+                                   
+                                    <div class="booking-extra mb-15 wow fadeInUp">
+                                            <h6 class="mb-10">Price Info</h6>
+                                            <div class="extra">
+                                                <i class="fas fa-check-circle"></i>Adult<span><span class="currency" id="totalAmount_adult"></span></span>
+                                            </div>
+                                            <div class="extra">
+                                                <i class="fas fa-check-circle"></i>Kids <span><span class="currency" id="totalAmount_kids"></span></span>
+                                            </div>
+                                        </div>
+                                        <div class="booking-total mb-20">
+                                            <div class="total">
+                                                <label>Total</label>
+                                                <span class="price"><span class="currency" id="totalAmount"></span></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="booking-date-time mb-20">
                                         <div class="submit-button">
                                             <button class="main-btn primary-btn" name="submit">Booking Now<i class="far fa-paper-plane"></i></button>
                                         </div>
@@ -558,6 +575,128 @@ if (isset($_POST["submit"])) {
     <!--====== Back To Top  ======-->
     <a href="#" class="back-to-top"><i class="far fa-angle-up"></i></a>
 
-</body>
+    <script>
+    var total1 = 0;
+    var total2 = 0;
+    var nonselected = "a";
 
+    function calculate_adult_amount(value1) {
+        
+        if(value1 == ""){
+            value1 = 0;
+        }
+
+        value1 = parseInt(value1)
+        var unitprice = 0;
+
+        switch (value1) {
+            case 0:
+                unitprice = 0;
+                break;
+            case 1:
+                unitprice = 193.55;
+                break;
+            case 2:
+                unitprice = 112.90;
+                break;
+            case 3:
+                unitprice = 96.77;
+                break;
+            case 4:
+                unitprice = 90.32;
+                break;
+            case 5:
+                unitprice = 80.65;
+                break;
+            case 6:
+                unitprice = 74.19;
+                break;
+            case 7:
+            case 8:
+            case 9:
+            case 10:
+                unitprice = 64.52;
+                break;
+            default:
+                nonselected = "more";
+                unitprice = 0;
+        }
+        if(nonselected == "more"){
+             total1 = unitprice * parseInt(value1); // float + integerr
+             document.getElementById('totalAmount_adult').innerText = "Not Allowed More than 10";
+            updateTotalAmount();
+        }
+        else{
+            total1 = unitprice * parseInt(value1);
+        document.getElementById('totalAmount_adult').innerText = '$' + total1.toFixed(2);
+        updateTotalAmount();
+        }
+       
+    }
+
+    function calculate_kid_amount(value2) {
+        
+        if(value2 == ""){
+            value2 = 0;
+        }
+
+        value2 = parseInt(value2);
+        var unitprice = 0;
+
+        switch (value2) {
+            case 0:
+                unitprice = 0;
+                break;
+            case 1:
+                unitprice = 77.42;
+                break;
+            case 2:
+                unitprice = 45.16;
+                break;
+            case 3:
+                unitprice = 38.71;
+                break;
+            case 4:
+                unitprice = 36.13;
+                break;
+            case 5:
+                unitprice = 32.26;
+                break;
+            case 6:
+                unitprice = 29.68;
+                break;
+            case 7:
+                unitprice = 25.81;
+                break;
+            case 8:
+            case 9:
+            case 10:
+                unitprice = 25.81;
+                break;
+            default:
+                nonselected = "more";
+                unitprice = 0;
+        }
+
+        if(nonselected == "more" ){
+            total2 = unitprice * parseInt(value2);
+            document.getElementById('totalAmount_kids').innerText = "Not Allowed More than 10";
+            updateTotalAmount();
+        }
+        else{
+            total2 = unitprice * parseInt(value2);
+            document.getElementById('totalAmount_kids').innerText = '$' + total2.toFixed(2);
+            updateTotalAmount();        
+        }
+       
+    }
+
+    function updateTotalAmount() {
+        var totalAmount = total1 + total2;
+        document.getElementById('totalAmount').innerText = '$' + totalAmount.toFixed(2);
+    }
+</script>
+
+
+</body>
 </html>
