@@ -20,8 +20,10 @@ if (isset($_POST["submit"])) {
     $no_kids = $_POST['no_kids'];
     $departurelocation = $_POST['departurelocation'];
     $needassist = $_POST['needassist'];
+    $price_of_child = $_POST['kids_value'];
+    $price_of_total = $_POST['total'];
 
-    $sql = "INSERT INTO `booking` (`o_id`, `full_name`, `e_mail`, `whatsapp_no`, `activity`, `date`, `time`, `no_adults`, `no_kids`, `departure_location`, `need_assist`) VALUES (NULL, '$fullname', '$email', '$whatsapp_no', '$activity', '$date', '$time', '$no_adults', '$no_kids', '$departurelocation','$needassist')";
+    $sql = "INSERT INTO `booking` (`o_id`, `full_name`, `e_mail`, `whatsapp_no`, `activity`, `date`, `time`, `no_adults`, `no_kids`, `departure_location`, `need_assist`,`price_of_adults`, `price_of_child`, `total_amount`) VALUES (NULL, '$fullname', '$email', '$whatsapp_no', '$activity', '$date', '$time', '$no_adults', '$no_kids', '$departurelocation','$needassist','$price_of_adults','$price_of_child','$price_of_total')";
 
     $result = mysqli_query($conn, $sql);
     if ($result) {
@@ -53,7 +55,10 @@ if (isset($_POST["submit"])) {
                 'Number of Adults: ' . $no_adults . '<br>' .
                 'Number of Kids: ' . $no_kids . '<br>' .
                 'Departure Location: ' . $departurelocation . '<br>' .
-                'Need Assistance: ' . $needassist;
+                'Need Assistance: ' . $needassist.'<br>'.
+                'Total Price of Adults: '.$price_of_adults .'<br>' . 
+                'Total Price of Child: '.$price_of_child . '<br>' . 
+                'Total Amount: '.$price_of_total;
             $Mail->send();
 
             echo "<script>alert('Email sent successfully')</script>";
@@ -534,22 +539,28 @@ if (isset($_POST["submit"])) {
                                             <h6 class="mb-10">Price Info</h6>
                                             <div class="extra">
                                                 <i class="fas fa-check-circle"></i>Adult<span><span class="currency" id="totalAmount_adult"></span></span>
+                                                <input type="hidden" id="totalAmountadult" name="adult_value" >
                                             </div>
                                             <div class="extra">
-                                                <i class="fas fa-check-circle"></i>Kids <span><span class="currency" id="totalAmount_kids"></span></span>
+                                                <i class="fas fa-check-circle"></i>Kids <span><span class="currency" id="totalAmount_kids"></span></span>  <input type="hidden" id="totalAmountkids" name="kids_value"> 
+                                                <input type="hidden" id="totalAmountkids" name="kids_value">
                                             </div>
                                         </div>
                                         <div class="booking-total mb-20">
                                             <div class="total">
                                                 <label>Total</label>
                                                 <span class="price"><span class="currency" id="totalAmount"></span></span>
+                                                <input type="hidden" id="totalAmountText" name="total">
                                             </div>
                                         </div>
+
                                     <div class="booking-date-time mb-20">
                                         <div class="submit-button">
                                             <button class="main-btn primary-btn" name="submit">Booking Now<i class="far fa-paper-plane"></i></button>
                                         </div>
                                     </div>
+
+                                    
                                 </form>
                             </div>
                             <!--=== Booking Info Widget ===-->
@@ -643,6 +654,7 @@ if (isset($_POST["submit"])) {
         else{
             total1 = unitprice * parseInt(value1);
         document.getElementById('totalAmount_adult').innerText = '$' + total1.toFixed(2);
+        document.getElementById('totalAmountadult').value = '$' + total1.toFixed(2);
         updateTotalAmount();
         }
        
@@ -704,6 +716,7 @@ if (isset($_POST["submit"])) {
         else{
             total2 = unitprice * parseInt(value2);
             document.getElementById('totalAmount_kids').innerText = '$' + total2.toFixed(2);
+            document.getElementById('totalAmountkids').value = '$' + total2.toFixed(2);
             updateTotalAmount();        
         }
        
@@ -712,6 +725,7 @@ if (isset($_POST["submit"])) {
     function updateTotalAmount() {
         var totalAmount = total1 + total2;
         document.getElementById('totalAmount').innerText = '$' + totalAmount.toFixed(2);
+        document.getElementById('totalAmountText').value = '$' + totalAmount.toFixed(2);
     }
 </script>
 

@@ -20,8 +20,11 @@ if (isset($_POST["submit"])) {
     $no_kids = $_POST['no_kids'];
     $departurelocation = $_POST['departurelocation'];
     $needassist = $_POST['needassist'];
+    $price_of_adults = $_POST['adult_value'];
+    $price_of_child = $_POST['kids_value'];
+    $price_of_total = $_POST['total'];
 
-    $sql = "INSERT INTO `booking` (`o_id`, `full_name`, `e_mail`, `whatsapp_no`, `activity`, `date`, `time`, `no_adults`, `no_kids`, `departure_location`, `need_assist`) VALUES (NULL, '$fullname', '$email', '$whatsapp_no', '$activity', '$date', '$time', '$no_adults', '$no_kids', '$departurelocation','$needassist')";
+    $sql = "INSERT INTO `booking` (`o_id`, `full_name`, `e_mail`, `whatsapp_no`, `activity`, `date`, `time`, `no_adults`, `no_kids`, `departure_location`, `need_assist`,`price_of_adults`, `price_of_child`, `total_amount`) VALUES (NULL, '$fullname', '$email', '$whatsapp_no', '$activity', '$date', '$time', '$no_adults', '$no_kids', '$departurelocation','$needassist','$price_of_adults','$price_of_child','$price_of_total')";
 
     $result = mysqli_query($conn, $sql);
     if ($result) {
@@ -53,7 +56,10 @@ if (isset($_POST["submit"])) {
                 'Number of Adults: ' . $no_adults . '<br>' .
                 'Number of Kids: ' . $no_kids . '<br>' .
                 'Departure Location: ' . $departurelocation . '<br>' .
-                'Need Assistance: ' . $needassist;
+                'Need Assistance: ' . $needassist .'<br>'. 
+                'Total Price of Adults: '.$price_of_adults .'<br>' . 
+                'Total Price of Child: '.$price_of_child . '<br>' . 
+                'Total Amount: '.$price_of_total;
             $Mail->send();
 
             echo "<script>alert('Email sent successfully')</script>";
@@ -389,59 +395,6 @@ if (isset($_POST["submit"])) {
                             </div>
                         </div>
 
-                        <!--=== Reviews Area ===-->
-                        <!-- <div class="reviews-wrapper mb-60 wow fadeInUp">
-                            <div class="reviews-inner-box">
-                                <div class="rating-value">
-                                    <h4>Clients Reviews</h4>
-                                    <div class="rate-score">4.9</div>
-                                    <ul class="ratings">
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><a href="#">(4.9)</a></li>
-                                    </ul>
-                                    <span class="reviews">3k Reviews</span>
-                                </div>
-                                <div class="reviews-progress">
-                                    <div class="single-progress-bar">
-                                        <div class="progress-title">
-                                            <h6>Quality <span class="rate">4.8</span></h6>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar wow slideInLeft" style="width: 85%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="single-progress-bar">
-                                        <div class="progress-title">
-                                            <h6>Team Member<span class="rate">4.6</span></h6>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar wow slideInLeft" style="width: 75%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="single-progress-bar">
-                                        <div class="progress-title">
-                                            <h6>Locations<span class="rate">4.7</span></h6>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar wow slideInLeft" style="width: 90%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="single-progress-bar">
-                                        <div class="progress-title">
-                                            <h6>Cost<span class="rate">4.9</span></h6>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar wow slideInLeft" style="width: 95%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-
                         <!--===  Comments Form  ===-->
                         <div class="comments-respond mb-30 wow fadeInUp">
                             <h3 class="comments-heading" style="margin-bottom: 15px;">Leave a Comments</h3>
@@ -579,12 +532,12 @@ if (isset($_POST["submit"])) {
 
                                     <div class="booking-item mb-20">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="email_address" placeholder="Number of Adults" name="no_adults">
+                                            <input type="text" class="form-control" id="no_adults" placeholder="Number of Adults" name="no_adults" onchange="calculate_adult_amount(this.value)">
                                         </div>
                                     </div>
                                     <div class="booking-item mb-20">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="Number_of_pax" placeholder="Number of Kids" name="no_kids">
+                                            <input type="text" class="form-control" id="no_kids" placeholder="Number of Kids" name="no_kids" onchange="calculate_kid_amount(this.value)">
                                         </div>
                                     </div>
                                     <div class="booking-item mb-20">
@@ -597,11 +550,34 @@ if (isset($_POST["submit"])) {
                                             <input type="text" class="form-control" id="Number_of_pax" placeholder="Need further assists? write us below" name="needassist">
                                         </div>
                                     </div>
+
+                                    <div class="booking-extra mb-15 wow fadeInUp">
+                                        <h6 class="mb-10">Price Info</h6>
+                                        <div class="extra">
+                                            <i class="fas fa-check-circle"></i>Adult<span><span class="currency" id="totalAmount_adult"></span></span> 
+                                            <input type="hidden" id="totalAmountadult" name="adult_value">
+
+                                        </div>
+                                        <div class="extra">
+                                            <i class="fas fa-check-circle"></i>Kids <span><span class="currency" id="totalAmount_kids"></span></span> 
+                                            <input type="hidden" id="totalAmountkids" name="kids_value">
+                                        </div>
+                                    </div>
+                                    <div class="booking-total mb-20">
+                                        <div class="total">
+                                            <label>Total</label>
+                                            <span class="price"><span class="currency" id="totalAmount"></span></span>  
+                                              <input type="hidden" id="totalAmountText" name="total">  
+                                        </div>
+                                    </div>
+
+
                                     <div class="booking-date-time mb-20">
                                         <div class="submit-button">
                                             <button class="main-btn primary-btn" name="submit">Booking Now<i class="far fa-paper-plane"></i></button>
                                         </div>
                                     </div>
+
                                 </form>
                             </div>
                             <!--=== Booking Info Widget ===-->
@@ -634,6 +610,139 @@ if (isset($_POST["submit"])) {
 
     <!--====== Back To Top  ======-->
     <a href="#" class="back-to-top"><i class="far fa-angle-up"></i></a>
+
+    <script>
+        var total1 = 0;
+        var total2 = 0;
+        var nonselected = "a";
+
+        function calculate_adult_amount(value1) {
+
+            if (value1 == "") {
+                value1 = 0;
+            }
+
+            value1 = parseInt(value1)
+            var unitprice = 0;
+
+            switch (value1) {
+                case 0:
+                    unitprice = 0;
+                    break;
+                case 1:
+                    unitprice = 169.35;
+                    break;
+                case 2:
+                    unitprice = 97.10;
+                    break;
+                case 3:
+                    unitprice = 74.97;
+                    break;
+                case 4:
+                    unitprice = 74.52;
+                    break;
+                case 5:
+                    unitprice = 64.58;
+                    break;
+                case 6:
+                    unitprice = 58.86;
+                    break;
+                case 7:
+                    unitprice = 54.45;
+                    break;
+                case 8:
+                    unitprice = 50.69;
+                    break;
+                case 9:
+                    unitprice = 48.12;
+                    break;
+                case 10:
+                    unitprice = 46.06;
+                    break;
+                default:
+                    nonselected = "more";
+                    unitprice = 0;
+            }
+            if (nonselected == "more") {
+                total1 = unitprice * parseInt(value1); // float + integerr
+                document.getElementById('totalAmount_adult').innerText = "Not Allowed More than 10";
+                updateTotalAmount();
+            } else {
+                total1 = unitprice * parseInt(value1);
+                document.getElementById('totalAmount_adult').innerText = '$' + total1.toFixed(2);
+                document.getElementById('totalAmountadult').value = '$' + total1.toFixed(2);
+                updateTotalAmount();
+            }
+            
+        }
+
+        function calculate_kid_amount(value2) {
+
+            if (value2 == "") {
+                value2 = 0;
+            }
+
+            value2 = parseInt(value2);
+            var unitprice = 0;
+
+            switch (value2) {
+                case 0:
+                    unitprice = 0;
+                    break;
+                case 1:
+                    unitprice = 67.74;
+                    break;
+                case 2:
+                    unitprice = 38.84;
+                    break;
+                case 3:
+                    unitprice = 29.99;
+                    break;
+                case 4:
+                    unitprice = 29.81;
+                    break;
+                case 5:
+                    unitprice = 25.83;
+                    break;
+                case 6:
+                    unitprice = 23.54
+                    break;
+                case 7:
+                    unitprice = 21.78;
+                    break;
+                case 8:
+                    unitprice = 20.28;
+                    break;
+                case 9:
+                    unitprice = 19.25;
+                    break;
+                case 10:
+                    unitprice = 18.43;
+                    break;
+                default:
+                    nonselected = "more";
+                    unitprice = 0;
+            }
+
+            if (nonselected == "more") {
+                total2 = unitprice * parseInt(value2);
+                document.getElementById('totalAmount_kids').innerText = "Not Allowed More than 10";
+                updateTotalAmount();
+            } else {
+                total2 = unitprice * parseInt(value2);
+                document.getElementById('totalAmount_kids').innerText = '$' + total2.toFixed(2);
+                document.getElementById('totalAmountkids').value = '$' + total2.toFixed(2);
+                updateTotalAmount();
+            }
+            
+        }
+
+        function updateTotalAmount() {
+            var totalAmount = total1 + total2;
+            document.getElementById('totalAmount').innerText = '$' + totalAmount.toFixed(2);
+            document.getElementById('totalAmountText').value = '$' + totalAmount.toFixed(2);
+        }
+    </script>
 
 </body>
 

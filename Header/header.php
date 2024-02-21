@@ -33,7 +33,8 @@
         <!--====== Style css ======-->
         <link rel="stylesheet" href="assets/css/style.css">
 
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css"> -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+
 </head>
 <body>
 

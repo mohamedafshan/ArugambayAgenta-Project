@@ -20,8 +20,11 @@ if (isset($_POST["submit"])) {
     $no_kids = $_POST['no_kids'];
     $departurelocation = $_POST['departurelocation'];
     $needassist = $_POST['needassist'];
+    $price_of_adults = $_POST['adult_value'];
+    $price_of_child = $_POST['kids_value'];
+    $price_of_total = $_POST['total'];
 
-    $sql = "INSERT INTO `booking` (`o_id`, `full_name`, `e_mail`, `whatsapp_no`, `activity`, `date`, `time`, `no_adults`, `no_kids`, `departure_location`, `need_assist`) VALUES (NULL, '$fullname', '$email', '$whatsapp_no', '$activity', '$date', '$time', '$no_adults', '$no_kids', '$departurelocation','$needassist')";
+    $sql = "INSERT INTO `booking` (`o_id`, `full_name`, `e_mail`, `whatsapp_no`, `activity`, `date`, `time`, `no_adults`, `no_kids`, `departure_location`, `need_assist`,`price_of_adults`, `price_of_child`, `total_amount`) VALUES (NULL, '$fullname', '$email', '$whatsapp_no', '$activity', '$date', '$time', '$no_adults', '$no_kids', '$departurelocation','$needassist','$price_of_adults','$price_of_child','$price_of_total')";
 
     $result = mysqli_query($conn, $sql);
     if ($result) {
@@ -53,7 +56,10 @@ if (isset($_POST["submit"])) {
                 'Number of Adults: ' . $no_adults . '<br>' .
                 'Number of Kids: ' . $no_kids . '<br>' .
                 'Departure Location: ' . $departurelocation . '<br>' .
-                'Need Assistance: ' . $needassist;
+                'Need Assistance: ' . $needassist .'<br>'. 
+                'Total Price of Adults: '.$price_of_adults .'<br>' . 
+                'Total Price of Child: '.$price_of_child . '<br>' . 
+                'Total Amount: '.$price_of_total;
             $Mail->send();
 
             echo "<script>alert('Email sent successfully')</script>";
@@ -277,7 +283,7 @@ if (isset($_POST["submit"])) {
                                     <div class="accordion-body">
                                         Dive into an enchanting voyage through the heart of Sri Lanka's capital with our exclusive 'Colombo City Excursion.' This captivating journey invites you to explore the tapestry of culture and heritage woven into the city's landscapes. Commence your day in tranquility at Gangarama Temple, a serene sanctuary brimming with spirituality, offering insight into ancient Buddhism and the island's vibrant cultural heritage. <br> <br>
 
-                                        Continue your quest for knowledge at the National Museum of Sri Lanka, an edifice steeped in history, unveiling the rich tapestry of the nation's traditions. Delve into the wonders of Beddagana Wetland National Park, an urban oasis teeming with diverse flora and fauna, offering a serene escape within the city limits. <br>   <br>
+                                        Continue your quest for knowledge at the National Museum of Sri Lanka, an edifice steeped in history, unveiling the rich tapestry of the nation's traditions. Delve into the wonders of Beddagana Wetland National Park, an urban oasis teeming with diverse flora and fauna, offering a serene escape within the city limits. <br> <br>
 
                                         Recharge your senses over a traditional Sri Lankan Rice and Curry lunch, embracing the flavors of the island's culinary heritage. Witness the architectural marvel of Red Masjith Colombo, a testament to the vibrant Islamic culture etched into the city's landscape. <br> <br>
 
@@ -312,7 +318,7 @@ if (isset($_POST["submit"])) {
                                     <div class="place-content">
                                         <div class="info">
                                             <h4 class="title"><a href="Experiential_package1.php">Day Trip to Sigiriya <br> <br>
-                                                   
+
                                                 </a></h4>
                                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
                                                     $</span>61.35</p>
@@ -327,7 +333,7 @@ if (isset($_POST["submit"])) {
                                     </div>
                                     <div class="place-content">
                                         <div class="info">
-                                            <h4 class="title"><a href="Experiential_package2.php">"Two Day in Highland" Tour 
+                                            <h4 class="title"><a href="Experiential_package2.php">"Two Day in Highland" Tour
                                                 </a></h4>
                                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
                                                     $</span>230.00</p>
@@ -545,12 +551,12 @@ if (isset($_POST["submit"])) {
 
                                     <div class="booking-item mb-20">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="email_address" placeholder="Number of Adults" name="no_adults">
+                                            <input type="text" class="form-control" id="no_adults" placeholder="Number of Adults" name="no_adults" onchange="calculate_adult_amount(this.value)">
                                         </div>
                                     </div>
                                     <div class="booking-item mb-20">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="Number_of_pax" placeholder="Number of Kids" name="no_kids">
+                                            <input type="text" class="form-control" id="no_kids" placeholder="Number of Kids" name="no_kids" onchange="calculate_kid_amount(this.value)">
                                         </div>
                                     </div>
                                     <div class="booking-item mb-20">
@@ -563,6 +569,26 @@ if (isset($_POST["submit"])) {
                                             <input type="text" class="form-control" id="Number_of_pax" placeholder="Need further assists? write us below" name="needassist">
                                         </div>
                                     </div>
+
+                                    <div class="booking-extra mb-15 wow fadeInUp">
+                                        <h6 class="mb-10">Price Info</h6>
+                                        <div class="extra">
+                                            <i class="fas fa-check-circle"></i>Adult<span><span class="currency" id="totalAmount_adult"></span></span>
+                                             <input type="hidden" id="totalAmountadult" name="adult_value">
+                                        </div>
+                                        <div class="extra">
+                                            <i class="fas fa-check-circle"></i>Kids <span><span class="currency" id="totalAmount_kids"></span></span> 
+                                             <input type="hidden" id="totalAmountkids" name="kids_value"> 
+                                        </div>
+                                    </div>
+                                    <div class="booking-total mb-20">
+                                        <div class="total">
+                                            <label>Total</label>
+                                            <span class="price"><span class="currency" id="totalAmount"></span></span>   
+                                            <input type="hidden" id="totalAmountText" name="total">  
+                                        </div>
+                                    </div>
+
                                     <div class="booking-date-time mb-20">
                                         <div class="submit-button">
                                             <button class="main-btn primary-btn" name="submit">Booking Now<i class="far fa-paper-plane"></i></button>
@@ -600,6 +626,121 @@ if (isset($_POST["submit"])) {
 
     <!--====== Back To Top  ======-->
     <a href="#" class="back-to-top"><i class="far fa-angle-up"></i></a>
+
+    <script>
+        var total1 = 0;
+        var total2 = 0;
+        var nonselected = "a";
+
+        function calculate_adult_amount(value1) {
+
+            if (value1 == "") {
+                value1 = 0;
+            }
+
+            value1 = parseInt(value1)
+            var unitprice = 0;
+
+            switch (value1) {
+                case 0:
+                    unitprice = 0;
+                    break;
+                case 1:
+                    unitprice = 62.01;
+                    break;
+                case 2:
+                    unitprice = 44.03;
+                    break;
+                case 3:
+                    unitprice = 38.01;
+                    break;
+                case 4:
+                    unitprice = 47.19;
+                    break;
+                case 5:
+                    unitprice = 42.23;
+                    break;
+                case 6:
+                    unitprice = 39.22
+                    break;
+                case 7:
+                    unitprice = 37.06
+                    break;
+                default:
+                    nonselected = "more";
+                    unitprice = 0;
+            }
+            if (nonselected == "more") {
+                total1 = unitprice * parseInt(value1); // float + integerr
+                document.getElementById('totalAmount_adult').innerText = "Not Allowed More than 7";
+                updateTotalAmount();
+            } else {
+                total1 = unitprice * parseInt(value1);
+                document.getElementById('totalAmount_adult').innerText = '$' + total1.toFixed(2);
+                document.getElementById('totalAmountadult').value = '$' + total1.toFixed(2);
+                updateTotalAmount();
+            }
+            
+        }
+
+        function calculate_kid_amount(value2) {
+
+            if (value2 == "") {
+                value2 = 0;
+            }
+
+            value2 = parseInt(value2);
+            var unitprice = 0;
+
+            switch (value2) {
+                case 0:
+                    unitprice = 0;
+                    break;
+                case 1:
+                    unitprice = 24.80;
+                    break;
+                case 2:
+                    unitprice = 17.61;
+                    break;
+                case 3:
+                    unitprice = 15.20;
+                    break;
+                case 4:
+                    unitprice = 18.88;
+                    break;
+                case 5:
+                    unitprice = 16.89;
+                    break;
+                case 6:
+                    unitprice = 15.69;
+                    break;
+                case 7:
+                    unitprice = 14.83;
+                    break;
+                default:
+                    nonselected = "more";
+                    unitprice = 0;
+            }
+
+            if (nonselected == "more") {
+                total2 = unitprice * parseInt(value2);
+                document.getElementById('totalAmount_kids').innerText = "Not Allowed More than 7";
+                updateTotalAmount();
+            } else {
+                total2 = unitprice * parseInt(value2);
+                document.getElementById('totalAmount_kids').innerText = '$' + total2.toFixed(2);
+                document.getElementById('totalAmountkids').value = '$' + total2.toFixed(2);
+                updateTotalAmount();
+            }
+            
+        }
+
+        function updateTotalAmount() {
+            var totalAmount = total1 + total2;
+            document.getElementById('totalAmount').innerText = '$' + totalAmount.toFixed(2);
+            document.getElementById('totalAmountText').value = '$' + totalAmount.toFixed(2);
+        }
+    </script>
 
 </body>
 

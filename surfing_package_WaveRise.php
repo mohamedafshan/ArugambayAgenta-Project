@@ -20,8 +20,11 @@ if (isset($_POST["submit"])) {
     $no_kids = $_POST['no_kids'];
     $departurelocation = $_POST['departurelocation'];
     $needassist = $_POST['needassist'];
+    $price_of_adults = $_POST['adult_value'];
+    $price_of_child = $_POST['kids_value'];
+    $price_of_total = $_POST['total'];
 
-    $sql = "INSERT INTO `booking` (`o_id`, `full_name`, `e_mail`, `whatsapp_no`, `activity`, `date`, `time`, `no_adults`, `no_kids`, `departure_location`, `need_assist`) VALUES (NULL, '$fullname', '$email', '$whatsapp_no', '$activity', '$date', '$time', '$no_adults', '$no_kids', '$departurelocation','$needassist')";
+    $sql = "INSERT INTO `booking` (`o_id`, `full_name`, `e_mail`, `whatsapp_no`, `activity`, `date`, `time`, `no_adults`, `no_kids`, `departure_location`, `need_assist`,`price_of_adults`, `price_of_child`, `total_amount`) VALUES (NULL, '$fullname', '$email', '$whatsapp_no', '$activity', '$date', '$time', '$no_adults', '$no_kids', '$departurelocation','$needassist','$price_of_adults','$price_of_child','$price_of_total')";
 
     $result = mysqli_query($conn, $sql);
     if ($result) {
@@ -52,7 +55,10 @@ if (isset($_POST["submit"])) {
                 'Number of Adults: ' . $no_adults . '<br>' .
                 'Number of Kids: ' . $no_kids . '<br>' .
                 'Departure Location: ' . $departurelocation . '<br>' .
-                'Need Assistance: ' . $needassist;
+                'Need Assistance: ' . $needassist .'<br>'. 
+                'Total Price of Adults: '.$price_of_adults .'<br>' . 
+                'Total Price of Child: '.$price_of_child . '<br>' . 
+                'Total Amount: '.$price_of_total;
             $Mail->send();
 
             echo "<script>alert('Email sent successfully')</script>";
@@ -259,7 +265,7 @@ if (isset($_POST["submit"])) {
                                     <div class="accordion-body">
                                         Dive into the exhilarating world of surfing with Arugambay Agenda’s Beginner Surf Lessons – an unforgettable introduction to the thrilling waves of Arugambay’s stunning coastline. As the golden sun casts its glow over this paradise, our ISA-qualified instructors are ready to guide you through an immersive surfing experience. <br> <br>
 
-                                        Nestled in the heart of Arugambay, renowned for its perfect swells and breathtaking landscapes, our surf lessons promise an ideal setting for both novice and seasoned surfers. We’ve carefully chosen surf spots like Baby Point, Peanut Farm, and Elephant Rock, each tailored to suit varying skill levels. <br>   <br>
+                                        Nestled in the heart of Arugambay, renowned for its perfect swells and breathtaking landscapes, our surf lessons promise an ideal setting for both novice and seasoned surfers. We’ve carefully chosen surf spots like Baby Point, Peanut Farm, and Elephant Rock, each tailored to suit varying skill levels. <br> <br>
 
                                         Our instructors, experts in their craft, will pick you up from your location and introduce you to the basics of surfing. With the morning and evening sessions available, you’ll harness the energy of the waves, complemented by the lush surroundings of this coastal gem. <br> <br>
 
@@ -296,7 +302,7 @@ if (isset($_POST["submit"])) {
                                     <div class="place-content">
                                         <div class="info">
                                             <h4 class="title"><a href="tour-details.php">
-                                                Cultural Excursion and Ancient Visit
+                                                    Cultural Excursion and Ancient Visit
                                                 </a></h4>
                                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
                                                     $</span>55.00</p>
@@ -312,7 +318,7 @@ if (isset($_POST["submit"])) {
                                     <div class="place-content">
                                         <div class="info">
                                             <h4 class="title"><a href="tour-details.php">
-                                                Cooking Class: Srilankan Tradition
+                                                    Cooking Class: Srilankan Tradition
                                                 </a></h4>
                                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
                                                     $</span>35.00</p>
@@ -328,7 +334,7 @@ if (isset($_POST["submit"])) {
                                     <div class="place-content">
                                         <div class="info">
                                             <h4 class="title"><a href="tour-details.php">
-                                                Tuk Tuk Sightseeing and Cooking Class
+                                                    Tuk Tuk Sightseeing and Cooking Class
                                                 </a></h4>
                                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
                                                     $</span>35.00</p>
@@ -525,12 +531,12 @@ if (isset($_POST["submit"])) {
 
                                     <div class="booking-item mb-20">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="email_address" placeholder="Number of Adults" name="no_adults">
+                                            <input type="text" class="form-control" id="no_adults" placeholder="Number of Adults" name="no_adults" onchange="calculate_adult_amount(this.value)">
                                         </div>
                                     </div>
                                     <div class="booking-item mb-20">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="Number_of_pax" placeholder="Number of Kids" name="no_kids">
+                                            <input type="text" class="form-control" id="no_kids" placeholder="Number of Kids" name="no_kids" onchange="calculate_kid_amount(this.value)">
                                         </div>
                                     </div>
                                     <div class="booking-item mb-20">
@@ -543,11 +549,31 @@ if (isset($_POST["submit"])) {
                                             <input type="text" class="form-control" id="Number_of_pax" placeholder="Need further assists? write us below" name="needassist">
                                         </div>
                                     </div>
+                                    <div class="booking-extra mb-15 wow fadeInUp">
+                                        <h6 class="mb-10">Price Info</h6>
+                                        <div class="extra">
+                                            <i class="fas fa-check-circle"></i>Adult<span><span class="currency" id="totalAmount_adult"></span>
+                                            </span> <input type="hidden" id="totalAmountadult" name="adult_value">
+                                        </div>
+                                        <div class="extra">
+                                            <i class="fas fa-check-circle"></i>Kids <span><span class="currency" id="totalAmount_kids"></span></span> 
+                                            <input type="hidden" id="totalAmountkids" name="kids_value">
+                                        </div>
+                                    </div>
+                                    <div class="booking-total mb-20">
+                                        <div class="total">
+                                            <label>Total</label>
+                                            <span class="price"><span class="currency" id="totalAmount"></span></span> 
+                                            <input type="hidden" id="totalAmountText" name="total">
+                                        </div>
+                                    </div>
+
                                     <div class="booking-date-time mb-20">
                                         <div class="submit-button">
                                             <button class="main-btn primary-btn" name="submit">Booking Now<i class="far fa-paper-plane"></i></button>
                                         </div>
                                     </div>
+
                                 </form>
                             </div>
                             <!--=== Booking Info Widget ===-->
@@ -580,6 +606,139 @@ if (isset($_POST["submit"])) {
 
     <!--====== Back To Top  ======-->
     <a href="#" class="back-to-top"><i class="far fa-angle-up"></i></a>
+
+    <script>
+        var total1 = 0;
+        var total2 = 0;
+        var nonselected = "a";
+
+        function calculate_adult_amount(value1) {
+
+            if (value1 == "") {
+                value1 = 0;
+            }
+
+            value1 = parseInt(value1)
+            var unitprice = 0;
+
+            switch (value1) {
+                case 0:
+                    unitprice = 0;
+                    break;
+                case 1:
+                    unitprice = 30.60;
+                    break;
+                case 2:
+                    unitprice = 25.66;
+                    break;
+                case 3:
+                    unitprice = 24.02;
+                    break;
+                case 4:
+                    unitprice = 25.66;
+                    break;
+                case 5:
+                    unitprice = 24.68;
+                    break;
+                case 6:
+                    unitprice = 24.02;
+                    break;
+                case 7:
+                    unitprice = 24.96;
+                    break;
+                case 8:
+                    unitprice = 24.43;
+                    break;
+                case 9:
+                    unitprice = 24.02;
+                    break;
+                case 10:
+                    unitprice = 24.68;
+                    break;
+                default:
+                    nonselected = "more";
+                    unitprice = 0;
+            }
+            if (nonselected == "more") {
+                total1 = unitprice * parseInt(value1); // float + integerr
+                document.getElementById('totalAmount_adult').innerText = "Not Allowed More than 10";
+                updateTotalAmount();
+            } else {
+                total1 = unitprice * parseInt(value1);
+                document.getElementById('totalAmount_adult').innerText = '$' + total1.toFixed(2);
+                document.getElementById('totalAmountadult').value = '$' + total1.toFixed(2);
+                updateTotalAmount();
+            }
+            
+        }
+
+        function calculate_kid_amount(value2) {
+
+            if (value2 == "") {
+                value2 = 0;
+            }
+
+            value2 = parseInt(value2);
+            var unitprice = 0;
+
+            switch (value2) {
+                case 0:
+                    unitprice = 0;
+                    break;
+                case 1:
+                    unitprice = 12.24;
+                    break;
+                case 2:
+                    unitprice = 10.27;
+                    break;
+                case 3:
+                    unitprice = 9.61;
+                    break;
+                case 4:
+                    unitprice = 10.27;
+                    break;
+                case 5:
+                    unitprice = 9.87;
+                    break;
+                case 6:
+                    unitprice = 9.61;
+                    break;
+                case 7:
+                    unitprice = 9.98;
+                    break;
+                case 8:
+                    unitprice = 9.77;
+                    break;
+                case 9:
+                    unitprice = 9.61;
+                    break;
+                case 10:
+                    unitprice = 9.87;
+                    break;
+                default:
+                    nonselected = "more";
+                    unitprice = 0;
+            }
+
+            if (nonselected == "more") {
+                total2 = unitprice * parseInt(value2);
+                document.getElementById('totalAmount_kids').innerText = "Not Allowed More than 10";
+                updateTotalAmount();
+            } else {
+                total2 = unitprice * parseInt(value2);
+                document.getElementById('totalAmount_kids').innerText = '$' + total2.toFixed(2);
+                document.getElementById('totalAmountkids').value = '$' + total2.toFixed(2);
+                updateTotalAmount();
+            }
+            
+        }
+
+        function updateTotalAmount() {
+            var totalAmount = total1 + total2;
+            document.getElementById('totalAmount').innerText = '$' + totalAmount.toFixed(2);
+            document.getElementById('totalAmountText').value = '$' + totalAmount.toFixed(2);
+        }
+    </script>
 
 </body>
 

@@ -314,9 +314,9 @@ textarea.form_control {
   z-index: 2; }
 
 .sub-title {
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 22px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 19px;
   padding: 10px 20px;
   background: rgba(99, 171, 69, 0.1);
   border-radius: 7px; }
