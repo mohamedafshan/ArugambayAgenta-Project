@@ -62,12 +62,28 @@ if (isset($_POST["submit"])) {
                 'Total Amount: '.$price_of_total;
             $Mail->send();
 
-            echo "<script>alert('Email sent successfully')</script>";
+            header("Location: Experiential_package1.php?msg=success");
         } catch (Exception $e) {
-            echo "Email could not be sent. Mailer Error: {$Mail->ErrorInfo}";
+            // echo "Email could not be sent. Mailer Error: {$Mail->ErrorInfo}";
+            echo"
+            <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+              });
+            </script>";
         }
     } else {
         echo "Failed: " . mysqli_error($conn);
+        echo"
+            <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+              });
+            </script>";
     }
 }
 ?>
@@ -816,4 +832,14 @@ if (isset($_POST["submit"])) {
 
 </body>
 
+<?php
+  if ($_GET["msg"] == "success") {
+    echo "<script> Swal.fire(
+     'Your booking has been taken successfully.',
+     'Pleas click the ok button',
+     'success'
+   )</script>";
+   }
+  ?>
+  
 </html>

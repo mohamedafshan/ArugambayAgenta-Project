@@ -1,97 +1,95 @@
 <?php
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-use Illuminate\Http\Request;
+// use PHPMailer\PHPMailer\PHPMailer;
+// use PHPMailer\PHPMailer\Exception;
 
-require 'phpEmail/PHPMailer/src/Exception.php';
-require 'phpEmail/PHPMailer/src/PHPMailer.php';
-require 'phpEmail/PHPMailer/src/SMTP.php';
-include "assets/php/connection.php";
+// require 'phpEmail/PHPMailer/src/Exception.php';
+// require 'phpEmail/PHPMailer/src/PHPMailer.php';
+// require 'phpEmail/PHPMailer/src/SMTP.php';
+// include "assets/php/connection.php";
 
-if (isset($_POST["submit"])) {
-    // Add new data
-    $fullname = $_POST['fullname'];
-    $email = $_POST['email_for_form'];
-    $whatsapp_no = $_POST['whatsapp_no'];
-    $activity = $_POST['activity'];
-    $date = $_POST['date'];
-    $time = $_POST['time'];
-    $no_adults = $_POST['no_adults'];
-    $no_kids = $_POST['no_kids'];
-    $departurelocation = $_POST['departurelocation'];
-    $needassist = $_POST['needassist'];
-    $price_of_adults = $_POST['adult_value'];
-    $price_of_child = $_POST['kids_value'];
-    $price_of_total = $_POST['total'];
+include('assets/php/formvalidation.php');
+
+// if (isset($_POST["submit"])) {
+//     // Add new data
+//     $fullname = $_POST['fullname'];
+//     $email = $_POST['email_for_form'];
+//     $whatsapp_no = $_POST['whatsapp_no'];
+//     $activity = $_POST['activity'];
+//     $date = $_POST['date'];
+//     $time = $_POST['time'];
+//     $no_adults = $_POST['no_adults'];
+//     $no_kids = $_POST['no_kids'];
+//     $departurelocation = $_POST['departurelocation'];
+//     $needassist = $_POST['needassist'];
+//     $price_of_adults = $_POST['adult_value'];
+//     $price_of_child = $_POST['kids_value'];
+//     $price_of_total = $_POST['total'];
+    
+//     $sql = "INSERT INTO `booking` (`o_id`, `full_name`, `e_mail`, `whatsapp_no`, `activity`, `date`, `time`, `no_adults`, `no_kids`, `departure_location`, `need_assist`,`price_of_adults`, `price_of_child`, `total_amount`) VALUES (NULL, '$fullname', '$email', '$whatsapp_no', '$activity', '$date', '$time', '$no_adults', '$no_kids', '$departurelocation','$needassist','$price_of_adults','$price_of_child','$price_of_total')";
+
+//     $result = mysqli_query($conn, $sql);
+//     if ($result) {
+//         $author_email = 'hassan.marazin@gmail.com'; // author mail address
+//         try {
+//             $Mail = new PHPMailer(true);
+//             $Mail->isSMTP();
+//             $Mail->Host = 'smtp.gmail.com';
+//             $Mail->SMTPAuth = true;
+//             $Mail->Username = 'afshan.marazin@gmail.com';
+//             $Mail->Password = 'eosb hhee rodl mtep';
+//             $Mail->SMTPSecure = 'ssl';
+//             $Mail->Port = 465;
 
 
+//             $Mail->setFrom('afshan.marazin@gmail.com');
+//             $Mail->addAddress($_POST['email_for_form']);
+//             $Mail->addAddress($author_email);
+//             $Mail->isHTML(true);
+//             $Mail->Subject = 'Welcome to Arugambay Agenda';
+//             $Mail->Body = 'We received your booking successfully.' .
+//                 '<br><br>' .
+//                 'Full Name: ' . $fullname . '<br>' .
+//                 'Email: ' . $email . '<br>' .
+//                 'WhatsApp Number: ' . $whatsapp_no . '<br>' .
+//                 'Activity: ' . $activity . '<br>' .
+//                 'Date: ' . $date . '<br>' .
+//                 'Time: ' . $time . '<br>' .
+//                 'Number of Adults: ' . $no_adults . '<br>' .
+//                 'Number of Kids: ' . $no_kids . '<br>' .
+//                 'Departure Location: ' . $departurelocation . '<br>' .
+//                 'Need Assistance: ' . $needassist .'<br>'. 
+//                 'Total Price of Adults: '.$price_of_adults .'<br>' . 
+//                 'Total Price of Child: '.$price_of_child . '<br>' . 
+//                 'Total Amount: '.$price_of_total;
+//             $Mail->send();
 
-    $sql = "INSERT INTO `booking` (`o_id`, `full_name`, `e_mail`, `whatsapp_no`, `activity`, `date`, `time`, `no_adults`, `no_kids`, `departure_location`, `need_assist`,`price_of_adults`, `price_of_child`, `total_amount`) VALUES (NULL, '$fullname', '$email', '$whatsapp_no', '$activity', '$date', '$time', '$no_adults', '$no_kids', '$departurelocation','$needassist','$price_of_adults','$price_of_child','$price_of_total')";
+//              header("Location: Experiential_package1.php?msg=Data Added successfull");
 
-    $result = mysqli_query($conn, $sql);
-    if ($result) {
-        $author_email = 'hassan.marazin@gmail.com'; // author mail address
-        try {
-            $Mail = new PHPMailer(true);
-            $Mail->isSMTP();
-            $Mail->Host = 'smtp.gmail.com';
-            $Mail->SMTPAuth = true;
-            $Mail->Username = 'afshan.marazin@gmail.com';
-            $Mail->Password = 'eosb hhee rodl mtep';
-            $Mail->SMTPSecure = 'ssl';
-            $Mail->Port = 465;
-
-
-            $Mail->setFrom('afshan.marazin@gmail.com');
-            $Mail->addAddress($_POST['email_for_form']);
-            $Mail->addAddress($author_email);
-            $Mail->isHTML(true);
-            $Mail->Subject = 'Welcome to Arugambay Agenda';
-            $Mail->Body = 'We received your booking successfully.' .
-                '<br><br>' .
-                'Full Name: ' . $fullname . '<br>' .
-                'Email: ' . $email . '<br>' .
-                'WhatsApp Number: ' . $whatsapp_no . '<br>' .
-                'Activity: ' . $activity . '<br>' .
-                'Date: ' . $date . '<br>' .
-                'Time: ' . $time . '<br>' .
-                'Number of Adults: ' . $no_adults . '<br>' .
-                'Number of Kids: ' . $no_kids . '<br>' .
-                'Departure Location: ' . $departurelocation . '<br>' .
-                'Need Assistance: ' . $needassist .'<br>'. 
-                'Total Price of Adults: '.$price_of_adults .'<br>' . 
-                'Total Price of Child: '.$price_of_child . '<br>' . 
-                'Total Amount: '.$price_of_total;
-            $Mail->send();
-
-             header("Location: Experiential_package1.php?msg=Data Added successfull");
-
-        } catch (Exception $e) {
-            echo"
-                <script>
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Something went wrong!',
-                  });
-                </script>
-            ";
-            // echo "Email could not be sent. Mailer Error: {$Mail->ErrorInfo}";
-        }
-    } else {
-        echo "Failed: " . mysqli_error($conn);
-            echo"
-                <script>
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Something went wrong!',
-                  });
-                </script>
-            ";
-    }
-}
+//         } catch (Exception $e) {
+//             echo"
+//                 <script>
+//                 Swal.fire({
+//                     icon: 'error',
+//                     title: 'Oops...',
+//                     text: 'Something went wrong!',
+//                   });
+//                 </script>
+//             ";
+//             // echo "Email could not be sent. Mailer Error: {$Mail->ErrorInfo}";
+//         }
+//     } else {
+//         echo "Failed: " . mysqli_error($conn);
+//             echo"
+//                 <script>
+//                 Swal.fire({
+//                     icon: 'error',
+//                     title: 'Oops...',
+//                     text: 'Something went wrong!',
+//                   });
+//                 </script>";
+//     }
+// }
 ?>
 
 
@@ -480,7 +478,7 @@ if (isset($_POST["submit"])) {
                                     </div>
                                     <div class="booking-item mb-20">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="email_for_form" placeholder="E-Mail Address" name="email_for_form">
+                                            <input type="email" class="form-control" id="email_for_form" placeholder="E-Mail Address" name="email_for_form">
                                         </div>
                                     </div>
                                     <div class="booking-item mb-20">
@@ -573,14 +571,6 @@ if (isset($_POST["submit"])) {
                                             <button class="main-btn primary-btn" name="submit">Booking Now<i class="far fa-paper-plane"></i></button>
                                         </div>
                                     </div>
-
-                                    <div class="booking-date-time mb-20">
-                                        <div class="submit-button">
-                                            <button class="main-btn primary-btn" id="showSweetAlertBtn">Sweet alert<i class="far fa-paper-plane"></i></button>
-                                        </div>
-                                    </div>
-
-
                                     
                                 </form>
                             </div>
@@ -738,17 +728,20 @@ if (isset($_POST["submit"])) {
         }
     </script>
 
-
 <?php
-  if ($_GET["msg"] == "Data Added successfull") {
-    echo "<script> Swal.fire(
-     'Your booking has been taken successfully.',
-     'Pleas click the ok button',
-     'success'
-   )</script>";
-   }
-  
-  ?>
+session_start(); // Start the session
+if (isset($_SESSION['message'])) {
+    echo "<script> 
+            Swal.fire({
+                title: '" . ($_SESSION['message'] == 'Data Added successfully' ? 'Success' : 'Error') . "',
+                text: '" . ($_SESSION['message'] == 'Data Added successfully' ? 'Your booking has been taken successfully.' : 'Your booking could not be added. Please try again later.') . "',
+                icon: '" . ($_SESSION['message'] == 'Data Added successfully' ? 'success' : 'error') . "',
+                confirmButtonText: 'OK'
+            });
+          </script>";
+    unset($_SESSION['message']); // Remove the message from session after displaying
+}
+?>
 
 </body>
 

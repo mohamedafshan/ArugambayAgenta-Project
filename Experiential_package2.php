@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -9,64 +9,131 @@ require 'phpEmail/PHPMailer/src/SMTP.php';
 include "assets/php/connection.php";
 
 if (isset($_POST["submit"])) {
+    $errors = array();
+
     // Add new data
-    $fullname = $_POST['fullname'];
-    $email = $_POST['email_for_form'];
-    $whatsapp_no = $_POST['whatsapp_no'];
-    $activity = $_POST['activity'];
-    $date = $_POST['date'];
-    $time = $_POST['time'];
-    $no_adults = $_POST['no_adults'];
-    $no_kids = $_POST['no_kids'];
-    $departurelocation = $_POST['departurelocation'];
-    $needassist = $_POST['needassist'];
+    // Validate Fullname
+    if (empty($_POST['fullname'])) {
+        $errors[] = "Fullname is required";
+    } else {
+        $fullname = $_POST['fullname'];
+    }
+
+    // Validate Email
+    if (empty($_POST['email_for_form'])) {
+        $errors[] = "Email is required";
+    } elseif (!filter_var($_POST['email_for_form'], FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "Invalid email format";
+    } else {
+        $email = $_POST['email_for_form'];
+    }
+
+    // Validate WhatsApp Number
+    if (empty($_POST['whatsapp_no'])) {
+        $errors[] = "WhatsApp number is required";
+    } elseif (!preg_match("/^[0-9]{10}$/", $_POST['whatsapp_no'])) {
+        $errors[] = "Invalid WhatsApp number format";
+    } else {
+        $whatsapp_no = $_POST['whatsapp_no'];
+    }
+
+    if (empty($_POST['activity'])) {
+        $errors[] = "activity is required";
+    } else {
+        $activity = $_POST['activity'];
+    }
+
+    if (empty($_POST['date'])) {
+        $errors[] = "date is required";
+    } else {
+        $date = $_POST['date'];
+    }
+
+    if (empty($_POST['time'])) {
+        $errors[] = "time is required";
+    } else {
+        $time = $_POST['time'];
+    }
+
+    if (empty($_POST['no_adults'])) {
+        $no_adults = 0;
+    } else {
+        $no_adults = $_POST['no_adults'];
+    }
+
+    if (empty($_POST['no_kids'])) {
+        $no_kids = 0;
+    } else {
+        $no_kids = $_POST['no_kids'];
+    }
+
+    if (empty($_POST['departurelocation'])) {
+        $errors[] = "Departurelocation is required";
+    } else {
+        $departurelocation = $_POST['departurelocation'];
+    }
+
+    if (empty($_POST['needassist'])) {
+        $needassist = "Nothing";
+    } else {
+        $needassist = $_POST['needassist'];
+    }
+
+    //no need validation
+    $price_of_adults = $_POST['adult_value'];
     $price_of_child = $_POST['kids_value'];
     $price_of_total = $_POST['total'];
 
-    $sql = "INSERT INTO `booking` (`o_id`, `full_name`, `e_mail`, `whatsapp_no`, `activity`, `date`, `time`, `no_adults`, `no_kids`, `departure_location`, `need_assist`,`price_of_adults`, `price_of_child`, `total_amount`) VALUES (NULL, '$fullname', '$email', '$whatsapp_no', '$activity', '$date', '$time', '$no_adults', '$no_kids', '$departurelocation','$needassist','$price_of_adults','$price_of_child','$price_of_total')";
+    if (empty($errors)) {
+        $sql = "INSERT INTO `booking` (`o_id`, `full_name`, `e_mail`, `whatsapp_no`, `activity`, `date`, `time`, `no_adults`, `no_kids`, `departure_location`, `need_assist`, `price_of_adults`, `price_of_child`, `total_amount`) VALUES (NULL, '$fullname', '$email', '$whatsapp_no', '$activity', '$date', '$time', '$no_adults', '$no_kids', '$departurelocation', '$needassist', '$price_of_adults', '$price_of_child', '$price_of_total')";
+        $result = mysqli_query($conn, $sql);
+        if ($result) {
+            $author_email = 'hassan.marazin@gmail.com'; // author mail address
+            try {
+                $Mail = new PHPMailer(true);
+                $Mail->isSMTP();
+                $Mail->Host = 'smtp.gmail.com';
+                $Mail->SMTPAuth = true;
+                $Mail->Username = 'afshan.marazin@gmail.com';
+                $Mail->Password = 'eosb hhee rodl mtep';
+                $Mail->SMTPSecure = 'ssl';
+                $Mail->Port = 465;
 
-    $result = mysqli_query($conn, $sql);
-    if ($result) {
-        $author_email = 'hassan.marazin@gmail.com'; // author mail address
-        try {
-            $Mail = new PHPMailer(true);
-            $Mail->isSMTP();
-            $Mail->Host = 'smtp.gmail.com';
-            $Mail->SMTPAuth = true;
-            $Mail->Username = 'afshan.marazin@gmail.com';
-            $Mail->Password = 'eosb hhee rodl mtep';
-            $Mail->SMTPSecure = 'ssl';
-            $Mail->Port = 465;
 
+                $Mail->setFrom('afshan.marazin@gmail.com');
+                $Mail->addAddress($_POST['email_for_form']);
+                $Mail->addAddress($author_email);
+                $Mail->isHTML(true);
+                $Mail->Subject = 'Welcome to Arugambay Agenda';
+                $Mail->Body = 'We received your booking successfully.' .
+                    '<br><br>' .
+                    'Full Name: ' . $fullname . '<br>' .
+                    'Email: ' . $email . '<br>' .
+                    'WhatsApp Number: ' . $whatsapp_no . '<br>' .
+                    'Activity: ' . $activity . '<br>' .
+                    'Date: ' . $date . '<br>' .
+                    'Time: ' . $time . '<br>' .
+                    'Number of Adults: ' . $no_adults . '<br>' .
+                    'Number of Kids: ' . $no_kids . '<br>' .
+                    'Departure Location: ' . $departurelocation . '<br>' .
+                    'Need Assistance: ' . $needassist . '<br>' .
+                    'Total Price of Adults: ' . $price_of_adults . '<br>' .
+                    'Total Price of Child: ' . $price_of_child . '<br>' .
+                    'Total Amount: ' . $price_of_total;
+                $Mail->send();
 
-            $Mail->setFrom('afshan.marazin@gmail.com');
-            $Mail->addAddress($_POST['email_for_form']);
-            $Mail->addAddress($author_email);
-            $Mail->isHTML(true);
-            $Mail->Subject = 'Welcome to Arugambay Agenda';
-            $Mail->Body = 'We received your booking successfully.' .
-                '<br><br>' .
-                'Full Name: ' . $fullname . '<br>' .
-                'Email: ' . $email . '<br>' .
-                'WhatsApp Number: ' . $whatsapp_no . '<br>' .
-                'Activity: ' . $activity . '<br>' .
-                'Date: ' . $date . '<br>' .
-                'Time: ' . $time . '<br>' .
-                'Number of Adults: ' . $no_adults . '<br>' .
-                'Number of Kids: ' . $no_kids . '<br>' .
-                'Departure Location: ' . $departurelocation . '<br>' .
-                'Need Assistance: ' . $needassist.'<br>'.
-                'Total Price of Adults: '.$price_of_adults .'<br>' . 
-                'Total Price of Child: '.$price_of_child . '<br>' . 
-                'Total Amount: '.$price_of_total;
-            $Mail->send();
-
-            echo "<script>alert('Email sent successfully')</script>";
-        } catch (Exception $e) {
-            echo "Email could not be sent. Mailer Error: {$Mail->ErrorInfo}";
+                $_SESSION['message'] = "Data Added successfully";
+            } catch (Exception $e) {
+                $_SESSION['message'] = "Data Not Added";  
+                // echo "Email could not be sent. Mailer Error: {$Mail->ErrorInfo}";
+            }
+        } else {
+            $_SESSION['message'] = "Data Not Added";
+            // echo "Failed: " . mysqli_error($conn);
+        
         }
-    } else {
-        echo "Failed: " . mysqli_error($conn);
+    }else{
+        $_SESSION['message'] = "Data Not Added";
     }
 }
 ?>
@@ -728,6 +795,22 @@ if (isset($_POST["submit"])) {
         document.getElementById('totalAmountText').value = '$' + totalAmount.toFixed(2);
     }
 </script>
+
+<?php
+session_start(); // Start the session
+if (isset($_SESSION['message'])) {
+    echo "<script> 
+            Swal.fire({
+                title: '" . ($_SESSION['message'] == 'Data Added successfully' ? 'Success' : 'Error') . "',
+                text: '" . ($_SESSION['message'] == 'Data Added successfully' ? 'Your booking has been taken successfully.' : 'Your booking could not be added. Please try again later.') . "',
+                icon: '" . ($_SESSION['message'] == 'Data Added successfully' ? 'success' : 'error') . "',
+                confirmButtonText: 'OK'
+            });
+          </script>";
+    unset($_SESSION['message']); // Remove the message from session after displaying
+}
+?>
+
 
 </body>
 
