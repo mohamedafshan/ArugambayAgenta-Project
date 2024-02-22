@@ -811,7 +811,7 @@ include('Header/header.php');
                     <div class="we-content-box mb-10 wow fadeInLeft">
                         <div class="section-title mb-30">
                             <div class="row justify-content-center">
-                                <div class="col-md-6 text-center">
+                                <div class="col-md-6 text-center col-md-10">
                                     <span class="sub-title mt-5 text-white">Discover the uniqueness of Arugambay Agenda</span>
                                 </div>
                             </div>
@@ -957,6 +957,16 @@ include('Header/header.php');
                         <p>Cooking class</p>
                     </div>
                 </div>
+                <!-- <div class="col-lg-3 col-sm-6">
+                    <div class="single-counter-item text-center mb-40 wow fadeInDown">
+                        <div class="icon">
+                            <i class="flaticon-award"></i>
+                        </div>
+                        <h2 class="number"><span class="count">30</span>+</h2>
+                        <p>Day trips</p>
+                    </div>
+                </div> -->
+
                 <div class="col-lg-3 col-sm-6">
                     <!--=== Counter Item ===-->
                     <div class="single-counter-item text-center mb-40 wow fadeInDown">

@@ -31,59 +31,65 @@ if (isset($_POST["submit"])) {
 
     $result = mysqli_query($conn, $sql);
     if ($result) {
-            header("Location: Experiential_package1.php?msg=Data Added successfull");
-    //     $author_email = 'hassan.marazin@gmail.com'; // author mail address
-    //     try {
-    //         $Mail = new PHPMailer(true);
-    //         $Mail->isSMTP();
-    //         $Mail->Host = 'smtp.gmail.com';
-    //         $Mail->SMTPAuth = true;
-    //         $Mail->Username = 'afshan.marazin@gmail.com';
-    //         $Mail->Password = 'eosb hhee rodl mtep';
-    //         $Mail->SMTPSecure = 'ssl';
-    //         $Mail->Port = 465;
+        $author_email = 'hassan.marazin@gmail.com'; // author mail address
+        try {
+            $Mail = new PHPMailer(true);
+            $Mail->isSMTP();
+            $Mail->Host = 'smtp.gmail.com';
+            $Mail->SMTPAuth = true;
+            $Mail->Username = 'afshan.marazin@gmail.com';
+            $Mail->Password = 'eosb hhee rodl mtep';
+            $Mail->SMTPSecure = 'ssl';
+            $Mail->Port = 465;
 
 
-    //         $Mail->setFrom('afshan.marazin@gmail.com');
-    //         $Mail->addAddress($_POST['email_for_form']);
-    //         $Mail->addAddress($author_email);
-    //         $Mail->isHTML(true);
-    //         $Mail->Subject = 'Welcome to Arugambay Agenda';
-    //         $Mail->Body = 'We received your booking successfully.' .
-    //             '<br><br>' .
-    //             'Full Name: ' . $fullname . '<br>' .
-    //             'Email: ' . $email . '<br>' .
-    //             'WhatsApp Number: ' . $whatsapp_no . '<br>' .
-    //             'Activity: ' . $activity . '<br>' .
-    //             'Date: ' . $date . '<br>' .
-    //             'Time: ' . $time . '<br>' .
-    //             'Number of Adults: ' . $no_adults . '<br>' .
-    //             'Number of Kids: ' . $no_kids . '<br>' .
-    //             'Departure Location: ' . $departurelocation . '<br>' .
-    //             'Need Assistance: ' . $needassist .'<br>'. 
-    //             'Total Price of Adults: '.$price_of_adults .'<br>' . 
-    //             'Total Price of Child: '.$price_of_child . '<br>' . 
-    //             'Total Amount: '.$price_of_total;
-    //         $Mail->send();
+            $Mail->setFrom('afshan.marazin@gmail.com');
+            $Mail->addAddress($_POST['email_for_form']);
+            $Mail->addAddress($author_email);
+            $Mail->isHTML(true);
+            $Mail->Subject = 'Welcome to Arugambay Agenda';
+            $Mail->Body = 'We received your booking successfully.' .
+                '<br><br>' .
+                'Full Name: ' . $fullname . '<br>' .
+                'Email: ' . $email . '<br>' .
+                'WhatsApp Number: ' . $whatsapp_no . '<br>' .
+                'Activity: ' . $activity . '<br>' .
+                'Date: ' . $date . '<br>' .
+                'Time: ' . $time . '<br>' .
+                'Number of Adults: ' . $no_adults . '<br>' .
+                'Number of Kids: ' . $no_kids . '<br>' .
+                'Departure Location: ' . $departurelocation . '<br>' .
+                'Need Assistance: ' . $needassist .'<br>'. 
+                'Total Price of Adults: '.$price_of_adults .'<br>' . 
+                'Total Price of Child: '.$price_of_child . '<br>' . 
+                'Total Amount: '.$price_of_total;
+            $Mail->send();
 
-    //         echo "<script>alert('Email sent successfully')</script>";
-    //     } catch (Exception $e) {
-    //         echo "Email could not be sent. Mailer Error: {$Mail->ErrorInfo}";
-    //     }
-    // } else {
-    //     echo "Failed: " . mysqli_error($conn);
-    echo "<script>
+             header("Location: Experiential_package1.php?msg=Data Added successfull");
+
+        } catch (Exception $e) {
+            echo"
+                <script>
                 Swal.fire({
-                  title: 'Success',
-                  text: 'Booking added successfully',
-                  icon: 'success',
-                  confirmButtonText: 'OK'
-                }).then((result) => {
-                  if (result.isConfirmed) {
-                    window.location.href = 'Experiential_package1.php'; 
-                  }
-                });
-              </script>";
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                  });
+                </script>
+            ";
+            // echo "Email could not be sent. Mailer Error: {$Mail->ErrorInfo}";
+        }
+    } else {
+        echo "Failed: " . mysqli_error($conn);
+            echo"
+                <script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                  });
+                </script>
+            ";
     }
 }
 ?>
