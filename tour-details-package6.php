@@ -1,92 +1,5 @@
 <?php
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-require 'phpEmail/PHPMailer/src/Exception.php';
-require 'phpEmail/PHPMailer/src/PHPMailer.php';
-require 'phpEmail/PHPMailer/src/SMTP.php';
-include "assets/php/connection.php";
-
-if (isset($_POST["submit"])) {
-    // Add new data
-    $fullname = $_POST['fullname'];
-    $email = $_POST['email_for_form'];
-    $whatsapp_no = $_POST['whatsapp_no'];
-    $activity = $_POST['activity'];
-    $date = $_POST['date'];
-    $time = $_POST['time'];
-    $no_adults = $_POST['no_adults'];
-    $no_kids = $_POST['no_kids'];
-    $departurelocation = $_POST['departurelocation'];
-    $needassist = $_POST['needassist'];
-    $price_of_adults = $_POST['adult_value'];
-    $price_of_child = $_POST['kids_value'];
-    $price_of_total = $_POST['total'];
-
-    $sql = "INSERT INTO `booking` (`o_id`, `full_name`, `e_mail`, `whatsapp_no`, `activity`, `date`, `time`, `no_adults`, `no_kids`, `departure_location`, `need_assist`,`price_of_adults`, `price_of_child`, `total_amount`) VALUES (NULL, '$fullname', '$email', '$whatsapp_no', '$activity', '$date', '$time', '$no_adults', '$no_kids', '$departurelocation','$needassist','$price_of_adults','$price_of_child','$price_of_total')";
-
-    $result = mysqli_query($conn, $sql);
-    if ($result) {
-        $author_email = 'hassan.marazin@gmail.com'; // author mail address
-        try {
-            $Mail = new PHPMailer(true);
-            $Mail->isSMTP();
-            $Mail->Host = 'smtp.gmail.com';
-            $Mail->SMTPAuth = true;
-            $Mail->Username = 'afshan.marazin@gmail.com';
-            $Mail->Password = 'eosb hhee rodl mtep';
-            $Mail->SMTPSecure = 'ssl';
-            $Mail->Port = 465;
-
-
-            $Mail->setFrom('afshan.marazin@gmail.com');
-            $Mail->addAddress($_POST['email_for_form']);
-            $Mail->addAddress($author_email);
-            $Mail->isHTML(true);
-            $Mail->Subject = 'Welcome to Arugambay Agenda';
-            $Mail->Body = 'We received your booking successfully.' .
-                '<br><br>' .
-                'Full Name: ' . $fullname . '<br>' .
-                'Email: ' . $email . '<br>' .
-                'WhatsApp Number: ' . $whatsapp_no . '<br>' .
-                'Activity: ' . $activity . '<br>' .
-                'Date: ' . $date . '<br>' .
-                'Time: ' . $time . '<br>' .
-                'Number of Adults: ' . $no_adults . '<br>' .
-                'Number of Kids: ' . $no_kids . '<br>' .
-                'Departure Location: ' . $departurelocation . '<br>' .
-                'Need Assistance: ' . $needassist .'<br>'. 
-                'Total Price of Adults: '.$price_of_adults .'<br>' . 
-                'Total Price of Child: '.$price_of_child . '<br>' . 
-                'Total Amount: '.$price_of_total;
-            $Mail->send();
-
-            header("Location: Experiential_package1.php?msg=success");
-        } catch (Exception $e) {
-            // echo "Email could not be sent. Mailer Error: {$Mail->ErrorInfo}";
-            echo"
-            <script>
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Something went wrong!',
-              });
-            </script>";
-        }
-    } else {
-        echo "Failed: " . mysqli_error($conn);
-            echo"
-                <script>
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Something went wrong!',
-                  });
-                </script>";
-
-    }
-}
+    include('assets/php/formvalidation.php')
 ?>
 
 <!DOCTYPE html>
@@ -478,59 +391,6 @@ if (isset($_POST["submit"])) {
                             </div>
                         </div>
 
-                        <!--=== Reviews Area ===-->
-                        <!-- <div class="reviews-wrapper mb-60 wow fadeInUp">
-                            <div class="reviews-inner-box">
-                                <div class="rating-value">
-                                    <h4>Clients Reviews</h4>
-                                    <div class="rate-score">4.9</div>
-                                    <ul class="ratings">
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><a href="#">(4.9)</a></li>
-                                    </ul>
-                                    <span class="reviews">3k Reviews</span>
-                                </div>
-                                <div class="reviews-progress">
-                                    <div class="single-progress-bar">
-                                        <div class="progress-title">
-                                            <h6>Quality <span class="rate">4.8</span></h6>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar wow slideInLeft" style="width: 85%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="single-progress-bar">
-                                        <div class="progress-title">
-                                            <h6>Team Member<span class="rate">4.6</span></h6>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar wow slideInLeft" style="width: 75%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="single-progress-bar">
-                                        <div class="progress-title">
-                                            <h6>Locations<span class="rate">4.7</span></h6>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar wow slideInLeft" style="width: 90%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="single-progress-bar">
-                                        <div class="progress-title">
-                                            <h6>Cost<span class="rate">4.9</span></h6>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar wow slideInLeft" style="width: 95%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-
                         <!--===  Comments Form  ===-->
                         <div class="comments-respond mb-30 wow fadeInUp">
                             <h3 class="comments-heading" style="margin-bottom: 15px;">Leave a Comments</h3>
@@ -697,14 +557,14 @@ if (isset($_POST["submit"])) {
                                             </span> <input type="hidden" id="totalAmountadult" name="adult_value">
                                         </div>
                                         <div class="extra">
-                                            <i class="fas fa-check-circle"></i>Kids <span><span class="currency" id="totalAmount_kids"></span></span> 
+                                            <i class="fas fa-check-circle"></i>Kids <span><span class="currency" id="totalAmount_kids"></span></span>
                                             <input type="hidden" id="totalAmountkids" name="kids_value">
                                         </div>
                                     </div>
                                     <div class="booking-total mb-20">
                                         <div class="total">
                                             <label>Total</label>
-                                            <span class="price"><span class="currency" id="totalAmount"></span></span> 
+                                            <span class="price"><span class="currency" id="totalAmount"></span></span>
                                             <input type="hidden" id="totalAmountText" name="total">
                                         </div>
                                     </div>
@@ -801,7 +661,7 @@ if (isset($_POST["submit"])) {
                 document.getElementById('totalAmountadult').value = '$' + total1.toFixed(2);
                 updateTotalAmount();
             }
-            
+
         }
 
         function calculate_kid_amount(value2) {
@@ -853,7 +713,7 @@ if (isset($_POST["submit"])) {
                 document.getElementById('totalAmountkids').value = '$' + total2.toFixed(2);
                 updateTotalAmount();
             }
-            
+
         }
 
         function updateTotalAmount() {
@@ -862,17 +722,21 @@ if (isset($_POST["submit"])) {
             document.getElementById('totalAmountText').value = '$' + totalAmount.toFixed(2);
         }
     </script>
-    
-<?php
-  if ($_GET["msg"] == "success") {
-    echo "<script> Swal.fire(
-     'Your booking has been taken successfully.',
-     'Pleas click the ok button',
-     'success'
-   )</script>";
-   }
-  
-  ?>
+
+    <?php
+    session_start(); // Start the session
+    if (isset($_SESSION['message'])) {
+        echo "<script> 
+            Swal.fire({
+                title: '" . ($_SESSION['message'] == 'Data Added successfully' ? 'Success' : 'Error') . "',
+                text: '" . ($_SESSION['message'] == 'Data Added successfully' ? 'Your booking has been taken successfully.' : 'Your booking could not be added. Please try again later.') . "',
+                icon: '" . ($_SESSION['message'] == 'Data Added successfully' ? 'success' : 'error') . "',
+                confirmButtonText: 'OK'
+            });
+          </script>";
+        unset($_SESSION['message']); // Remove the message from session after displaying
+    }
+    ?>
 
 </body>
 
