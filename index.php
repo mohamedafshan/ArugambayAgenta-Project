@@ -514,11 +514,11 @@ include('Header/header.php');
                     </div>
                     <div class="place-content">
                         <div class="info">
-                            <h4 class="title"><a href="tour-details-package7.php">Half-Day Wild Safari in Kumana
-                                    National park (Sharing)</a></h4>
+                            <h4 class="title"><a href="tour-details-package7.php">Full-Day Wild Safari in Yala
+                                    National park</a></h4>
                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>140.00</p>
                             <div class="meta">
-                                <span><i class="far fa-clock"></i>06 hours</span>
+                                <span><i class="far fa-clock"></i>12 hours</span>
                                 <span><i class="far fa-user"></i>21</span>
                                 <span><a href="tour-details-package7.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                             </div>
@@ -1342,6 +1342,8 @@ include('Header/header.php');
             </div>
         </div>
     </section><!--====== End Hero Section ======-->
+    
+    <a href="https://wa.me/message/L2MV5OGPQV2RH1" class="back-to-top"><i class="fab fa-whatsapp"></i></a>
 
     <?php include('Footer/footer.php'); ?>
 </body>

@@ -221,6 +221,7 @@
             <?php include('Footer/footer.php')?>
 
         <!--====== Back To Top  ======-->
-        <a href="#" class="back-to-top" ><i class="far fa-angle-up"></i></a>
+        <!-- <a href="#" class="back-to-top" ><i class="far fa-angle-up"></i></a> -->
+        <a href="https://wa.me/message/L2MV5OGPQV2RH1" class="back-to-top"><i class="fab fa-whatsapp"></i></a>
     </body>
 </html>

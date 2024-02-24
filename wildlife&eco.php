@@ -204,8 +204,8 @@
                             </div>
                             <div class="place-content">
                                 <div class="info">
-                                    <h4 class="title"><a href="tour-details-package7.php">Half-Day Wild Safari in Kumana
-                                        National park (Sharing)</a></h4>  
+                                    <h4 class="title"><a href="tour-details-package7.php">Full-Day Wild Safari in Yala
+                                        National park</a></h4>  
                                     <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>140.00</p>
                                     <div class="meta">
                                         <span><i class="far fa-clock"></i>06 hours</span>
@@ -226,7 +226,7 @@
                             <div class="place-content">
                                 <div class="info">
                                     <h4 class="title"><a href="tour-details-package8.php">Half Day Wild Safari in
-                                        Yala National Park <br> <br>
+                                        Yala National Park
                                     </a></h4>  
                                     <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>85.00</p>
                                     <div class="meta">
@@ -268,7 +268,8 @@
             <?php include('Footer/footer.php')?>
 
         <!--====== Back To Top  ======-->
-        <a href="#" class="back-to-top" ><i class="far fa-angle-up"></i></a>
+        <!-- <a href="#" class="back-to-top" ><i class="far fa-angle-up"></i></a> -->
+        <a href="https://wa.me/message/L2MV5OGPQV2RH1" class="back-to-top"><i class="fab fa-whatsapp"></i></a>
        
     </body>
 </html>

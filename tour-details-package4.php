@@ -478,8 +478,8 @@
                                         </div>
                                     </div>
                                     <div class="booking-item mb-20">
-                                        <div class="form-group">
-                                            <select class="form-select" id="select_option" name="activity">
+                                        <div class="bk-item">
+                                            <select class="" id="select_option" name="activity">
                                                 <option value="">Select an option</option>
                                                 <option value="Half-Day wild safari in Kumana National Park">Half-Day wild safari in Kumana National Park</option>
                                                 <option value="Full-Day wild safari in Kumana National Park">Full-Day wild safari in Kumana National Park</option>
@@ -502,19 +502,8 @@
                                         <div class="bk-item booking-date">
                                             <i class="far fa-calendar-alt"></i>
                                             <select class="wide" name="time">
-                                                <option value="12.00">12.00 Am</option>
-                                                <option value="01.00">01.00 Am</option>
-                                                <option value="02.00">02.00 Am</option>
-                                                <option value="03.00">03.00 Am</option>
-                                                <option value="04.00">04.00 Am</option>
-                                                <option value="05.00">05.00 Am</option>
-                                                <option value="06.00">06.00 Am</option>
-                                                <option value="07.00">07.00 Am</option>
-                                                <option value="08.00">08.00 Am</option>
-                                                <option value="09.00">09.00 Am</option>
-                                                <option value="10.00">10.00 Am</option>
-                                                <option value="11.00">11.00 Am</option>
-                                                <option value="12.00">12.00 Pm</option>
+                                                <option value="03.00 A.M">03.00 A.M</option>
+                                                <option value="09.30 A.M">09.30 A.M</option>
                                             </select>
                                         </div>
                                     </div>
@@ -570,8 +559,6 @@
                                 <h4 class="widget-title">Tour Information</h4>
                                 <ul class="info-list">
                                     <li><span><i class="far fa-user-circle"></i>Max Guests<span>21</span></span></li>
-                                    <li><span><i class="far fa-user-circle"></i>Minimum Age<span>12+</span></span></li>
-                                    <li><span><i class="far fa-map-marker-alt"></i>Tour Location<span>Srilanka</span></span></li>
                                     <li><span><i class="far fa-globe"></i>Language<span>English</span></span></li>
                                 </ul>
                             </div>
@@ -594,7 +581,8 @@
     <?php include('Footer/footer.php'); ?>
 
     <!--====== Back To Top  ======-->
-    <a href="#" class="back-to-top"><i class="far fa-angle-up"></i></a>
+    <!-- <a href="#" class="back-to-top"><i class="far fa-angle-up"></i></a> -->
+    <a href="https://wa.me/message/L2MV5OGPQV2RH1" class="back-to-top"><i class="fab fa-whatsapp"></i></a>
 
     <script>
         var total1 = 0;

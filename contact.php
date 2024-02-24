@@ -148,6 +148,8 @@
         <!--====== Start Footer ======-->
         <?php include('Footer/footer.php')?>
         <!-- For Contact Form -->
+        
+        
         <script src="assets/vendor/form-validation/jquery.ajaxchimp.min.js"></script>
         <script src="assets/vendor/form-validation/form-validator.min.js"></script>
         <script src="assets/vendor/form-validation/contact-form-script.js"></script>

@@ -20,7 +20,7 @@
     <!--====== Start Place Details Section ======-->
     <section class="place-details-section">
         <!--=== Place Slider ===-->
-        <div class="place-slider-area overflow-hidden wow fadeInUp">
+        <div class="place-slider-area overflow-hidden wow fadeInUp col-xs-12">
             <div class="place-slider">
                 <div class="place-slider-item">
                     <div class="place-img">
@@ -130,7 +130,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xl-8">
+                    <div class="col-xl-8 d-flex flex-column">
                         <!--=== Place Content Wrap ===-->
                         <div class="place-content-wrap pt-45 wow fadeInUp">
                             <h3 class="title">Explore Tour Package</h3>
@@ -260,7 +260,7 @@
                                 <!--=== Single Place Item ===-->
                                 <div class="single-place-item mb-60 wow fadeInUp">
                                     <div class="place-img">
-                                        <img src="assets/images/must See/Tuk Tuk Sightseeing.jpg" alt="Place Image">
+                                        <img src="assets/images/must See/Tuk Tuk Sightseeing.jpg" alt="Place Image" height="280px" >
                                     </div>
                                     <div class="place-content">
                                         <div class="info">
@@ -348,7 +348,7 @@
                             </form>
                         </div>
                     </div>
-                    <div class="col-xl-4">
+                    <div class="col-xl-4 d-flex flex-column">
                         <!--=== Sidebar Widget Area ===-->
                         <div class="sidebar-widget-area pt-60 pl-lg-30">
                             <!--=== Booking Widget ===-->
@@ -371,8 +371,8 @@
                                         </div>
                                     </div>
                                     <div class="booking-item mb-20">
-                                        <div class="form-group">
-                                            <select class="form-select" id="select_option" name="activity">
+                                        <div class="bk-item">
+                                            <select class="" id="select_option" name="activity">
                                                 <option value="">Select an option</option>
                                                 <option value="WaveRise: Beginner Surf Experience">WaveRise: Beginner Surf Experience</option>
                                             </select>
@@ -390,19 +390,8 @@
                                         <div class="bk-item booking-date">
                                             <i class="far fa-calendar-alt"></i>
                                             <select class="wide" name="time">
-                                                <option value="12.00">12.00 Am</option>
-                                                <option value="01.00">01.00 Am</option>
-                                                <option value="02.00">02.00 Am</option>
-                                                <option value="03.00">03.00 Am</option>
-                                                <option value="04.00">04.00 Am</option>
-                                                <option value="05.00">05.00 Am</option>
-                                                <option value="06.00">06.00 Am</option>
-                                                <option value="07.00">07.00 Am</option>
-                                                <option value="08.00">08.00 Am</option>
-                                                <option value="09.00">09.00 Am</option>
-                                                <option value="10.00">10.00 Am</option>
-                                                <option value="11.00">11.00 Am</option>
-                                                <option value="12.00">12.00 Pm</option>
+                                                <option value="06.00 A.M">06.00 A.M</option>
+                                                <option value="04.00 P.M">04.00 P.M</option>
                                             </select>
                                         </div>
                                     </div>
@@ -459,8 +448,6 @@
                                 <h4 class="widget-title">Tour Information</h4>
                                 <ul class="info-list">
                                     <li><span><i class="far fa-user-circle"></i>Max Guests<span>21</span></span></li>
-                                    <li><span><i class="far fa-user-circle"></i>Minimum Age<span>12+</span></span></li>
-                                    <li><span><i class="far fa-map-marker-alt"></i>Tour Location<span>Srilanka</span></span></li>
                                     <li><span><i class="far fa-globe"></i>Language<span>English</span></span></li>
                                 </ul>
                             </div>
@@ -483,7 +470,8 @@
     <?php include('Footer/footer.php'); ?>
 
     <!--====== Back To Top  ======-->
-    <a href="#" class="back-to-top"><i class="far fa-angle-up"></i></a>
+    <!-- <a href="#" class="back-to-top"><i class="far fa-angle-up"></i></a> -->
+    <a href="https://wa.me/message/L2MV5OGPQV2RH1" class="back-to-top"><i class="fab fa-whatsapp"></i></a>
 
     <script>
         var total1 = 0;

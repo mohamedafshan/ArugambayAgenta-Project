@@ -125,18 +125,18 @@
     //===== Back to top
 
     $(window).on('scroll', function(event) {
-        if ($(this).scrollTop() > 600) {
+        if ($(this).scrollTop() > 50) {
             $('.back-to-top').fadeIn(200)
         } else {
             $('.back-to-top').fadeOut(200)
         }
     });
-    $('.back-to-top').on('click', function(event) {
-        event.preventDefault();
-        $('html, body').animate({
-            scrollTop: 0,
-        }, 1500);
-    });
+    // $('.back-to-top').on('click', function(event) {
+    //     event.preventDefault();
+    //     $('html, body').animate({
+    //         scrollTop: 0,
+    //     }, 1500);
+    // });
     
     //===== Counter js
     

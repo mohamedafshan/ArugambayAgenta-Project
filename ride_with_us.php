@@ -168,7 +168,7 @@ if (isset($_POST["submit"])) {
         </div>
     </div>
 </section><!--====== End Contact Section ======-->
-
+<a href="https://wa.me/message/L2MV5OGPQV2RH1" class="back-to-top"><i class="fab fa-whatsapp"></i></a>
 <!--====== Start Footer ======-->
 <?php include('Footer/footer.php') ?>
 <!-- For Contact Form -->

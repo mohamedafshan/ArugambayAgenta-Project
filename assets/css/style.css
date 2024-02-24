@@ -627,7 +627,7 @@ button {
 
 /*====== Start Back to top css ======*/
 .back-to-top {
-  background-color: #0097b2;
+  background-color: #25D366;
   border-radius: 50%;
   bottom: 30px;
   color: #fff;
@@ -4181,7 +4181,7 @@ form.comment-form .form_control {
     z-index: 2; }
   .sidebar-widget-area .booking-form-widget .sidebar-booking-form .bk-item .nice-select,
   .sidebar-widget-area .booking-form-widget .sidebar-booking-form .bk-item input {
-    width: 150px;
+    width: 245px;
     line-height: 20px;
     padding: 10px 10px 10px 35px;
     border: 1px solid rgba(29, 35, 31, 0.2);
