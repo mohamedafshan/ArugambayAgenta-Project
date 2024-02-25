@@ -7,20 +7,28 @@ include('Header/header.php');
 
 <body>
     <!--====== Start Testimonial Section ======-->
-    <section class="page-banner overlay opacity-0.125 pt-150 pb-160 bg_cover" style="background-image: url(assets/images/Experiential/Railway\ and\ train\ in\ Ella.jpg);">
+    <section class="page-banner overlay opacity-0.125 pt-150 pb-160 bg_cover" style="background-image: url(assets/images/Experiential/Railway\ and\ train\ in\ Ella.jpg);">         
         <div class="container">
-            <div class="row justify-content-center"> 
-                <div class="col-lg-10"> 
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
                     <div class="page-banner-content text-center text-white">
-                        <b><h1 class="page-title">ARUGAMBAY AGENDA</h1></b>
+                        <b>
+                            <h1 class="page-title">ARUGAMBAY AGENDA</h1>
+                        </b>
                         <h2 class="h2 mb-20">Crafting Dream Gateways</h2>
                     </div>
                 </div>
             </div>
 
+            <!-- <div>
+            <i class="far fa-arrow-left"></i>
+            </div> -->
+            
             <div class="slider-active-3-item">
                 <!-- important -->
-
+    
+                   
+                
                 <div class="gw-testimonial-item">
                     <div class="testimonial-inner-content">
                         <!--=== Features Image Item ===-->
@@ -365,7 +373,7 @@ include('Header/header.php');
                                 <div class="content">
                                     <div class="text">
                                         <h4 class="title">
-                                            Okanda Seren
+                                            Okand serenity
                                         </h4>
                                         <a href="must_see_package1.php" class="icon-btn"><i class="far fa-arrow-right"></i></a>
                                     </div>
@@ -375,10 +383,9 @@ include('Header/header.php');
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-    </section><!--====== End Testimonial Section ======-->
+    </section>
 
     <!--====== Start Features Section ======-->
     <section class="features-section pt-100">
@@ -799,7 +806,7 @@ include('Header/header.php');
         </div>
         <div class="col-lg-12">
             <div class="form_group form-group text-center">
-                <button class="main-btn primary-btn">Book Your Ride Now<i class="fas fa-arrow-right"></i></button>
+                <a href="ride_with_us.php"> <button class="main-btn primary-btn">Book Your Ride Now<i class="fas fa-arrow-right"></i></button></a>
             </div>
         </div>
     </section><!--====== End Features Section ======-->
@@ -981,18 +988,20 @@ include('Header/header.php');
         </div>
     </section><!--====== End Fact Section ======-->
 
-    <section class="testimonial-section bg_cover pt-100 pb-100 mt-50" style="background-image: url(assets/images/bg/map-bg.jpg);">
+    <section class="bg_cover pt-100 pb-100 mt-50" style="background-image: url(assets/images/bg/map-bg.jpg);">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-7">
                     <div class="section-title text-center text-white mb-60">
                         <span class="sub-title">Our testimonials</span>
-                        <h2>What people say on us</h2>
+                        <h2>What people say on about us</h2>
                     </div>
                 </div>
             </div>
-            <div class="slider-active-3-item">
-                <div class="gw-testimonial-item-two">
+
+            <div class='sk-ww-google-reviews' data-embed-id='25370954'></div>
+            <script src='https://widgets.sociablekit.com/google-reviews/widget.js' async defer></script>
+            <!-- <div class="gw-testimonial-item-two">
                     <div class="testimonial-inner-content">
                         <div class="author-thumb-title">
                             <div class="author-thumb">
@@ -1039,8 +1048,6 @@ include('Header/header.php');
                         </ul>
                         <p>We booked trip with Hanas from Arugam Bay to Yala National Park. It was an excellent experience!
                             We had a chance to see all amazing animals including leopards,
-                            <!-- we could feed elephants on our way there, as the guys were flexible and we could stop anytime we wanted.  -->
-                            <!-- The vehicle was also big enough for our luggage and the drop off was flexible so we could chose Mirissa as our next destination.</p> -->
                             <button class="btn btn-transparent">readmore</button>
                     </div>
                 </div>
@@ -1065,8 +1072,7 @@ include('Header/header.php');
                         </ul>
                         <p>It was a really good safari in the district 6 of the Yala National Park.
                             Few elephants and two leopards spotted! It felt really safe all the time.
-                            <!-- Hanas was our guide and did his best that we enjoyed the tour. In the price “drop off to any place was included”  -->
-                            <!-- so he dropped us off in Mirissa, which is 3h drive from Yala. Really nice. -->
+                           
                         </p>
                         <button class="btn btn-transparent">readmore</button>
                     </div>
@@ -1092,8 +1098,7 @@ include('Header/header.php');
                         </ul>
                         <p>An unforgettable day in my life with guide Hanas. Went on a safari in 4x4 Hilux,
                             A super comfy vehicle. left Arugambay in the afternoon to Kumana National Park.
-                            <!-- A blessed day to spot all the animals available there. We spot a couple of majesty leopard, a sloth bear, many elephants, many deers and many many bird species.
-                             Hanas is a very good person and super friendly! If you wanna do a safari in Kumana or in Yala, you can just choose him. Worth for your spend your!! Strongly recommend this. -->
+                          
                         </p>
                         <button class="btn btn-transparent">readmore</button>
                     </div>
@@ -1145,10 +1150,9 @@ include('Header/header.php');
                     </div>
                 </div>
 
-            </div>
+            </div> -->
         </div>
     </section><!--====== End Testimonial Section ======-->
-
 
     <!--====== Start Team Section ======-->
     <section class="team-section pt-100 pb-70">
@@ -1342,7 +1346,7 @@ include('Header/header.php');
             </div>
         </div>
     </section><!--====== End Hero Section ======-->
-    
+
     <a href="https://wa.me/message/L2MV5OGPQV2RH1" class="back-to-top"><i class="fab fa-whatsapp"></i></a>
 
     <?php include('Footer/footer.php'); ?>

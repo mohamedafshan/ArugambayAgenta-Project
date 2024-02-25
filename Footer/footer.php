@@ -67,9 +67,9 @@
                             <div class="footer-widget about-company-widget mb-40 wow fadeInUp">
                                 <h4 class="widget-title">About</h4>
                                 <div class="footer-content">
-                                    <p>To take trivial example which us 
-                                        ever undertakes laborious physica
-                                        exercise except obsome</p>
+                                    <p>Explore Sri Lanka's cultural wonders with 
+                                        Arugambay Agenda's seamless island 
+                                        transfers and curated tours.</p>
                                     <a href="index.php" class="footer-logo"><img src="assets/images/logo/Arulogo_footer.png" alt="Site Logo"></a>
                                 </div>
                             </div>
@@ -100,8 +100,8 @@
                             <div class="footer-widget footer-newsletter-widget mb-40 pl-lg-100 wow fadeInUp">
                                 <h4 class="widget-title">Newsletter</h4>
                                 <div class="footer-content">
-                                    <p>Which of us ever undertake laborious
-                                        physical exercise except obtain</p>
+                                    <p>Stay updated on exclusive offers and travel 
+                                        insights with our newsletter subscription.</p>
                                     <form>
                                         <div class="form_group">
                                             <label><i class="far fa-paper-plane"></i></label>
@@ -134,7 +134,8 @@
         </footer><!--====== End Footer ======-->
 
         <!--====== Back To Top  ======-->
-        <a href="#" class="back-to-top" ><i class="far fa-angle-up"></i></a>
+        <!-- <a href="#" class="back-to-top" ><i class="far fa-angle-up"></i></a> -->
+        
         <!--====== Jquery js ======-->
         <script src="assets/vendor/jquery-3.6.0.min.js"></script>
         <!--====== Bootstrap js ======-->

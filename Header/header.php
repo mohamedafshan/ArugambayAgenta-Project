@@ -8,7 +8,7 @@
         <title>Arugambay Agenda</title>
 
         <!--====== Favicon Icon ======-->
-        <!-- <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/png"> -->
+        <link rel="shortcut icon" href="assets/images/fav_icon/arugambayagenda_fav_icon.png" type="image/png">
         
         <!--====== Google Fonts ======-->
         <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
