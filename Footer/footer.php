@@ -50,7 +50,7 @@
                                 <ul class="social-link">
                                     <li><a href="https://www.facebook.com/profile.php?id=100092304975049&mibextid=LQQJ4d"><i class="fab fa-facebook-f"></i></a></li>
                                     <li><a href="https://instagram.com/arugambayagenda?igshid=MzMyNGUyNmU2YQ%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="https://www.threads.net/@arugambayagenda"><i class="fas fa-comments"></i></a></li>
+                                    <li><a href="https://www.threads.net/@arugambayagenda"><i class="fas-brands fa-square-threads"></i></a></li>
                                     <li><a href="info.arugambayagenda.com"><i class="fas fa-envelope"></i></a></li>
                                     <!-- threat fa-brands fa-threads -->
                                 </ul>
@@ -133,8 +133,6 @@
             </div>
         </footer><!--====== End Footer ======-->
 
-        <!--====== Back To Top  ======-->
-        <!-- <a href="#" class="back-to-top" ><i class="far fa-angle-up"></i></a> -->
         
         <!--====== Jquery js ======-->
         <script src="assets/vendor/jquery-3.6.0.min.js"></script>

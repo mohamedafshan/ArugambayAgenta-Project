@@ -7,6 +7,18 @@ url("./flaticon_gowilds.eot?d0235de0bbc7ec3e6bca4c8fddee355a#iefix") format("emb
 url("./flaticon_gowilds.svg?d0235de0bbc7ec3e6bca4c8fddee355a#flaticon_gowilds") format("svg");
 }
 
+/* @font-face {
+    font-family: "flaticon_gowilds";
+    src: url("./new_version/flaticon_gowilds.ttf?new_version_hash") format("truetype"),
+         url("./new_version/flaticon_gowilds.woff?new_version_hash") format("woff"),
+         url("./new_version/flaticon_gowilds.woff2?new_version_hash") format("woff2"),
+         url("./new_version/flaticon_gowilds.eot?new_version_hash#iefix") format("embedded-opentype"),
+         url("./new_version/flaticon_gowilds.svg?new_version_hash#flaticon_gowilds") format("svg");
+} */
+
+/* Rest of your CSS remains the same */
+
+
 i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
     font-family: flaticon_gowilds !important;
     font-style: normal;

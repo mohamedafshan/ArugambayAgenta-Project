@@ -5,6 +5,21 @@
 include('Header/header.php');
 ?>
 
+<style>
+@media (min-width: 1000px) and (max-width: 1920.98px) {
+    .xxl-custom-col {
+        width: 20% !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .xxl-custom-col {
+        width: 25% !important;
+    }
+}
+
+</style>
+
 <body>
     <!--====== Start Testimonial Section ======-->
     <section class="page-banner overlay opacity-0.125 pt-150 pb-160 bg_cover" style="background-image: url(assets/images/Experiential/Railway\ and\ train\ in\ Ella.jpg);">         
@@ -833,7 +848,7 @@ include('Header/header.php');
                                         <i class="fas fa-badge-check"></i>
                                     </div>
                                     <div class="icon">
-                                        <i class="flaticon-helmet"></i>
+                                        <i class="flaticon-hiking"></i>
                                     </div>
                                 </div>
                                 <div class="content">
@@ -848,7 +863,7 @@ include('Header/header.php');
                                         <i class="fas fa-badge-check"></i>
                                     </div>
                                     <div class="icon">
-                                        <i class="flaticon-best-price"></i>
+                                        <i class="flaticon-reviews"></i>
                                     </div>
                                 </div>
                                 <div class="content">
@@ -883,7 +898,7 @@ include('Header/header.php');
                                         <i class="fas fa-badge-check"></i>
                                     </div>
                                     <div class="icon">
-                                        <i class="flaticon-helmet"></i>
+                                        <i class="flaticon-camping"></i>
                                     </div>
                                 </div>
                                 <div class="content">
@@ -932,19 +947,19 @@ include('Header/header.php');
     </section>
 
     <section class="fact-section pt-20">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-3 col-sm-6">
+                <div class="col-lg-3 col-sm-6 xxl-custom-col">
                     <!--=== Counter Item ===-->
                     <div class="single-counter-item text-center mb-40 wow fadeInUp">
                         <div class="icon">
-                            <i class="flaticon-journey"></i>
+                            <i class="flaticon-firewood"></i>
                         </div>
                         <h2 class="number"><span class="count">200</span>+</h2>
                         <p>Half day wild safaris</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
+                <div class="col-lg-3 col-sm-6 xxl-custom-col">
                     <!--=== Counter Item ===-->
                     <div class="single-counter-item text-center mb-40 wow fadeInDown">
                         <div class="icon">
@@ -954,7 +969,7 @@ include('Header/header.php');
                         <p>Full day wild safaris</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
+                <div class="col-lg-3 col-sm-6 xxl-custom-col">
                     <!--=== Counter Item ===-->
                     <div class="single-counter-item text-center mb-40 wow fadeInUp">
                         <div class="icon">
@@ -964,21 +979,22 @@ include('Header/header.php');
                         <p>Cooking class</p>
                     </div>
                 </div>
-                <!-- <div class="col-lg-3 col-sm-6">
+
+                <div class="col-lg-3 col-sm-6 xxl-custom-col">
                     <div class="single-counter-item text-center mb-40 wow fadeInDown">
                         <div class="icon">
-                            <i class="flaticon-award"></i>
+                            <i class="flaticon-cable-car"></i>
                         </div>
                         <h2 class="number"><span class="count">30</span>+</h2>
                         <p>Day trips</p>
                     </div>
-                </div> -->
+                </div>
 
-                <div class="col-lg-3 col-sm-6">
+                <div class="col-lg-3 col-sm-6 xxl-custom-col">
                     <!--=== Counter Item ===-->
                     <div class="single-counter-item text-center mb-40 wow fadeInDown">
                         <div class="icon">
-                            <i class="flaticon-award"></i>
+                            <i class="flaticon-camping"></i>
                         </div>
                         <h2 class="number"><span class="count">100</span>+</h2>
                         <p>Cultural & Anciant visits</p>
@@ -998,9 +1014,7 @@ include('Header/header.php');
                     </div>
                 </div>
             </div>
-
-            <div class='sk-ww-google-reviews' data-embed-id='25370954'></div>
-            <script src='https://widgets.sociablekit.com/google-reviews/widget.js' async defer></script>
+            <div class='sk-ww-google-reviews' data-embed-id='25370954'></div><script src='https://widgets.sociablekit.com/google-reviews/widget.js' async defer></script>
             <!-- <div class="gw-testimonial-item-two">
                     <div class="testimonial-inner-content">
                         <div class="author-thumb-title">
@@ -1168,7 +1182,7 @@ include('Header/header.php');
                             Hey there, I’m Hanas, the heart and soul behind Arugambay Agenda. As the founder of this venture, I’m on a mission to share the enchantment of my beloved hometown, Arugambay, with the world. I’m a true Arugambay native, born and raised on the East Coast of Sri Lanka. Picture me as the youngest member of a lively family, nestled among the sounds of the ocean and the warmth of a tight-knit clan.
                         </p>
                         <div class="form_group form-group text-center mt-5">
-                            <button class="main-btn primary-btn">Discover More<i class="fas fa-arrow-right"></i></button>
+                            <a href="aboutus.php"><button class="main-btn primary-btn">Discover More<i class="fas fa-arrow-right"></i></button></a>
                         </div>
                     </div>
                 </div>

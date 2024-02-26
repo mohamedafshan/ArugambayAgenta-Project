@@ -48,7 +48,7 @@
                 <div class="primary-menu">
                         <!--====== Site Branding ======-->
                         <div class="site-branding mt-20 ml-md-55 ml-xl-10 ml-xs-10 ml-lg-2 ml-sm-2">
-                            <a href="index.php" class="brand-logo"><img src="assets/images/logo/Arulogo_header.png"alt="Site Logo" ></a>
+                            <a href="index.php" class="brand-logo"><img src="assets/images/logo/Arugabay_agenda_logo_menu1 1.png"alt="Site Logo" ></a>
                         </div>
                         <!--====== Nav Menu ======-->
                         <div class="nav-menu">
