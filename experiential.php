@@ -73,14 +73,14 @@
                             </div>
                             <div class="place-content">
                                 <div class="info">
-                                    <h4 class="title"><a href="Experiential_package1.php">
+                                    <h4 class="title"><a href="day_trip_to_sigirya.php">
                                         Day Trip to Sigiriya <br> <br>
                                     </a></h4>  
                                     <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>61.35</p>
                                     <div class="meta">
                                         <span><i class="far fa-clock"></i>1 day</span>
                                         <span><i class="far fa-user"></i>21</span>
-                                        <span><a href="Experiential_package1.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                        <span><a href="day_trip_to_sigirya.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                                     </div>
                                 </div>
                             </div>
@@ -95,13 +95,13 @@
                             </div>
                             <div class="place-content">
                                 <div class="info">
-                                    <h4 class="title"><a href="Experiential_package2.php">"Two Days in Highland" Tour
+                                    <h4 class="title"><a href="two_days_in_highland_our.php">"Two Days in Highland" Tour
                                        </a></h4>  
                                     <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>230.00</p>
                                     <div class="meta">
                                         <span><i class="far fa-clock"></i>2 days</span>
                                         <span><i class="far fa-user"></i>21</span>
-                                        <span><a href="Experiential_package2.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                        <span><a href="two_days_in_highland_our.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                                     </div>
                                 </div>
                             </div>
@@ -116,14 +116,14 @@
                             </div>
                             <div class="place-content">
                                 <div class="info">
-                                    <h4 class="title"><a href="Experiential_package3.php">
+                                    <h4 class="title"><a href="day_trip_to_ella.php">
                                         Day Trip to Ella <br> <br>
                                     </a></h4>  
                                     <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>130.00</p>
                                     <div class="meta">
                                         <span><i class="far fa-clock"></i>1 day</span>
                                         <span><i class="far fa-user"></i>21</span>
-                                        <span><a href="Experiential_package3.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                        <span><a href="day_trip_to_ella.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                                     </div>
                                 </div>
                             </div>
@@ -138,14 +138,14 @@
                             </div>
                             <div class="place-content">
                                 <div class="info">
-                                    <h4 class="title"><a href="Experiential_package4.php">
+                                    <h4 class="title"><a href="colombo_city_excursion.php">
                                         Colombo City Excursion with Srilankan Lunch
                                     </a></h4>  
                                     <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>55.00</p>
                                     <div class="meta">
                                         <span><i class="far fa-clock"></i>07 hours</span>
                                         <span><i class="far fa-user"></i>21</span>
-                                        <span><a href="Experiential_package4.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                        <span><a href="colombo_city_excursion.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                                     </div>
                                 </div>
                             </div>

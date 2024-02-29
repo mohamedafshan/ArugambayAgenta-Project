@@ -35,13 +35,13 @@
                             </div>
                             <div class="place-content">
                                 <div class="info">
-                                    <h4 class="title"><a href="tour-details-package1.php">Half-Day Wild Safari in Kumana
+                                    <h4 class="title"><a href="half_day_wild_safari_in_kumana_national_park_sharing.php">Half-Day Wild Safari in Kumana
                                         National park (Sharing)</a></h4>  
                                     <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>40.00</p>
                                     <div class="meta">
                                         <span><i class="far fa-clock"></i>06 hours</span>
                                         <span><i class="far fa-user"></i>21</span>
-                                        <span><a href="tour-details-package1.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                        <span><a href="half_day_wild_safari_in_kumana_national_park_sharing.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                                     </div>
                                 </div>
                             </div>
@@ -56,14 +56,14 @@
                             </div>
                             <div class="place-content">
                                 <div class="info">
-                                    <h4 class="title"><a href="tour-details-package2.php">Wild Safari in Lahugala
+                                    <h4 class="title"><a href="wild_safari_in_lahugala_national_park.php">Wild Safari in Lahugala
                                          National Park <br><br>
                                        </a></h4>  
                                     <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>23.47</p>
                                     <div class="meta">
                                         <span><i class="far fa-clock"></i>04 hours</span>
                                         <span><i class="far fa-user"></i>21</span>
-                                        <span><a href="tour-details-package2.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                        <span><a href="wild_safari_in_lahugala_national_park.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                                     </div>
                                 </div>
                             </div>
@@ -78,13 +78,13 @@
                             </div>
                             <div class="place-content">
                                 <div class="info">
-                                    <h4 class="title"><a href="tour-details-package3.php">Mangrove Watching in Pottuvil Lagoon
+                                    <h4 class="title"><a href="mangrove_watching_in_pottuvil.php">Mangrove Watching in Pottuvil Lagoon
                                         (Lagoon Eco Tour)</a></h4>  
                                     <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>25.00</p>
                                     <div class="meta">
                                         <span><i class="far fa-clock"></i>03 hours</span>
                                         <span><i class="far fa-user"></i>21</span>
-                                        <span><a href="tour-details-package3.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                        <span><a href="mangrove_watching_in_pottuvil.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                                     </div>
                                 </div>
                             </div>
@@ -99,13 +99,13 @@
                             </div>
                             <div class="place-content">
                                 <div class="info">
-                                    <h4 class="title"><a href="tour-details-package4.php">Arugambay to Yala: wild Safari +
+                                    <h4 class="title"><a href="arugambay_to_yala_wild_safari+Drop_off_flexibility.php">Arugambay to Yala: wild Safari +
                                       Drop-off Flexibilty </a></h4>  
                                     <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>170.00</p>
                                     <div class="meta">
                                         <span><i class="far fa-clock"></i>08 hours 30 mins</span>
                                         <span><i class="far fa-user"></i>21</span>
-                                        <span><a href="tour-details-package4.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                        <span><a href="arugambay_to_yala_wild_safari+Drop_off_flexibility.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                                     </div>
                                 </div>
                             </div>
@@ -120,14 +120,14 @@
                             </div>
                             <div class="place-content">
                                 <div class="info">
-                                    <h4 class="title"><a href="tour-details-package5.php">
+                                    <h4 class="title"><a href="half_day_wild_safari_in_kumana_national_park_private.php">
                                         Half-Day Wild Safari in Kumana National Park (Private)
                                     </a></h4>  
                                     <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>75.00</p>
                                     <div class="meta">
                                         <span><i class="far fa-clock"></i>06 hours</span>
                                         <span><i class="far fa-user"></i>21</span>
-                                        <span><a href="tour-details-package5.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                        <span><a href="half_day_wild_safari_in_kumana_national_park_private.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                                     </div>
                                 </div>
                             </div>
@@ -142,14 +142,16 @@
                             </div>
                             <div class="place-content">
                                 <div class="info">
-                                    <h4 class="title"><a href="tour-details-package6.php">
+                                    <h4 class="title"><a href="full_day_wild_safari_in_kumana_national_park_private.php
+">
                                         Full-Day Wild Safari in Kumana National Park(Private)
                                     </a></h4>  
                                     <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>130.00</p>
                                     <div class="meta">
                                         <span><i class="far fa-clock"></i>12 hours</span>
                                         <span><i class="far fa-user"></i>21</span>
-                                        <span><a href="tour-details-package6.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                        <span><a href="full_day_wild_safari_in_kumana_national_park_private.php
+">Explore<i class="far fa-long-arrow-right"></i></a></span>
                                     </div>
                                 </div>
                             </div>
@@ -164,13 +166,13 @@
                             </div>
                             <div class="place-content">
                                 <div class="info">
-                                    <h4 class="title"><a href="tour-details-package7.php">Full-Day Wild Safari in Yala
+                                    <h4 class="title"><a href="full_day_wild_safari_in_yala_national_park.php">Full-Day Wild Safari in Yala
                                         National park</a></h4>  
                                     <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>140.00</p>
                                     <div class="meta">
                                         <span><i class="far fa-clock"></i>06 hours</span>
                                         <span><i class="far fa-user"></i>21</span>
-                                        <span><a href="tour-details-package7.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                        <span><a href="full_day_wild_safari_in_yala_national_park.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                                     </div>
                                 </div>
                             </div>
@@ -185,14 +187,14 @@
                             </div>
                             <div class="place-content">
                                 <div class="info">
-                                    <h4 class="title"><a href="tour-details-package8.php">Half Day Wild Safari in
+                                    <h4 class="title"><a href="half_day_wild_safari_in_yala_national_park.php">Half Day Wild Safari in
                                         Yala National Park
                                     </a></h4>  
                                     <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>85.00</p>
                                     <div class="meta">
                                         <span><i class="far fa-clock"></i>12 hours</span>
                                         <span><i class="far fa-user"></i>21</span>
-                                        <span><a href="tour-details-package8.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                        <span><a href="half_day_wild_safari_in_yala_national_park.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                                     </div>
                                 </div>
                             </div>

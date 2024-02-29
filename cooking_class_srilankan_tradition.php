@@ -24,86 +24,45 @@ include('assets/php/formvalidation.php')
             <div class="place-slider">
                 <div class="place-slider-item">
                     <div class="place-img">
-                        <img src="assets/images/Full-Day Wild Safari in Kumana-private/Kumana elephants go to their habitat in herds.jpg" alt="Place Image" height="630px">
+                        <img src="assets/images/Cooking Class - Sri Lankan Tradition/cooking instructions.jpg" alt="Place Image" height="630px">
                     </div>
                 </div>
 
                 <div class="place-item">
                     <div class="place-img">
-                        <img src="assets/images/Full-Day Wild Safari in Kumana-private/A photo of a tiger resting.jpg" alt="Place Image" height="630px">
+                        <img src="assets/images/Cooking Class - Sri Lankan Tradition/Cooking instruction for women.jpg" alt="Place Image" height="630px">
                     </div>
                 </div>
 
                 <div class="place-slider-item">
                     <div class="place-img">
-                        <img src="assets/images/Full-Day Wild Safari in Kumana-private/A picture of a peacock swinging in the forest.jpg" alt="Place Image" height="630px">
+                        <img src="assets/images/Cooking Class - Sri Lankan Tradition/Culinary vegetables.jpg" alt="Place Image" height="630px">
                     </div>
                 </div>
 
                 <div class="place-slider-item">
                     <div class="place-img">
-                        <img src="assets/images/Full-Day Wild Safari in Kumana-private/A tiger climbs a tree.jpg" alt="Place Image" height="630px">
+                        <img src="assets/images/Cooking Class - Sri Lankan Tradition/Lunch Arrangement.jpg" alt="Place Image" height="630px">
                     </div>
                 </div>
 
                 <div class="place-slider-item">
                     <div class="place-img">
-                        <img src="assets/images/Full-Day Wild Safari in Kumana-private/Accommodation arranged for rest in kumana area.jpg" alt="Place Image" height="630px">
+                        <img src="assets/images/Cooking Class - Sri Lankan Tradition/Family discussion.jpg" alt="Place Image" height="630px">
                     </div>
                 </div>
 
                 <div class="place-slider-item">
                     <div class="place-img">
-                        <img src="assets/images/Full-Day Wild Safari in Kumana-private/Group photo of tourists with hanas.jpg" alt="Place Image" height="630px">
+                        <img src="assets/images/Cooking Class - Sri Lankan Tradition/Cooking Tips.jpg" alt="Place Image" height="630px">
                     </div>
                 </div>
 
                 <div class="place-slider-item">
                     <div class="place-img">
-                        <img src="assets/images/Full-Day Wild Safari in Kumana-private/A picture of a wild elephant standing in Kumana area.jpg" alt="Place Image" height="630px">
+                        <img src="assets/images/Cooking Class - Sri Lankan Tradition/Food preparation.jpg" alt="Place Image" height="630px">
                     </div>
-                </div>
 
-                <div class="place-slider-item">
-                    <div class="place-img">
-                        <img src="assets/images/Full-Day Wild Safari in Kumana-private/Visitors group photo.jpg" alt="Place Image" height="630px">
-                    </div>
-                </div>
-
-                <div class="place-slider-item">
-                    <div class="place-img">
-                        <img src="assets/images/Full-Day Wild Safari in Kumana-private/A monkey sits on a tree.jpg" alt="Place Image" height="630px">
-                    </div>
-                </div>
-
-                <div class="place-slider-item">
-                    <div class="place-img">
-                        <img src="assets/images/Full-Day Wild Safari in Kumana-private/The eagle eats its prey in the tree.jpg" alt="Place Image" height="630px">
-                    </div>
-                </div>
-
-                <div class="place-slider-item">
-                    <div class="place-img">
-                        <img src="assets/images/Full-Day Wild Safari in Kumana-private/A wild elephant stands in the mud.jpg" alt="Place Image" height="630px" width="465px">
-                    </div>
-                </div>
-
-                <div class="place-slider-item">
-                    <div class="place-img">
-                        <img src="assets/images/Full-Day Wild Safari in Kumana-private/Buffalo graze in the pasture land.jpg" alt="Place Image" height="630px">
-                    </div>
-                </div>
-
-                <div class="place-slider-item">
-                    <div class="place-img">
-                        <img src="assets/images/Full-Day Wild Safari in Kumana-private/A picture of a tiger resting on the wall.jpg" alt="Place Image" height="630px">
-                    </div>
-                </div>
-
-                <div class="place-slider-item">
-                    <div class="place-img">
-                        <img src="assets/images/Full-Day Wild Safari in Kumana-private/Chirping of birds in tree branches.jpg" alt="Place Image" height="630px">
-                    </div>
                 </div>
             </div>
         </div>
@@ -116,7 +75,7 @@ include('assets/php/formvalidation.php')
                     <div class="row">
                         <div class="col-xl-6">
                             <div class="tour-title mb-20">
-                                <h3 class="title">Full-Day Wild Safari in Kumana National Park (Private)</h3>
+                                <h3 class="title">Cooking Class: Sri Lankan Tradition</h3>
                             </div>
                         </div>
                         <div class="col-xl-6">
@@ -126,7 +85,7 @@ include('assets/php/formvalidation.php')
                                         <i class="fal fa-box-usd"></i>
                                     </div>
                                     <div class="info">
-                                        <h4><span>From</span>$130.00</h4>
+                                        <h4><span>From</span>$35.00</h4>
                                     </div>
                                 </div>
                                 <div class="info-box mb-20">
@@ -134,7 +93,7 @@ include('assets/php/formvalidation.php')
                                         <i class="fal fa-clock"></i>
                                     </div>
                                     <div class="info">
-                                        <h4><span>Durations</span>12 hours</h4>
+                                        <h4><span>Durations</span>1 hour 30 minutes</h4>
                                     </div>
                                 </div>
                             </div>
@@ -158,7 +117,7 @@ include('assets/php/formvalidation.php')
                         <!--=== Place Content Wrap ===-->
                         <div class="place-content-wrap pt-45 wow fadeInUp">
                             <h3 class="title">Explore Tour Package</h3>
-                            <p>Experience wildlife magic with Arugambay Agenda’s Full Day Safari to Kumana National Park. Dive into two thrilling half-day sessions at sunrise (5 am). Enjoy a serene breakfast and river oasis. A day of awe-inspiring encounters awaits!</h4>
+                            <p>Explore Sri Lankan flavors in our Cooking Class – Sri Lankan Tradition. Join us in Panama village for a warm welcome, culinary lessons, and a delightful lunch. Return to Arugambay with new skills and cherished memories.</p>
                             <div class="row align-items-lg-center">
                                 <div class="col-lg-5">
                                     <ul class="check-list">
@@ -170,18 +129,17 @@ include('assets/php/formvalidation.php')
                                     </ul>
                                 </div>
                                 <div class="col-lg-7">
-                                    <img src="assets/images/wildlife&eco/Waiting for tiger hunt.jpg" class="mb-20 w-100" alt="place image" width="470px" height="365px">
+                                    <img src="assets/images/must See/Cooking Class.jpg" class="mb-20 w-100" alt="place image" width="470px" height="365px">
                                 </div>
                             </div>
                             <h4>Included</h4>
                             <div class="col-lg-5 mt-5">
                                 <ul class="check-list">
-                                    <li><i class="fas fa-badge-check"></i>From Hotels/any locations around Arugambay Pickup and Drop-off</li>
-                                    <li><i class="fas fa-badge-check"></i>Private vehicle</li>
-                                    <li><i class="fas fa-badge-check"></i>All entry fares, tickets and taxes</li>
-                                    <li><i class="fas fa-badge-check"></i>English speaking guide</li>
-                                    <li><i class="fas fa-badge-check"></i>Complementary refreshing drinks.</li>
-                                    <li><i class="fas fa-badge-check"></i>Sri Lankan Traditional Breakfast and Lunch</li>
+                                    <li><i class="fas fa-badge-check"></i>Hotel pickup and Dropoff</li>
+                                    <li><i class="fas fa-badge-check"></i>Full Transport</li>
+                                    <li><i class="fas fa-badge-check"></i>Tour Instructor</li>
+                                    <li><i class="fas fa-badge-check"></i>1.5 hours cooking lesson</li>
+                                    <li><i class="fas fa-badge-check"></i>Aayubowan Welcome drink</li>
                                 </ul>
                             </div>
                         </div>
@@ -200,11 +158,11 @@ include('assets/php/formvalidation.php')
                                     <div class="accordion-body">
                                         <div class="col-lg-5">
                                             <ul class="check-list">
-                                                <li><i class="fas fa-badge-check"></i>Expert Guides: Our passionate guides enhance your safari with extensive wildlife knowledge.</li>
-                                                <li><i class="fas fa-badge-check"></i>Intimate Wildlife Encounters: Get up close to leopards and elephants for unforgettable moments.</li>
-                                                <li><i class="fas fa-badge-check"></i>Comfort & Safety: Enjoy a secure, smooth ride in our 4WD vehicles.</li>
-                                                <li><i class="fas fa-badge-check"></i>Birdwatcher’s Paradise: Kumana’s 255+ bird species offer an enchanting experience for bird lovers.</li>
-                                                <li><i class="fas fa-badge-check"></i>Capture the Moment: Preserve remarkable wildlife sightings and scenic beauty with your camera.</li>
+                                                <li><i class="fas fa-badge-check"></i>Taste Sri Lanka’s Heritage: Join our vibrant Cooking Class!</li>
+                                                <li><i class="fas fa-badge-check"></i>Culinary Journey: Experience Sri Lankan traditions firsthand.</li>
+                                                <li><i class="fas fa-badge-check"></i>Panama Village Feast: Learn, cook, and relish local flavors.</li>
+                                                <li><i class="fas fa-badge-check"></i>Authentic Sri Lankan Cuisine: Explore, cook, and savor!</li>
+                                                <li><i class="fas fa-badge-check"></i>Sri Lankan Gastronomy: A hands-on culinary adventure awaits!</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -218,50 +176,9 @@ include('assets/php/formvalidation.php')
                                 </h2>
                                 <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">
-                                        Experience the Untamed Beauty and the captivating wilderness of Kumana National Park with Arugambay Agenda's Full Day Safari in Kumana National Park, a journey that takes you on an unforgettable wildlife adventure from sunrise to sunset. This extraordinary expedition begins at 5 am, where we set off for two thrilling half day safari sessions, offering you the chance to witness the majestic leopards, graceful elephants, and an array of exotic wildlife in their natural habitat. <br> <br>
+                                        Embark on an enriching culinary journey with our Cooking Class - Sri Lankan Tradition. Join us as we venture to the rural village of Panama from Arugambay. Upon arrival, immerse yourself in a warm traditional welcome, greeted with ‘Aayubowan’ and a refreshing drink. Under the guidance of a seasoned local expert, dive into the secrets of Sri Lankan cuisine. <br> <br>
 
-                                        As the sun bathes the park in golden hues, indulge in a serene breakfast under the shade of a grand tree, savoring Sri Lankan delights and energizing fruits that fuel your adventurous spirit. Reconnect with nature as you explore the vast landscapes, discovering hidden gems and witnessing the raw beauty of the park's flora and fauna. <br> <br>
-
-                                        A highlight of our Full Day Safari is the rejuvenating experience by the river. Take a refreshing dip in the cool waters and unwind amidst the tranquil ambiance. Afterward, indulge in a delectable lunch, a delightful culmination of flavors, and a moment to relax and cherish the memories created throughout the day. <br> <br>
-
-                                        Our expert guides, passionate about wildlife conservation, accompany you every step of the way, sharing their knowledge and expertise, making this journey both educational and awe-inspiring. Throughout the day, our comfortable and well-equipped 4WD vehicles ensure a safe and enjoyable exploration of the rugged terrains. <br> <br>
-
-                                        Let Arugambay Agenda be your gateway to an unforgettable wildlife experience. Book our Full Day Safari to Kumana National Park and immerse yourself in the untamed beauty of nature, capturing cherished memories that will stay with you forever. Prepare for a day filled with enchantment, adventure, and the wonders of the wild. <br> <br>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                        Important information
-                                    </button>
-                                </h2>
-                                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">
-                                        <ul class="check-list">
-                                            <U>Not Allowed</U>
-                                            <li><i class="fas fa-badge-check"></i>Alcohol and drugs</li>
-                                            <li><i class="fas fa-badge-check"></i>Weapons or sharp objects</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo2" aria-expanded="false" aria-controls="flush-collapseTwo2">
-                                        Not suitable for
-                                    </button>
-                                </h2>
-                                <div id="flush-collapseTwo2" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">
-                                        <ul class="check-list">
-                                            <U>Not Allowed</U>
-                                            <li><i class="fas fa-badge-check"></i>People with mobility impairments.</li>
-                                            <li><i class="fas fa-badge-check"></i>Pregnant women</li>
-                                            <li><i class="fas fa-badge-check"></i>People with heart problems</li>
-                                            <li><i class="fas fa-badge-check"></i>People with low level of fitness.</li>
-                                        </ul>
+                                        Learn, cook, and savor the flavors of authentic Sri Lankan dishes, crafting your own culinary delights. Indulge in a delightful Sri Lankan-style lunch, relishing the fruits of your labor. After a satisfying afternoon, return to Arugambay, carrying with you cherished memories and newfound cooking skills that will resonate for a lifetime. <br> <br>
                                     </div>
                                 </div>
                             </div>
@@ -294,12 +211,9 @@ include('assets/php/formvalidation.php')
                                             <div class="bk-item">
                                                 <select class="" id="select_option" name="activity">
                                                     <option value="">Select an option</option>
-                                                    <option value="Half-Day wild safari in Kumana National Park">Half-Day wild safari in Kumana National Park</option>
-                                                    <option value="Full-Day wild safari in Kumana National Park">Full-Day wild safari in Kumana National Park</option>
-                                                    <option value="Mangrove wathing in Pottuvil Lagoon - Lagoon eco tour">Mangrove wathing in Pottuvil Lagoon - Lagoon eco tour</option>
-                                                    <option value="Half-Day wild safari in yala National">Half-Day wild safari in yala National </option>
-                                                    <option value="Full-Day wild safari in yala National">Full-Day wild safari in yala National </option>
-                                                    <option value="arugambay to yala : wild safari + Drop of flexibilty">arugambay to yala : wild safari + Drop of flexibilty </option>
+                                                    <option value="Cultural excursion and Ancient visit">Cultural excursion and Ancient visit</option>
+                                                    <option value="Tuktuk sightseeking and Cooking class">Tuktuk sightseeking and Cooking class</option>
+                                                    <option value="Cooking - Srilankan tradition">Cooking - Srilankan tradition</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -315,7 +229,7 @@ include('assets/php/formvalidation.php')
                                             <div class="bk-item booking-date">
                                                 <i class="far fa-calendar-alt"></i>
                                                 <select class="wide" name="time">
-                                                    <option value="05.00 A.M">05.00 A.M</option>
+                                                    <option value="11.30 A.M">11.30 A.M</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -344,7 +258,8 @@ include('assets/php/formvalidation.php')
                                             <h6 class="mb-10">Price Info</h6>
                                             <div class="extra">
                                                 <i class="fas fa-check-circle"></i>Adult<span><span class="currency" id="totalAmount_adult"></span>
-                                                </span> <input type="hidden" id="totalAmountadult" name="adult_value">
+                                                </span>
+                                                <input type="hidden" id="totalAmountadult" name="adult_value">
                                             </div>
                                             <div class="extra">
                                                 <i class="fas fa-check-circle"></i>Kids <span><span class="currency" id="totalAmount_kids"></span></span>
@@ -475,14 +390,15 @@ include('assets/php/formvalidation.php')
                                 <!--=== Single Place Item ===-->
                                 <div class="single-place-item mb-60 wow fadeInUp">
                                     <div class="place-img">
-                                        <img src="assets/images/wildlife&eco/Waiting for tiger hunt.jpg" alt="Place Image" height="280px">
+                                        <img src="assets/images/must See/Cultural excursion.jpg" alt="Place Image">
                                     </div>
                                     <div class="place-content">
                                         <div class="info">
-                                            <h4 class="title"><a href="tour-details-package6.php">Full-Day Wild Safari in Kumana National park (Private)
+                                            <h4 class="title"><a href="cultural_excursion_and_ancient_visit.php">
+                                                    Cultural Excursion and Ancient Visit
                                                 </a></h4>
                                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
-                                                    $</span>130.00</p>
+                                                    $</span>55.00</p>
                                         </div>
                                     </div>
                                 </div>
@@ -490,14 +406,15 @@ include('assets/php/formvalidation.php')
                                 <!--=== Single Place Item ===-->
                                 <div class="single-place-item mb-60 wow fadeInUp">
                                     <div class="place-img">
-                                        <img src="assets/images/wildlife&eco/Wild Safari in Kumana with hanas.jpg" alt="Place Image" height="280px">
+                                        <img src="assets/images/must See/Tuk Tuk Sightseeing.jpg" alt="Place Image" height="280px">
                                     </div>
                                     <div class="place-content">
                                         <div class="info">
-                                            <h4 class="title"><a href="tour-details-package1.php">Half-Day Wild Safari in Kumana National park(Sharing)
+                                            <h4 class="title"><a href="tuk_tuk_sightseeing_and_cooking_class.php">
+                                                    Tuk Tuk Sightseeing and Cooking Class
                                                 </a></h4>
                                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
-                                                    $</span>40.00</p>
+                                                    $</span>35.00</p>
                                         </div>
                                     </div>
                                 </div>
@@ -505,14 +422,15 @@ include('assets/php/formvalidation.php')
                                 <!--=== Single Place Item ===-->
                                 <div class="single-place-item mb-60 wow fadeInUp">
                                     <div class="place-img">
-                                        <img src="assets/images/wildlife&eco/Tiger roars in yala.jpg" alt="Place Image" height="280px">
+                                        <img src="assets/images/must See/Cultural excursion.jpg" alt="Place Image">
                                     </div>
                                     <div class="place-content">
                                         <div class="info">
-                                            <h4 class="title"><a href="tour-details-package7.php">Full-Day Wild Safari in Kumana National park (Private)
+                                            <h4 class="title"><a href="cultural_excursion_and_ancient_visit.php">
+                                                    Cultural Excursion and Ancient Visit
                                                 </a></h4>
                                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
-                                                    $</span>140.00</p>
+                                                    $</span>55.00</p>
                                         </div>
                                     </div>
                                 </div>
@@ -520,71 +438,23 @@ include('assets/php/formvalidation.php')
                                 <!--=== Single Place Item ===-->
                                 <div class="single-place-item mb-60 wow fadeInUp">
                                     <div class="place-img">
-                                        <img src="assets/images/wildlife&eco/Selfie photo with riding buddies with hanas.jpg" alt="Place Image" height="280px">
+                                        <img src="assets/images/must See/Tuk Tuk Sightseeing.jpg" alt="Place Image" height="280px">
                                     </div>
                                     <div class="place-content">
                                         <div class="info">
-                                            <h4 class="title"><a href="tour-details-package8.php">Half Day Wild Safari in Yala National park <br><br>
+                                            <h4 class="title"><a href="tuk_tuk_sightseeing_and_cooking_class.php">
+                                                    Tuk Tuk Sightseeing and Cooking Class
                                                 </a></h4>
                                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
-                                                    $</span>85.00</p>
+                                                    $</span>35.00</p>
                                         </div>
                                     </div>
                                 </div>
-
-                                <!--=== Single Place Item ===-->
-                                <div class="single-place-item mb-60 wow fadeInUp">
-                                    <div class="place-img">
-                                        <img src="assets/images/wildlife&eco/Boat trip with travel buddies.jpg" alt="Place Image" height="280px">
-                                    </div>
-                                    <div class="place-content">
-                                        <div class="info">
-                                            <h4 class="title"><a href="tour-details-package3.php">Mangrove Watching in Pottuvil Lagoon (Lagoon Eco Tour)
-                                                </a></h4>
-                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
-                                                    $</span>25.00</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--=== Single Place Item ===-->
-                                <div class="single-place-item mb-60 wow fadeInUp">
-                                    <div class="place-img">
-                                        <img src="assets/images/wildlife&eco/Buffalo in Lahugala National Park.jpg" alt="Place Image" height="280px">
-                                    </div>
-                                    <div class="place-content">
-                                        <div class="info">
-                                            <h4 class="title"><a href="tour-details-package2.php">Arugambay to Yala: Wild Safari + Drop-off Flexibilty
-                                                </a></h4>
-                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
-                                                    <br>$</span>23.47</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--=== Single Place Item ===-->
-                                <div class="single-place-item mb-60 wow fadeInUp">
-                                    <div class="place-img">
-                                        <img src="assets/images/wildlife&eco/Visit of wild elephants.jpg" alt="Place Image" height="280px">
-                                    </div>
-                                    <div class="place-content">
-                                        <div class="info">
-                                            <h4 class="title"><a href="tour-details-package5.php">Wild Safari in Lahugala National Park
-                                                    <br><br></a></h4>
-                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
-                                                    $</span>75.00</p>
-                                        </div>
-                                    </div>
-                                </div>
-
 
                             </div>
                         </div>
 
                     </div>
-
-
-
                     <div class="col-xl-4 col-lg-10 justify-content-center d-none d-sm-none d-lg-none d-md-none d-xl-block d-xxl-block">
                         <!--=== Sidebar Widget Area ===-->
                         <div class="sidebar-widget-area pt-60 pl-lg-30">
@@ -611,12 +481,9 @@ include('assets/php/formvalidation.php')
                                         <div class="bk-item">
                                             <select class="" id="select_option" name="activity">
                                                 <option value="">Select an option</option>
-                                                <option value="Half-Day wild safari in Kumana National Park">Half-Day wild safari in Kumana National Park</option>
-                                                <option value="Full-Day wild safari in Kumana National Park">Full-Day wild safari in Kumana National Park</option>
-                                                <option value="Mangrove wathing in Pottuvil Lagoon - Lagoon eco tour">Mangrove wathing in Pottuvil Lagoon - Lagoon eco tour</option>
-                                                <option value="Half-Day wild safari in yala National">Half-Day wild safari in yala National </option>
-                                                <option value="Full-Day wild safari in yala National">Full-Day wild safari in yala National </option>
-                                                <option value="arugambay to yala : wild safari + Drop of flexibilty">arugambay to yala : wild safari + Drop of flexibilty </option>
+                                                <option value="Cultural excursion and Ancient visit">Cultural excursion and Ancient visit</option>
+                                                <option value="Tuktuk sightseeking and Cooking class">Tuktuk sightseeking and Cooking class</option>
+                                                <option value="Cooking - Srilankan tradition">Cooking - Srilankan tradition</option>
                                             </select>
                                         </div>
                                     </div>
@@ -632,7 +499,7 @@ include('assets/php/formvalidation.php')
                                         <div class="bk-item booking-date">
                                             <i class="far fa-calendar-alt"></i>
                                             <select class="wide" name="time">
-                                                <option value="05.00 A.M">05.00 A.M</option>
+                                                <option value="11.30 A.M">11.30 A.M</option>
                                             </select>
                                         </div>
                                     </div>
@@ -661,7 +528,8 @@ include('assets/php/formvalidation.php')
                                         <h6 class="mb-10">Price Info</h6>
                                         <div class="extra">
                                             <i class="fas fa-check-circle"></i>Adult<span><span class="currency" id="totalAmount_adult"></span>
-                                            </span> <input type="hidden" id="totalAmountadult" name="adult_value">
+                                            </span>
+                                            <input type="hidden" id="totalAmountadult" name="adult_value">
                                         </div>
                                         <div class="extra">
                                             <i class="fas fa-check-circle"></i>Kids <span><span class="currency" id="totalAmount_kids"></span></span>
@@ -733,25 +601,34 @@ include('assets/php/formvalidation.php')
                     unitprice = 0;
                     break;
                 case 1:
-                    unitprice = 208.21;
+                    unitprice = 50.17;
                     break;
                 case 2:
-                    unitprice = 118.05;
+                    unitprice = 33.88;
                     break;
                 case 3:
-                    unitprice = 90.79;
+                    unitprice = 28.45;
                     break;
                 case 4:
-                    unitprice = 76.11;
+                    unitprice = 33.88;
                     break;
                 case 5:
-                    unitprice = 69.82;
+                    unitprice = 30.63;
                     break;
                 case 6:
-                    unitprice = 65.00;
+                    unitprice = 28.45;
                     break;
                 case 7:
-                    unitprice = 59.28;
+                    unitprice = 31.56;
+                    break;
+                case 8:
+                    unitprice = 29.81;
+                    break;
+                case 9:
+                    unitprice = 28.45;
+                    break;
+                case 10:
+                    unitprice = 30.63;
                     break;
                 default:
                     nonselected = "more";
@@ -759,7 +636,7 @@ include('assets/php/formvalidation.php')
             }
             if (nonselected == "more") {
                 total1 = unitprice * parseInt(value1); // float + integerr
-                document.getElementById('totalAmount_adult').innerText = "Not Allowed More than 7";
+                document.getElementById('totalAmount_adult').innerText = "Not Allowed More than 10";
                 updateTotalAmount();
             } else {
                 total1 = unitprice * parseInt(value1);
@@ -784,25 +661,34 @@ include('assets/php/formvalidation.php')
                     unitprice = 0;
                     break;
                 case 1:
-                    unitprice = 83.28;
+                    unitprice = 25.09;
                     break;
                 case 2:
-                    unitprice = 47.22;
+                    unitprice = 16.94;
                     break;
                 case 3:
-                    unitprice = 36.32;
+                    unitprice = 14.23;
                     break;
                 case 4:
-                    unitprice = 30.45;
+                    unitprice = 16.94;
                     break;
                 case 5:
-                    unitprice = 27.93;
+                    unitprice = 15.31;
                     break;
                 case 6:
-                    unitprice = 26.00;
+                    unitprice = 14.23;
                     break;
                 case 7:
-                    unitprice = 23.71;
+                    unitprice = 15.78;
+                    break;
+                case 8:
+                    unitprice = 14.91;
+                    break;
+                case 9:
+                    unitprice = 14.23;
+                    break;
+                case 10:
+                    unitprice = 15.31;
                     break;
                 default:
                     nonselected = "more";
@@ -811,7 +697,7 @@ include('assets/php/formvalidation.php')
 
             if (nonselected == "more") {
                 total2 = unitprice * parseInt(value2);
-                document.getElementById('totalAmount_kids').innerText = "Not Allowed More than 7";
+                document.getElementById('totalAmount_kids').innerText = "Not Allowed More than 10";
                 updateTotalAmount();
             } else {
                 total2 = unitprice * parseInt(value2);

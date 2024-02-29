@@ -1,102 +1,234 @@
 <?php
+session_start();
 
-// use PHPMailer\PHPMailer\PHPMailer;
-// use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-// require 'phpEmail/PHPMailer/src/Exception.php';
-// require 'phpEmail/PHPMailer/src/PHPMailer.php';
-// require 'phpEmail/PHPMailer/src/SMTP.php';
-// include "assets/php/connection.php";
-
-include('assets/php/formvalidation.php');
-
-// if (isset($_POST["submit"])) {
-//     // Add new data
-//     $fullname = $_POST['fullname'];
-//     $email = $_POST['email_for_form'];
-//     $whatsapp_no = $_POST['whatsapp_no'];
-//     $activity = $_POST['activity'];
-//     $date = $_POST['date'];
-//     $time = $_POST['time'];
-//     $no_adults = $_POST['no_adults'];
-//     $no_kids = $_POST['no_kids'];
-//     $departurelocation = $_POST['departurelocation'];
-//     $needassist = $_POST['needassist'];
-//     $price_of_adults = $_POST['adult_value'];
-//     $price_of_child = $_POST['kids_value'];
-//     $price_of_total = $_POST['total'];
-
-//     $sql = "INSERT INTO `booking` (`o_id`, `full_name`, `e_mail`, `whatsapp_no`, `activity`, `date`, `time`, `no_adults`, `no_kids`, `departure_location`, `need_assist`,`price_of_adults`, `price_of_child`, `total_amount`) VALUES (NULL, '$fullname', '$email', '$whatsapp_no', '$activity', '$date', '$time', '$no_adults', '$no_kids', '$departurelocation','$needassist','$price_of_adults','$price_of_child','$price_of_total')";
-
-//     $result = mysqli_query($conn, $sql);
-//     if ($result) {
-//         $author_email = 'hassan.marazin@gmail.com'; // author mail address
-//         try {
-//             $Mail = new PHPMailer(true);
-//             $Mail->isSMTP();
-//             $Mail->Host = 'smtp.gmail.com';
-//             $Mail->SMTPAuth = true;
-//             $Mail->Username = 'afshan.marazin@gmail.com';
-//             $Mail->Password = 'eosb hhee rodl mtep';
-//             $Mail->SMTPSecure = 'ssl';
-//             $Mail->Port = 465;
+require 'phpEmail/PHPMailer/src/Exception.php';
+require 'phpEmail/PHPMailer/src/PHPMailer.php';
+require 'phpEmail/PHPMailer/src/SMTP.php';
+include "assets/php/connection.php";
 
 
-//             $Mail->setFrom('afshan.marazin@gmail.com');
-//             $Mail->addAddress($_POST['email_for_form']);
-//             $Mail->addAddress($author_email);
-//             $Mail->isHTML(true);
-//             $Mail->Subject = 'Welcome to Arugambay Agenda';
-//             $Mail->Body = 'We received your booking successfully.' .
-//                 '<br><br>' .
-//                 'Full Name: ' . $fullname . '<br>' .
-//                 'Email: ' . $email . '<br>' .
-//                 'WhatsApp Number: ' . $whatsapp_no . '<br>' .
-//                 'Activity: ' . $activity . '<br>' .
-//                 'Date: ' . $date . '<br>' .
-//                 'Time: ' . $time . '<br>' .
-//                 'Number of Adults: ' . $no_adults . '<br>' .
-//                 'Number of Kids: ' . $no_kids . '<br>' .
-//                 'Departure Location: ' . $departurelocation . '<br>' .
-//                 'Need Assistance: ' . $needassist .'<br>'. 
-//                 'Total Price of Adults: '.$price_of_adults .'<br>' . 
-//                 'Total Price of Child: '.$price_of_child . '<br>' . 
-//                 'Total Amount: '.$price_of_total;
-//             $Mail->send();
+if (isset($_POST["submit"])) {
 
-//              header("Location: Experiential_package1.php?msg=Data Added successfull");
+    $errors = array();
 
-//         } catch (Exception $e) {
-//             echo"
-//                 <script>
-//                 Swal.fire({
-//                     icon: 'error',
-//                     title: 'Oops...',
-//                     text: 'Something went wrong!',
-//                   });
-//                 </script>
-//             ";
-//             // echo "Email could not be sent. Mailer Error: {$Mail->ErrorInfo}";
-//         }
-//     } else {
-//         echo "Failed: " . mysqli_error($conn);
-//             echo"
-//                 <script>
-//                 Swal.fire({
-//                     icon: 'error',
-//                     title: 'Oops...',
-//                     text: 'Something went wrong!',
-//                   });
-//                 </script>";
-//     }
-// }
+    // Validate Fullname
+    if (empty($_POST['fullname'])) {
+        $errors[] = "Fullname is required";
+    } else {
+        $fullname = $_POST['fullname'];
+    }
+
+    // Validate Email
+    if (empty($_POST['email_for_form'])) {
+        $errors[] = "Email is required";
+    } elseif (!filter_var($_POST['email_for_form'], FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "Invalid email format";
+    } else {
+        $email = $_POST['email_for_form'];
+    }
+
+    // Validate WhatsApp Number
+    if (empty($_POST['whatsapp_no'])) {
+        $errors[] = "WhatsApp number is required";
+    } elseif (!preg_match("/^\+[0-9]{1,3}[0-9]{9}$/", $_POST['whatsapp_no'])) {
+        $errors[] = "Invalid WhatsApp number format";
+    } else {
+        $whatsapp_no = $_POST['whatsapp_no'];
+    }
+
+
+    if (empty($_POST['activity'])) {
+        $errors[] = "activity is required";
+    } else {
+        $activity = $_POST['activity'];
+    }
+
+    if (empty($_POST['date'])) {
+        $errors[] = "date is required";
+    } else {
+        $date = $_POST['date'];
+    }
+
+    if (empty($_POST['time'])) {
+        $errors[] = "time is required";
+    } else {
+        $time = $_POST['time'];
+    }
+
+    if (empty($_POST['no_adults'])) {
+        $no_adults = 0;
+    } else {
+        $no_adults = $_POST['no_adults'];
+    }
+
+    if (empty($_POST['departurelocation'])) {
+        $errors[] = "Departurelocation is required";
+    } else {
+        $departurelocation = $_POST['departurelocation'];
+    }
+
+    if (empty($_POST['needassist'])) {
+        $needassist = "Nothing";
+    } else {
+        $needassist = $_POST['needassist'];
+    }
+
+    //no need validation
+    $no_kids = null;
+    $price_of_adults = $_POST['adult_value'];
+    $price_of_child = $_POST['kids_value'];
+    $price_of_total = $_POST['total'];
+
+    if (empty($errors)) {
+        $sql = "INSERT INTO `booking` (`o_id`, `full_name`, `e_mail`, `whatsapp_no`, `activity`, `date`, `time`, `no_adults`, `no_kids`, `departure_location`, `need_assist`, `price_of_adults`, `price_of_child`, `total_amount`) VALUES (NULL, '$fullname', '$email', '$whatsapp_no', '$activity', '$date', '$time', '$no_adults', '$no_kids', '$departurelocation', '$needassist', '$price_of_adults', '$price_of_child', '$price_of_total')";
+        $result = mysqli_query($conn, $sql);
+        if ($result) {
+            $author_email = 'afshan.marazin@gmail.com'; // author mail address
+            try {
+                $Mail = new PHPMailer(true);
+                $Mail->isSMTP();
+                $Mail->Host = 'smtp.gmail.com';
+                $Mail->SMTPAuth = true;
+                $Mail->Username = 'arugambayagenda@gmail.com';
+                $Mail->Password = 'epnt abvu suoq qxqh';
+                $Mail->SMTPSecure = 'ssl';
+                $Mail->Port = 465;
+
+
+                $Mail->setFrom('arugambayagenda@gmail.com');
+                $Mail->addAddress($_POST['email_for_form']);
+                $Mail->addAddress($author_email);
+                $Mail->isHTML(true);
+                $Mail->Subject = 'Welcome to Arugambay Agenda';
+                $Mail->Body = 'We received your booking successfully.' .
+                    '<br><br>' .
+                    'Full Name: ' . $fullname . '<br>' .
+                    'Email: ' . $email . '<br>' .
+                    'WhatsApp Number: ' . $whatsapp_no . '<br>' .
+                    'Activity: ' . $activity . '<br>' .
+                    'Date: ' . $date . '<br>' .
+                    'Time: ' . $time . '<br>' .
+                    'Number of Pax: ' . $no_adults . '<br>' .
+                    'Departure Location: ' . $departurelocation . '<br>' .
+                    'Need Assistance: ' . $needassist . '<br>' .
+                    'Total Amount: ' . $price_of_total;
+                $Mail->send();
+
+                $_SESSION['message'] = "Data Added successfully";
+            } catch (Exception $e) {
+                $_SESSION['message'] = "Data Not Added";
+                // echo "Email could not be sent. Mailer Error: {$Mail->ErrorInfo}";
+            }
+        } else {
+            $_SESSION['message'] = "Data Not Added";
+            // echo "Failed: " . mysqli_error($conn);
+
+        }
+    } else {
+        $_SESSION['message'] = "Data Not Added";
+    }
+}
 ?>
-
-
 <!DOCTYPE html>
 <html lang="zxx">
 
 <body>
+
+    <!-- <style>
+        span.next,
+        span.prev {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 14px;
+            color: #0097b2;
+            font-size: 24px;
+            font-weight: bold;
+            transition: 0.5s;
+            border-radius: 3px;
+            user-select: none;
+            cursor: pointer;
+            z-index: 1;
+            background-color: #eee;
+            opacity: 0.8;
+        }
+
+        span.next {
+            right: 20px;
+        }
+
+        span.prev {
+            left: 20px;
+        }
+
+        span.next:hover,
+        span.prev:hover {
+            background-color: #0097b2;
+            opacity: 0.8;
+            color: #F7921E;
+        }
+
+        @keyframes next1 {
+            from {
+                left: 0%
+            }
+
+            to {
+                left: -100%;
+            }
+        }
+
+        @keyframes next2 {
+            from {
+                left: 100%
+            }
+
+            to {
+                left: 0%;
+            }
+        }
+
+        @keyframes prev1 {
+            from {
+                left: 0%
+            }
+
+            to {
+                left: 100%;
+            }
+        }
+
+        @keyframes prev2 {
+            from {
+                left: -100%
+            }
+
+            to {
+                left: 0%;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+
+            span.next,
+            span.prev {
+                padding: 6px;
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+
+            span.next,
+            span.prev {
+                padding: 4px;
+                font-size: 14px;
+            }
+        }
+    </style> -->
 
     <header class="header-area header-one black-bg mt-1">
         <!--====== Header Navigation ======-->
@@ -111,57 +243,85 @@ include('assets/php/formvalidation.php');
     <!--====== Start Place Details Section ======-->
     <section class="place-details-section">
         <!--=== Place Slider ===-->
-        <div class="place-slider-area overflow-hidden wow fadeInUp col-xs-12">
+        <div class="place-slider-area overflow-hidden wow fadeInUp">
             <div class="place-slider">
                 <div class="place-slider-item">
                     <div class="place-img">
-                        <img src="assets/images/Day Trip to Sigiriya/Our travel buddies.jpg" alt="Place Image" height="630px">
+                        <img src="assets/images/wildlife_kumana_package/Visit of the wild elephant.jpg" alt="Place Image" height="630px">
                     </div>
                 </div>
-
                 <div class="place-item">
                     <div class="place-img">
-                        <img src="assets/images/Day Trip to Sigiriya/Beautiful peacock dance.jpg" alt="Place Image" height="630px">
+                        <img src="assets/images/wildlife_kumana_package/herd of buffaloes.jpg" alt="Place Image" height="630px">
                     </div>
                 </div>
-
                 <div class="place-slider-item">
                     <div class="place-img">
-                        <img src="assets/images/Day Trip to Sigiriya/External appearance of Sigiriya.jpg" alt="Place Image" height="630px">
+                        <img src="assets/images/wildlife_kumana_package/Crane in search of prey.jpg" alt="Place Image" height="630px">
                     </div>
                 </div>
-
                 <div class="place-slider-item">
                     <div class="place-img">
-                        <img src="assets/images/Day Trip to Sigiriya/Sigiriya Monkey Adventures.jpg" alt="Place Image" height="630px">
+                        <img src="assets/images/wildlife_kumana_package/wildsafari_tiger.jpg" alt="Place Image" height="630px">
                     </div>
                 </div>
-
                 <div class="place-slider-item">
                     <div class="place-img">
-                        <img src="assets/images/Day Trip to Sigiriya/Sigiriya corn food.jpg" alt="Place Image" height="630px">
+                        <img src="assets/images/wildlife_kumana_package/Short rest time in the forest.jpg" alt="Place Image" height="630px">
                     </div>
                 </div>
-
                 <div class="place-slider-item">
                     <div class="place-img">
-                        <img src="assets/images/Day Trip to Sigiriya/The monkey games of Sigia.jpg" alt="Place Image" height="630px">
+                        <img src="assets/images/wildlife_kumana_package/Group photo of tourists.jpg" alt="Place Image" height="630px">
                     </div>
                 </div>
-
                 <div class="place-slider-item">
                     <div class="place-img">
-                        <img src="assets/images/Day Trip to Sigiriya/Sunlight on the summit of Sigiriya.jpg" alt="Place Image" height="630px">
+                        <img src="assets/images/wildlife_kumana_package/Mother and baby monkeys.jpg" alt="Place Image" height="630px">
                     </div>
                 </div>
-
                 <div class="place-slider-item">
                     <div class="place-img">
-                        <img src="assets/images/Day Trip to Sigiriya/Group photo with our travel friends.jpg" alt="Place Image" height="630px">
+                        <img src="assets/images/wildlife_kumana_package/A waiting wild tiger for hunting.jpg" alt="Place Image" height="630px">
+                    </div>
+                </div>
+                <div class="place-slider-item">
+                    <div class="place-img">
+                        <img src="assets/images/wildlife_kumana_package/Group photo of tourists.jpg" alt="Place Image" height="630px">
+                    </div>
+                </div>
+                <div class="place-slider-item">
+                    <div class="place-img">
+                        <img src="assets/images/wildlife_kumana_package/The singing cuckuu is on the tree.jpg" alt="Place Image" height="630px">
+                    </div>
+                </div>
+                <div class="place-slider-item">
+                    <div class="place-img">
+                        <img src="assets/images/wildlife_kumana_package/A waiting tiger in kumana.jpg" alt="Place Image" height="630px">
+                    </div>
+                </div>
+                <div class="place-slider-item">
+                    <div class="place-img">
+                        <img src="assets/images/wildlife_kumana_package/Two traveling women.jpg" alt="Place Image" height="630px">
+                    </div>
+                </div>
+                <div class="place-slider-item">
+                    <div class="place-img">
+                        <img src="assets/images/wildlife_kumana_package/A visit to the wild elephant can be seen in Kumana.jpg" alt="Place Image" height="630px">
+                    </div>
+                </div>
+                <div class="place-slider-item">
+                    <div class="place-img">
+                        <img src="assets/images/wildlife_kumana_package/A resting tiger.jpg" alt="Place Image" height="630px">
                     </div>
                 </div>
             </div>
         </div>
+        <!-- <div class="buttons">
+            <span class="prev" onclick="prevSlide()">&#10094;</span>
+            <span class="next" onclick="nextSlide()">&#10095;</span>
+        </div> -->
+
 
         <div class="container">
             <!--=== Tour Details Wrapper ===-->
@@ -171,7 +331,7 @@ include('assets/php/formvalidation.php');
                     <div class="row">
                         <div class="col-xl-6">
                             <div class="tour-title mb-20">
-                                <h3 class="title">Day Trip to Sigiriya</h3>
+                                <h3 class="title">Half-Day Wild Safari in Kumana National Park (Sharing)</h3>
                             </div>
                         </div>
                         <div class="col-xl-6">
@@ -181,7 +341,7 @@ include('assets/php/formvalidation.php');
                                         <i class="fal fa-box-usd"></i>
                                     </div>
                                     <div class="info">
-                                        <h4><span>From</span>$61.35</h4>
+                                        <h4><span>From</span>$40.00</h4>
                                     </div>
                                 </div>
                                 <div class="info-box mb-20">
@@ -189,7 +349,7 @@ include('assets/php/formvalidation.php');
                                         <i class="fal fa-clock"></i>
                                     </div>
                                     <div class="info">
-                                        <h4><span>Durations</span>1 day</h4>
+                                        <h4><span>Durations</span>6 hours</h4>
                                     </div>
                                 </div>
                             </div>
@@ -208,13 +368,12 @@ include('assets/php/formvalidation.php');
                         </div>
                     </div>
                 </div>
-
-                <div class="row flex-column-reverse flex-xl-row">
-                    <div class="col-xl-8  ">
+                <div class="row">
+                    <div class="col-xl-8">
                         <!--=== Place Content Wrap ===-->
                         <div class="place-content-wrap pt-45 wow fadeInUp">
                             <h3 class="title">Explore Tour Package</h3>
-                            <p>Discover Sigiriya’s ancient splendor on Arugambay Agenda’s Day Tour. Witness the iconic Lion Rock, delve into its captivating history, and make unforgettable memories.</p>
+                            <p> Experience Kumana National Park’s wonders with our Shared Half-Day Wild Safari. Split costs, share memories, and explore the wild in great company. Book now!</h4>
                             <div class="row align-items-lg-center">
                                 <div class="col-lg-5">
                                     <ul class="check-list">
@@ -225,47 +384,15 @@ include('assets/php/formvalidation.php');
                                         <li><i class="fas fa-badge-check"></i>Eco-Conscious Tours</li>
                                     </ul>
                                 </div>
-                                <div class="col-lg-7 ">
-                                    <img src="assets/images/Experiential/Trip to Sigiriya.jpg" class="mb-20 w-100" alt="place image" width="470px" height="365px">
+                                <div class="col-lg-7">
+                                    <img src="assets/images/wildlife&eco/Wild Safari in Kumana with hanas.jpg" class="mb-20 w-100" alt="place image" height="365px">
                                 </div>
-                            </div>
-                            <h4>Included</h4>
-                            <div class="col-lg-5 mt-5">
-                                <ul class="check-list">
-                                    <li><i class="fas fa-badge-check"></i>Hotel Pickup and Drop-off.</li>
-                                    <li><i class="fas fa-badge-check"></i>Full Transport</li>
-                                    <li><i class="fas fa-badge-check"></i>Entry Tickets</li>
-                                    <li><i class="fas fa-badge-check"></i>Lunch</li>
-                                    <li><i class="fas fa-badge-check"></i>Water</li>
-                                    <li><i class="fas fa-badge-check"></i>Tour Gears.</li>
-                                </ul>
                             </div>
                         </div>
                         <!--=== Days Area ===-->
 
-                        <h3 class="mt-5">Experience</h3>
                         <!-- Accordion -->
                         <div class="accordion accordion-flush" id="accordionFlushExample">
-                            <div class="accordion-item mt-2">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne1" aria-expanded="false" aria-controls="flush-collapseOne1">
-                                        Highlights
-                                    </button>
-                                </h2>
-                                <div id="flush-collapseOne1" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">
-                                        <div class="col-lg-5">
-                                            <ul class="check-list">
-                                                <li><i class="fas fa-badge-check"></i>Historical Perspective: Gain a deeper understanding of Sigiriya’s history.</li>
-                                                <li><i class="fas fa-badge-check"></i>Pidurangala View: Epic Sigiriya views from Pidurangala.</li>
-                                                <li><i class="fas fa-badge-check"></i>Cultural Immersion: Immerse in local culture.</li>
-                                                <li><i class="fas fa-badge-check"></i>Flexible Itinerary: Tour at your pace.</li>
-                                                <li><i class="fas fa-badge-check"></i>Efficient Transport: Smooth rides to Sigiriya.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
@@ -273,15 +400,7 @@ include('assets/php/formvalidation.php');
                                     </button>
                                 </h2>
                                 <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">
-                                        From the shores of Arugambay to the iconic marvel of Sigiriya, a UNESCO World Heritage Site, on our specially curated Day Tour to Sigiriya. We depart from Arugambay at a pleasant time, ensuring you experience every moment of this memorable excursion. <br> <br>
-
-                                        Our first stop is the breathtaking Pidurangala Rock, situated adjacent to the legendary Sigiriya Lion Rock. From this vantage point, you'll witness the enchanting beauty of the Sigiriya Rock in all its glory. Marvel at the ancient engineering marvel that continues to amaze travelers from across the globe. <br> <br>
-
-                                        Next, we ascend Sigiriya Lion Rock itself, a testament to the architectural and artistic brilliance of the ancient Sri Lankan kingdom. As you climb to the top, our experienced guides will narrate the captivating story of the Sigiriya Kingdom, revealing its rich history and secrets. <br> <br>
-
-                                        The Day Tour to Sigiriya promises an unforgettable adventure filled with history, culture, and natural beauty. Join Arugambay Agenda, your trusted travel partner, and let us guide you through this mesmerizing journey into the heart of Sri Lanka's past. Book your tour today and embark on an experience like no other! <br><br>
-                                    </div>
+                                    <div class="accordion-body">Introducing Our Shared Half-Day Wild Safari - Discover the thrill of exploring Kumana National Park's breathtaking landscapes and diverse wildlife in the company of fellow adventurers. Our new sharing option allows you to experience the magic of the wild while splitting the cost, making it an affordable and exciting choice for all. Reserve your spot today and create unforgettable memories together. Join us in the heart of nature, where every moment becomes an extraordinary adventure. Book now and share the wonder!</div>
                                 </div>
                             </div>
                             <div class="accordion-item">
@@ -293,34 +412,25 @@ include('assets/php/formvalidation.php');
                                 <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">
                                         <ul class="check-list">
-                                            <U>What to bring</U>
-                                            <li><i class="fas fa-badge-check"></i>Biodegradable sunscreen</li>
-                                            <li><i class="fas fa-badge-check"></i>Comfortable shoes</li>
-
                                             <U>Not Allowed</U>
-                                            <li><i class="fas fa-badge-check"></i>Skirts</li>
-
-                                            <U>Know before you go</U>
-                                            <li><i class="fas fa-badge-check"></i>This tour will take place rain or shine.</li>
-                                            <li><i class="fas fa-badge-check"></i>You will climb 600FT to reach the peak of the Rock.</li>
-                                            <li><i class="fas fa-badge-check"></i>There’s no Elevator.</li>
-                                            <li><i class="fas fa-badge-check"></i>The vehicle (Car/Van/Bus) will come to your hostel/any pickup location for pickup to start our journey to Sigiriya.</li>
+                                            <li><i class="fas fa-badge-check"></i>Alcohol and drugs</li>
+                                            <li><i class="fas fa-badge-check"></i>Weapons or sharp objects</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo2" aria-expanded="false" aria-controls="flush-collapseTwo2">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
                                         Not suitable for
                                     </button>
                                 </h2>
-                                <div id="flush-collapseTwo2" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">
                                         <ul class="check-list">
-                                            <U>Not Allowed</U>
-                                            <li><i class="fas fa-badge-check"></i>People over 95 years.</li>
+                                            <li><i class="fas fa-badge-check"></i>People with mobility impairments.</li>
+                                            <li><i class="fas fa-badge-check"></i>Pregnant women.</li>
+                                            <li><i class="fas fa-badge-check"></i>People with heart problems.</li>
                                             <li><i class="fas fa-badge-check"></i>People with low level of fitness.</li>
                                         </ul>
                                     </div>
@@ -329,9 +439,10 @@ include('assets/php/formvalidation.php');
                         </div>
                         <br>
 
+                        <!-- form booking -->
                         <div class="col-xl-8 col-lg-10 justify-content-center d-xxl-none d-xl-none">
                             <!--=== Sidebar Widget Area ===-->
-                            <div class="sidebar-widget-area pt-60 pl-lg-30">
+                            <div class="sidebar-widget-area pt-10 pl-lg-30">
                                 <!--=== Booking Widget ===-->
                                 <div class="sidebar-widget booking-form-widget wow fadeInUp mb-40">
                                     <h4 class="widget-title">Booking Now</h4>
@@ -343,7 +454,7 @@ include('assets/php/formvalidation.php');
                                         </div>
                                         <div class="booking-item mb-20">
                                             <div class="form-group">
-                                                <input type="email" class="form-control" id="email_for_form" placeholder="E-Mail Address" name="email_for_form">
+                                                <input type="text" class="form-control" id="email_for_form" placeholder="E-Mail Address" name="email_for_form">
                                             </div>
                                         </div>
                                         <div class="booking-item mb-20">
@@ -355,10 +466,12 @@ include('assets/php/formvalidation.php');
                                             <div class="bk-item">
                                                 <select class="" id="select_option" name="activity">
                                                     <option value="">Select an option</option>
-                                                    <option value="Day trip to Ella">Day trip to Ella</option>
-                                                    <option value="Day trip to Sigirya">Day trip to Sigirya</option>
-                                                    <option value="Two days in Highland">Two days in Highland</option>
-                                                    <option value="Colombo city excursion with Srilankan traditional lunch">Colombo city excursion with Srilankan traditional lunch</option>
+                                                    <option value="Half-Day wild safari in Kumana National Park (Sharing)">Half-Day wild safari in Kumana National Park (Sharing)</option>
+                                                    <option value="Full-Day wild safari in Kumana National Park">Full-Day wild safari in Kumana National Park</option>
+                                                    <option value="Mangrove wathing in Pottuvil Lagoon - Lagoon eco tour">Mangrove wathing in Pottuvil Lagoon - Lagoon eco tour</option>
+                                                    <option value="Half-Day wild safari in yala National">Half-Day wild safari in yala National </option>
+                                                    <option value="Full-Day wild safari in yala National">Full-Day wild safari in yala National </option>
+                                                    <option value="arugambay to yala : wild safari + Drop of flexibilty">arugambay to yala : wild safari + Drop of flexibilty </option>
                                                 </select>
                                             </div>
                                         </div>
@@ -374,33 +487,18 @@ include('assets/php/formvalidation.php');
                                             <div class="bk-item booking-date">
                                                 <i class="far fa-calendar-alt"></i>
                                                 <select class="wide" name="time">
-                                                    <option value="05.00 A.M - 05.30 A.M">05.00 A.M - 05.30 A.M </option>
-                                                    <option value="05.30 A.M - 06.00 A.M">05.30 A.M - 06.00 A.M </option>
-                                                    <option value="06.00 A.M - 06.30 A.M">06.00 A.M - 06.30 A.M </option>
-                                                    <option value="06.30 A.M - 07.00 A.M">06.30 A.M - 07.00 A.M </option>
-                                                    <option value="07.00 A.M - 07.30 A.M">07.00 A.M - 07.30 A.M </option>
-                                                    <option value="07.30 A.M - 08.00 A.M">07.30 A.M - 08.00 A.M </option>
-                                                    <option value="08.00 A.M - 08.30 A.M">08.00 A.M - 08.30 A.M </option>
-                                                    <option value="08.30 A.M - 09.00 A.M">08.30 A.M - 09.00 A.M </option>
-                                                    <!-- <option value="09.00 A.M - 09.30 A.M">09.00 A.M - 09.30 A.M </option>
-                                                <option value="09.30 A.M - 10.00 A.M">09.30 A.M - 10.00 A.M </option>
-                                                <option value="10.00 A.M - 10.30 A.M">10.00 A.M - 10.30 A.M </option>
-                                                <option value="10.30 A.M - 11.00 A.M">10.30 A.M - 11.00 A.M </option> -->
-
+                                                    <option value="05.00 A.M">05.00 A.M </option>
+                                                    <option value="01.00 P.M">01.00 P.M</option>
                                                 </select>
                                             </div>
                                         </div>
 
                                         <div class="booking-item mb-20">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="no_adults" placeholder="Number of Adults" name="no_adults" onchange="calculate_adult_amount(this.value)">
+                                                <input type="text" class="form-control" id="no_adults" placeholder="Number of Pax" name="no_adults" onchange="calculate_no_pax(this.value)">
                                             </div>
                                         </div>
-                                        <div class="booking-item mb-20">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="no_kids" placeholder="Number of Kids" name="no_kids" onchange="calculate_kid_amount(this.value)">
-                                            </div>
-                                        </div>
+
                                         <div class="booking-item mb-20">
                                             <div class="form-group">
                                                 <input type="text" class="form-control" id="Number_of_pax" placeholder="Departure location" name="departurelocation">
@@ -411,15 +509,12 @@ include('assets/php/formvalidation.php');
                                                 <input type="text" class="form-control" id="Number_of_pax" placeholder="Need further assists? write us below" name="needassist">
                                             </div>
                                         </div>
-
                                         <div class="booking-extra mb-15 wow fadeInUp">
                                             <h6 class="mb-10">Price Info</h6>
-                                            <div class="extra">
-                                                <i class="fas fa-check-circle"></i>Adult<span><span class="currency" id="totalAmount_adult"></span></span>
-                                                <input type="hidden" id="totalAmountadult" name="adult_value">
+                                            <div>
+                                                </span> <input type="hidden" id="totalAmountadult" name="adult_value">
                                             </div>
-                                            <div class="extra">
-                                                <i class="fas fa-check-circle"></i>Kids <span><span class="currency" id="totalAmount_kids"></span></span>
+                                            <div>
                                                 <input type="hidden" id="totalAmountkids" name="kids_value">
                                             </div>
                                         </div>
@@ -431,13 +526,14 @@ include('assets/php/formvalidation.php');
                                             </div>
                                         </div>
 
-                                        <div class="booking-date-time mb-20">
+                                        <div class="booking-date-time mb-20 col-lg-6 col-md-5 col-xl-12">
                                             <div class="submit-button">
                                                 <button class="main-btn primary-btn" name="submit">Booking Now<i class="far fa-paper-plane"></i></button>
                                             </div>
                                         </div>
 
                                     </form>
+
                                 </div>
                                 <!--=== Booking Info Widget ===-->
                                 <div class="sidebar-widget booking-info-widget wow fadeInUp mb-40">
@@ -448,6 +544,7 @@ include('assets/php/formvalidation.php');
                                     </ul>
                                 </div>
 
+                                <!-- more details -->
                                 <div class="sidebar-widget booking-info-widget wow fadeInUp mb-40">
                                     <h4 class="widget-title">For More Details</h4>
                                     <ul class="info-list">
@@ -456,6 +553,7 @@ include('assets/php/formvalidation.php');
                                         <li><span><i class="far fa-phone"></i><span>+94 76 689 9188</span></span></li>
                                     </ul>
                                 </div>
+
                             </div>
                         </div>
 
@@ -547,26 +645,12 @@ include('assets/php/formvalidation.php');
                                 <!--=== Single Place Item ===-->
                                 <div class="single-place-item mb-60 wow fadeInUp">
                                     <div class="place-img">
-                                        <img src="assets/images/Experiential/Travel buddies who traveled with us on Ella.jpg" alt="Place Image" height="280px">
+                                        <img src="assets/images/wildlife_kumana_package/A waiting tiger in kumana.jpg" alt="Place Image" height="280px">
                                     </div>
                                     <div class="place-content">
                                         <div class="info">
-                                            <h4 class="title"><a href="Experiential_package2.php">"Two Day in Highland" Tour
-                                                </a></h4>
-                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
-                                                    $</span>230.00</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--=== Single Place Item ===-->
-                                <div class="single-place-item mb-60 wow fadeInUp">
-                                    <div class="place-img">
-                                        <img src="assets/images/Experiential/Railway and train in Ella.jpg" alt="Place Image" height="280px">
-                                    </div>
-                                    <div class="place-content">
-                                        <div class="info">
-                                            <h4 class="title"><a href="Experiential_package3.php">Day Trip to Ella <br> <br>
+                                            <h4 class="title"><a href="full_day_wild_safari_in_kumana_national_park_private.php
+">Full-Day Wild Safari in Kumana National park (Private)
                                                 </a></h4>
                                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
                                                     $</span>130.00</p>
@@ -577,26 +661,104 @@ include('assets/php/formvalidation.php');
                                 <!--=== Single Place Item ===-->
                                 <div class="single-place-item mb-60 wow fadeInUp">
                                     <div class="place-img">
-                                        <img src="assets/images/Experiential/Travel to Colombo Statue Temple.jpg" alt="Place Image" height="280px">
+                                        <img src="assets/images/wildlife&eco/Selfie photo with riding buddies with hanas.jpg" alt="Place Image" height="280px">
                                     </div>
                                     <div class="place-content">
                                         <div class="info">
-                                            <h4 class="title"><a href="Experiential_package4.php">Colombo City Excursion with Srilankan Traditional Lunch
+                                            <h4 class="title"><a href="half_day_wild_safari_in_yala_national_park.php">Half Day Wild Safari in Yala National park <br><br>
                                                 </a></h4>
                                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
-                                                    $</span>55.00</p>
+                                                    $</span>85.00</p>
                                         </div>
                                     </div>
                                 </div>
+
+                                <!--=== Single Place Item ===-->
+                                <div class="single-place-item mb-60 wow fadeInUp">
+                                    <div class="place-img">
+                                        <img src="assets/images/wildlife&eco/Tiger roars in yala.jpg" alt="Place Image" height="280px">
+                                    </div>
+                                    <div class="place-content">
+                                        <div class="info">
+                                            <h4 class="title"><a href="full_day_wild_safari_in_yala_national_park.php">Full-Day Wild Safari in Kumana National park (Private)
+                                                </a></h4>
+                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
+                                                    $</span>140.00</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--=== Single Place Item ===-->
+                                <div class="single-place-item mb-60 wow fadeInUp">
+                                    <div class="place-img">
+                                        <img src="assets/images/wildlife&eco/Boat trip with travel buddies.jpg" alt="Place Image" height="280px">
+                                    </div>
+                                    <div class="place-content">
+                                        <div class="info">
+                                            <h4 class="title"><a href="mangrove_watching_in_pottuvil.php">Full-Day Wild Safari in Yala National Park
+                                                    <br><br> </a></h4>
+                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
+                                                    $</span>25.00</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--=== Single Place Item ===-->
+                                <div class="single-place-item mb-60 wow fadeInUp">
+                                    <div class="place-img">
+                                        <img src="assets/images/wildlife&eco/Wild tigers can be seen in yala.jpg" alt="Place Image" height="280px">
+                                    </div>
+                                    <div class="place-content">
+                                        <div class="info">
+                                            <h4 class="title"><a href="arugambay_to_yala_wild_safari+Drop_off_flexibility.php">Mangrove Watching in Pottuvil Lagoon (Lagoon Eco Tour)
+                                                </a></h4>
+                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
+                                                    $</span>170.00</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--=== Single Place Item ===-->
+                                <div class="single-place-item mb-60 wow fadeInUp">
+                                    <div class="place-img">
+                                        <img src="assets/images/wildlife&eco/Buffalo in Lahugala National Park.jpg" alt="Place Image" height="280px">
+                                    </div>
+                                    <div class="place-content">
+                                        <div class="info">
+                                            <h4 class="title"><a href="wild_safari_in_lahugala_national_park.php">Arugambay to Yala: Wild Safari + Drop-off Flexibilty
+                                                </a></h4>
+                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
+                                                    <br>$</span>23.47</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--=== Single Place Item ===-->
+                                <div class="single-place-item mb-40 wow fadeInUp">
+                                    <div class="place-img">
+                                        <img src="assets/images/wildlife&eco/Visit of wild elephants.jpg" alt="Place Image" height="280px">
+                                    </div>
+                                    <div class="place-content">
+                                        <div class="info">
+                                            <h4 class="title"><a href="half_day_wild_safari_in_kumana_national_park_private.php">Wild Safari in Lahugala National Park
+                                                    <br><br></a></h4>
+                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
+                                                    $</span>75.00</p>
+                                        </div>
+                                    </div>
+                                </div>
+
 
                             </div>
                         </div>
 
                     </div>
 
+
+                    <!-- booking -->
                     <div class="col-xl-4 col-lg-10 justify-content-center d-none d-sm-none d-lg-none d-md-none d-xl-block d-xxl-block">
                         <!--=== Sidebar Widget Area ===-->
-                        <div class="sidebar-widget-area pt-60 pl-lg-30">
+                        <div class="sidebar-widget-area pt-10 pl-lg-30">
                             <!--=== Booking Widget ===-->
                             <div class="sidebar-widget booking-form-widget wow fadeInUp mb-40">
                                 <h4 class="widget-title">Booking Now</h4>
@@ -608,7 +770,7 @@ include('assets/php/formvalidation.php');
                                     </div>
                                     <div class="booking-item mb-20">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" id="email_for_form" placeholder="E-Mail Address" name="email_for_form">
+                                            <input type="text" class="form-control" id="email_for_form" placeholder="E-Mail Address" name="email_for_form">
                                         </div>
                                     </div>
                                     <div class="booking-item mb-20">
@@ -620,10 +782,12 @@ include('assets/php/formvalidation.php');
                                         <div class="bk-item">
                                             <select class="" id="select_option" name="activity">
                                                 <option value="">Select an option</option>
-                                                <option value="Day trip to Ella">Day trip to Ella</option>
-                                                <option value="Day trip to Sigirya">Day trip to Sigirya</option>
-                                                <option value="Two days in Highland">Two days in Highland</option>
-                                                <option value="Colombo city excursion with Srilankan traditional lunch">Colombo city excursion with Srilankan traditional lunch</option>
+                                                <option value="Half-Day wild safari in Kumana National Park (Sharing)">Half-Day wild safari in Kumana National Park (Sharing)</option>
+                                                <option value="Full-Day wild safari in Kumana National Park">Full-Day wild safari in Kumana National Park</option>
+                                                <option value="Mangrove wathing in Pottuvil Lagoon - Lagoon eco tour">Mangrove wathing in Pottuvil Lagoon - Lagoon eco tour</option>
+                                                <option value="Half-Day wild safari in yala National">Half-Day wild safari in yala National </option>
+                                                <option value="Full-Day wild safari in yala National">Full-Day wild safari in yala National </option>
+                                                <option value="arugambay to yala : wild safari + Drop of flexibilty">arugambay to yala : wild safari + Drop of flexibilty </option>
                                             </select>
                                         </div>
                                     </div>
@@ -639,33 +803,18 @@ include('assets/php/formvalidation.php');
                                         <div class="bk-item booking-date">
                                             <i class="far fa-calendar-alt"></i>
                                             <select class="wide" name="time">
-                                                <option value="05.00 A.M - 05.30 A.M">05.00 A.M - 05.30 A.M </option>
-                                                <option value="05.30 A.M - 06.00 A.M">05.30 A.M - 06.00 A.M </option>
-                                                <option value="06.00 A.M - 06.30 A.M">06.00 A.M - 06.30 A.M </option>
-                                                <option value="06.30 A.M - 07.00 A.M">06.30 A.M - 07.00 A.M </option>
-                                                <option value="07.00 A.M - 07.30 A.M">07.00 A.M - 07.30 A.M </option>
-                                                <option value="07.30 A.M - 08.00 A.M">07.30 A.M - 08.00 A.M </option>
-                                                <option value="08.00 A.M - 08.30 A.M">08.00 A.M - 08.30 A.M </option>
-                                                <option value="08.30 A.M - 09.00 A.M">08.30 A.M - 09.00 A.M </option>
-                                                <!-- <option value="09.00 A.M - 09.30 A.M">09.00 A.M - 09.30 A.M </option>
-                                                <option value="09.30 A.M - 10.00 A.M">09.30 A.M - 10.00 A.M </option>
-                                                <option value="10.00 A.M - 10.30 A.M">10.00 A.M - 10.30 A.M </option>
-                                                <option value="10.30 A.M - 11.00 A.M">10.30 A.M - 11.00 A.M </option> -->
-
+                                                <option value="05.00 A.M">05.00 A.M </option>
+                                                <option value="01.00 P.M">01.00 P.M</option>
                                             </select>
                                         </div>
                                     </div>
 
                                     <div class="booking-item mb-20">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="no_adults" placeholder="Number of Adults" name="no_adults" onchange="calculate_adult_amount(this.value)">
+                                            <input type="text" class="form-control" id="no_adults" placeholder="Number of Pax" name="no_adults" onchange="calculate_no_pax(this.value)">
                                         </div>
                                     </div>
-                                    <div class="booking-item mb-20">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="no_kids" placeholder="Number of Kids" name="no_kids" onchange="calculate_kid_amount(this.value)">
-                                        </div>
-                                    </div>
+
                                     <div class="booking-item mb-20">
                                         <div class="form-group">
                                             <input type="text" class="form-control" id="Number_of_pax" placeholder="Departure location" name="departurelocation">
@@ -676,15 +825,12 @@ include('assets/php/formvalidation.php');
                                             <input type="text" class="form-control" id="Number_of_pax" placeholder="Need further assists? write us below" name="needassist">
                                         </div>
                                     </div>
-
                                     <div class="booking-extra mb-15 wow fadeInUp">
                                         <h6 class="mb-10">Price Info</h6>
-                                        <div class="extra">
-                                            <i class="fas fa-check-circle"></i>Adult<span><span class="currency" id="totalAmount_adult"></span></span>
-                                            <input type="hidden" id="totalAmountadult" name="adult_value">
+                                        <div>
+                                            </span> <input type="hidden" id="totalAmountadult" name="adult_value">
                                         </div>
-                                        <div class="extra">
-                                            <i class="fas fa-check-circle"></i>Kids <span><span class="currency" id="totalAmount_kids"></span></span>
+                                        <div>
                                             <input type="hidden" id="totalAmountkids" name="kids_value">
                                         </div>
                                     </div>
@@ -696,13 +842,14 @@ include('assets/php/formvalidation.php');
                                         </div>
                                     </div>
 
-                                    <div class="booking-date-time mb-20">
+                                    <div class="booking-date-time mb-20 col-lg-6 col-md-5 col-xl-12">
                                         <div class="submit-button">
                                             <button class="main-btn primary-btn" name="submit">Booking Now<i class="far fa-paper-plane"></i></button>
                                         </div>
                                     </div>
 
                                 </form>
+
                             </div>
                             <!--=== Booking Info Widget ===-->
                             <div class="sidebar-widget booking-info-widget wow fadeInUp mb-40">
@@ -713,6 +860,7 @@ include('assets/php/formvalidation.php');
                                 </ul>
                             </div>
 
+                            <!-- more details -->
                             <div class="sidebar-widget booking-info-widget wow fadeInUp mb-40">
                                 <h4 class="widget-title">For More Details</h4>
                                 <ul class="info-list">
@@ -721,8 +869,10 @@ include('assets/php/formvalidation.php');
                                     <li><span><i class="far fa-phone"></i><span>+94 76 689 9188</span></span></li>
                                 </ul>
                             </div>
+
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -733,128 +883,33 @@ include('assets/php/formvalidation.php');
     <!--====== Back To Top  ======-->
     <!-- <a href="#" class="back-to-top"><i class="far fa-angle-up"></i></a> -->
     <a href="https://wa.me/message/L2MV5OGPQV2RH1" class="back-to-top"><i class="fab fa-whatsapp"></i></a>
+
     <script>
-        var total1 = 0;
-        var total2 = 0;
-        var nonselected = "a";
-
-        function calculate_adult_amount(value1) {
-
+        function calculate_no_pax(value1) {
             if (value1 == "") {
                 value1 = 0;
             }
+            value1 = parseInt(value1);
 
-            value1 = parseInt(value1)
-            var unitprice = 0;
-
-            switch (value1) {
-                case 0:
-                    unitprice = 0;
-                    break;
-                case 1:
-                    unitprice = 193.55;
-                    break;
-                case 2:
-                    unitprice = 112.90;
-                    break;
-                case 3:
-                    unitprice = 96.77;
-                    break;
-                case 4:
-                    unitprice = 90.32;
-                    break;
-                case 5:
-                    unitprice = 80.65;
-                    break;
-                case 6:
-                    unitprice = 74.19;
-                    break;
-                case 7:
-                case 8:
-                case 9:
-                case 10:
-                    unitprice = 64.52;
-                    break;
-                default:
-                    nonselected = "more";
-                    unitprice = 0;
-            }
-            if (nonselected == "more") {
-                total1 = unitprice * parseInt(value1); // float + integerr
-                document.getElementById('totalAmount_adult').innerText = "Not Allowed More than 10";
-                updateTotalAmount();
-            } else {
-                total1 = unitprice * parseInt(value1);
-                document.getElementById('totalAmount_adult').innerText = '$' + total1.toFixed(2);
-                document.getElementById('totalAmountadult').value = '$' + total1.toFixed(2);
-                updateTotalAmount();
-            }
-
+            updateTotalAmount(value1);
         }
 
-        function calculate_kid_amount(value2) {
-
-            if (value2 == "") {
-                value2 = 0;
-            }
-
-            value2 = parseInt(value2);
-            var unitprice = 0;
-
-            switch (value2) {
-                case 0:
-                    unitprice = 0;
-                    break;
-                case 1:
-                    unitprice = 77.42;
-                    break;
-                case 2:
-                    unitprice = 45.16;
-                    break;
-                case 3:
-                    unitprice = 38.71;
-                    break;
-                case 4:
-                    unitprice = 36.13;
-                    break;
-                case 5:
-                    unitprice = 32.26;
-                    break;
-                case 6:
-                    unitprice = 29.68;
-                    break;
-                case 7:
-                    unitprice = 25.81;
-                    break;
-                case 8:
-                case 9:
-                case 10:
-                    unitprice = 25.81;
-                    break;
-                default:
-                    nonselected = "more";
-                    unitprice = 0;
-            }
-
-            if (nonselected == "more") {
-                total2 = unitprice * parseInt(value2);
-                document.getElementById('totalAmount_kids').innerText = "Not Allowed More than 10";
-                updateTotalAmount();
+        function updateTotalAmount(value1) {
+            var unitprice = 40; // Assuming a unit price of $10, you need to define it properly.
+            if (value1 >= 4) {
+                document.getElementById('totalAmount').style.color = "black";
+                var totalAmount = value1 * unitprice; //(Math.floor(value1 / 4)) * unitprice;
+                document.getElementById('totalAmount').innerText = '$' + totalAmount.toFixed(2);
+                document.getElementById('totalAmountText').value = '$' + totalAmount.toFixed(2);
+                document.getElementById('totalAmountadult').value = 0;
+                document.getElementById('totalAmountkids').value = 0;
             } else {
-                total2 = unitprice * parseInt(value2);
-                document.getElementById('totalAmount_kids').innerText = '$' + total2.toFixed(2);
-                document.getElementById('totalAmountkids').value = '$' + total2.toFixed(2);
-                updateTotalAmount();
+                document.getElementById('totalAmount').style.color = "red";
+                document.getElementById('totalAmount').innerText = 'Required Minimum 4 Pax';
             }
-
-        }
-
-        function updateTotalAmount() {
-            var totalAmount = total1 + total2;
-            document.getElementById('totalAmount').innerText = '$' + totalAmount.toFixed(2);
-            document.getElementById('totalAmountText').value = '$' + totalAmount.toFixed(2);
         }
     </script>
+
 
     <?php
     session_start(); // Start the session
@@ -871,6 +926,30 @@ include('assets/php/formvalidation.php');
     }
     ?>
 
+    <!-- <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.place-slider-item');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+            });
+            currentIndex = index;
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        // Show the first slide initially
+        showSlide(0);
+    </script> -->
 </body>
 
 </html>

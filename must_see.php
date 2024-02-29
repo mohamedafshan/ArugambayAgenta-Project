@@ -75,14 +75,14 @@
                             </div>
                             <div class="place-content">
                                 <div class="info">
-                                    <h4 class="title"><a href="must_see_package1.php">
+                                    <h4 class="title"><a href="cultural_excursion_and_ancient_visit.php">
                                     Cultural Excursion and Ancient Visit 
                                     </a></h4>  
                                     <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>55.00</p>
                                     <div class="meta">
                                         <span><i class="far fa-clock"></i>7 hours</span>
                                         <span><i class="far fa-user"></i>21</span>
-                                        <span><a href="must_see_package1.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                        <span><a href="cultural_excursion_and_ancient_visit.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                                     </div>
                                 </div>
                             </div>
@@ -97,13 +97,13 @@
                             </div>
                             <div class="place-content">
                                 <div class="info">
-                                    <h4 class="title"><a href="must_see_package2.php">Tuk Tuk Sightseeing and Cooking Class
+                                    <h4 class="title"><a href="tuk_tuk_sightseeing_and_cooking_class.php">Tuk Tuk Sightseeing and Cooking Class
                                        </a></h4>  
                                     <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>35.00</p>
                                     <div class="meta">
                                         <span><i class="far fa-clock"></i>5 hours</span>
                                         <span><i class="far fa-user"></i>21</span>
-                                        <span><a href="must_see_package2.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                        <span><a href="tuk_tuk_sightseeing_and_cooking_class.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                                     </div>
                                 </div>
                             </div>
@@ -118,14 +118,14 @@
                             </div>
                             <div class="place-content">
                                 <div class="info">
-                                    <h4 class="title"><a href="must_see_package3.php">
+                                    <h4 class="title"><a href="cooking_class_srilankan_tradition.php">
                                     Cooking Class: Sri Lankan Tradition 
                                     </a></h4>  
                                     <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>35.00</p>
                                     <div class="meta">
                                         <span><i class="far fa-clock"></i>1 hour 30 minutes</span>
                                         <span><i class="far fa-user"></i>21</span>
-                                        <span><a href="must_see_package3.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                        <span><a href="cooking_class_srilankan_tradition.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                                     </div>
                                 </div>
                             </div>

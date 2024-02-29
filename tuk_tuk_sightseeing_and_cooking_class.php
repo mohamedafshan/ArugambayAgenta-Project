@@ -24,69 +24,58 @@ include('assets/php/formvalidation.php')
             <div class="place-slider">
                 <div class="place-slider-item">
                     <div class="place-img">
-                        <img src="assets/images/Cultural Excursion and Ancient Visit/Photo of people traveling with hanas.jpg" alt="Place Image" height="630px">
+                        <img src="assets/images/Tuk Tuk Sightseeing and Cooking Class/Maintaining good relations among Sri Lankan citizens.jpg" alt="Place Image" height="630px">
                     </div>
                 </div>
 
                 <div class="place-item">
                     <div class="place-img">
-                        <img src="assets/images/Cultural Excursion and Ancient Visit/A feast of travel.jpg" alt="Place Image" height="630px">
+                        <img src="assets/images/Tuk Tuk Sightseeing and Cooking Class/Cooking class for girls.jpg" alt="Place Image" height="630px">
                     </div>
                 </div>
 
                 <div class="place-slider-item">
                     <div class="place-img">
-                        <img src="assets/images/Cultural Excursion and Ancient Visit/Travel buddies with hanas.jpg" alt="Place Image" height="630px">
+                        <img src="assets/images/Tuk Tuk Sightseeing and Cooking Class/Photo of men cooking.jpg" alt="Place Image" height="630px">
                     </div>
                 </div>
 
                 <div class="place-slider-item">
                     <div class="place-img">
-                        <img src="assets/images/Cultural Excursion and Ancient Visit/Temple visit.jpg" alt="Place Image" height="630px">
+                        <img src="assets/images/Tuk Tuk Sightseeing and Cooking Class/Travel buddies with hanas.jpg" alt="Place Image" height="630px">
                     </div>
                 </div>
 
                 <div class="place-slider-item">
                     <div class="place-img">
-                        <img src="assets/images/Cultural Excursion and Ancient Visit/Elephants strolling in the fields.jpg" alt="Place Image" height="630px">
+                        <img src="assets/images/Tuk Tuk Sightseeing and Cooking Class/Wild Deer.jpg" alt="Place Image" height="630px">
                     </div>
                 </div>
 
                 <div class="place-slider-item">
                     <div class="place-img">
-                        <img src="assets/images/Cultural Excursion and Ancient Visit/Elephants travel in groups in the field.jpg" alt="Place Image" height="630px">
+                        <img src="assets/images/Tuk Tuk Sightseeing and Cooking Class/Blue Water Lilly.jpg" alt="Place Image" height="630px">
                     </div>
                 </div>
 
                 <div class="place-slider-item">
                     <div class="place-img">
-                        <img src="assets/images/Cultural Excursion and Ancient Visit/Peacock dance.jpg" alt="Place Image" height="630px">
+                        <img src="assets/images/Tuk Tuk Sightseeing and Cooking Class/Tips for cooking traditional food.jpg" alt="Place Image" height="630px">
                     </div>
                 </div>
 
                 <div class="place-slider-item">
                     <div class="place-img">
-                        <img src="assets/images/Cultural Excursion and Ancient Visit/Wild Deer.jpg" alt="Place Image" height="630px">
+                        <img src="assets/images/Tuk Tuk Sightseeing and Cooking Class/Vegetables used for cooking.jpg" alt="Place Image" height="630px">
                     </div>
                 </div>
 
                 <div class="place-slider-item">
                     <div class="place-img">
-                        <img src="assets/images/Cultural Excursion and Ancient Visit/Blue water lily in places to visit.jpg" alt="Place Image" height="630px">
+                        <img src="assets/images/Tuk Tuk Sightseeing and Cooking Class/Methodology of rice cooking.jpg" alt="Place Image" height="630px">
                     </div>
                 </div>
 
-                <div class="place-slider-item">
-                    <div class="place-img">
-                        <img src="assets/images/Cultural Excursion and Ancient Visit/Adventures of the Monkey in the Tree.jpg" alt="Place Image" height="630px">
-                    </div>
-                </div>
-
-                <div class="place-slider-item">
-                    <div class="place-img">
-                        <img src="assets/images/Cultural Excursion and Ancient Visit/Photo of cranes looking for food.jpg" alt="Place Image" height="630px">
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -98,7 +87,7 @@ include('assets/php/formvalidation.php')
                     <div class="row">
                         <div class="col-xl-6">
                             <div class="tour-title mb-20">
-                                <h3 class="title">Cultural Excursion and Ancient Visit</h3>
+                                <h3 class="title">Tuk Tuk Sightseeing and Cooking Class</h3>
                             </div>
                         </div>
                         <div class="col-xl-6">
@@ -108,7 +97,7 @@ include('assets/php/formvalidation.php')
                                         <i class="fal fa-box-usd"></i>
                                     </div>
                                     <div class="info">
-                                        <h4><span>From</span>$55.00</h4>
+                                        <h4><span>From</span>$35.00</h4>
                                     </div>
                                 </div>
                                 <div class="info-box mb-20">
@@ -116,7 +105,7 @@ include('assets/php/formvalidation.php')
                                         <i class="fal fa-clock"></i>
                                     </div>
                                     <div class="info">
-                                        <h4><span>Durations</span>7 hours</h4>
+                                        <h4><span>Durations</span>5 hours</h4>
                                     </div>
                                 </div>
                             </div>
@@ -140,29 +129,30 @@ include('assets/php/formvalidation.php')
                         <!--=== Place Content Wrap ===-->
                         <div class="place-content-wrap pt-45 wow fadeInUp">
                             <h3 class="title">Explore Tour Package</h3>
-                            <p>Discover Sri Lanka’s beauty, culture, and wildlife on our ‘Cultural excursion and Ancient Visit’ tour. Beach, curry lunch, wildlife, culture, and sunset enchantment await!</p>
+                            <p>Experience Sri Lanka’s vibrant culture with “Tuk Tuk sightseeing and Cooking Class.” Warm “Aayubowan” welcome. Surf, cook, wildlife, and more in Panama village. Unforgettable memories await!</p>
                             <div class="row align-items-lg-center">
                                 <div class="col-lg-5">
                                     <ul class="check-list">
                                         <li><i class="fas fa-badge-check"></i>Flexible Booking</li>
                                         <li><i class="fas fa-badge-check"></i>Reserve now & pay later</li>
-                                        <li><i class="fas fa-badge-check"></i>Expert Guide </li>
+                                        <li><i class="fas fa-badge-check"></i>Expert Instructor</li>
                                         <li><i class="fas fa-badge-check"></i>Convenient Pickup</li>
                                         <li><i class="fas fa-badge-check"></i>Eco-Conscious Tours</li>
                                     </ul>
                                 </div>
                                 <div class="col-lg-7">
-                                    <img src="assets/images/must See/Cultural excursion.jpg" class="mb-20 w-100" alt="place image" width="470px" height="365px">
+                                    <img src="assets/images/must See/Tuk Tuk Sightseeing.jpg" class="mb-20 w-100" alt="place image" width="470px" height="365px">
                                 </div>
                             </div>
                             <h4>Included</h4>
                             <div class="col-lg-5 mt-5">
                                 <ul class="check-list">
-                                    <li><i class="fas fa-badge-check"></i>Hotel Pickup and Drop-off.</li>
-                                    <li><i class="fas fa-badge-check"></i>Full Transport</li>
-                                    <li><i class="fas fa-badge-check"></i>Live Host or Greeter</li>
-                                    <li><i class="fas fa-badge-check"></i>Tour Gears</li>
-                                    <li><i class="fas fa-badge-check"></i>Lunch Water</li>
+                                    <li><i class="fas fa-badge-check"></i>Full Tuk Tuk Transport.</li>
+                                    <li><i class="fas fa-badge-check"></i>Hotel Pickup and Drop-Off.</li>
+                                    <li><i class="fas fa-badge-check"></i>Cooking Class.</li>
+                                    <li><i class="fas fa-badge-check"></i>Tour Around Panama Village.</li>
+                                    <li><i class="fas fa-badge-check"></i>Welcome Drink.</li>
+                                    <li><i class="fas fa-badge-check"></i>Photos and videos taken by the Instructor.</li>
                                 </ul>
                             </div>
                         </div>
@@ -181,11 +171,11 @@ include('assets/php/formvalidation.php')
                                     <div class="accordion-body">
                                         <div class="col-lg-5">
                                             <ul class="check-list">
-                                                <li><i class="fas fa-badge-check"></i>Unwind on pristine beaches, choose your adventure.</li>
-                                                <li><i class="fas fa-badge-check"></i>Savor Sri Lankan Rice and curry amid nature’s embrace.</li>
-                                                <li><i class="fas fa-badge-check"></i>Wildlife encounters at Panama Lake, a thrilling expedition.</li>
-                                                <li><i class="fas fa-badge-check"></i>Explore ancient “Kudumbigala” Monastery’s mystique.</li>
-                                                <li><i class="fas fa-badge-check"></i>Vibrant “Okanda Temple”, where cultures unite.</li>
+                                                <li><i class="fas fa-badge-check"></i>Authentic Sri Lankan cooking lessons.</li>
+                                                <li><i class="fas fa-badge-check"></i>Immersive Tuk Tuk village tour.</li>
+                                                <li><i class="fas fa-badge-check"></i>Personalized interaction with locals.</li>
+                                                <li><i class="fas fa-badge-check"></i>Panama beach relaxation and surfing.</li>
+                                                <li><i class="fas fa-badge-check"></i>Crocodile and wildlife sightings.</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -199,17 +189,13 @@ include('assets/php/formvalidation.php')
                                 </h2>
                                 <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">
-                                        Begin your day with a visit to the pristine beach, where the sparkling waves invite you to surf or simply unwind and soak up the sun. It's your time to choose how to enjoy this natural paradise. Next, a feast of Sri Lankan flavors. Experience the burst of traditional tastes with a sumptuous Sri Lankan Rice and Curry lunch. You'll dine with a backdrop of pristine nature, setting the stage for a day full of awe-inspiring moments. <br> <br>
+                                        Start your day by embarking on a Tuk Tuk adventure, as we pick you up from your Arugambay location and journey to the picturesque Panama beach. Surf the waves or bask in the tropical sun as you relax on the golden shores. <br> <br>
 
-                                        We'll then embark on a thrilling wildlife expedition, keeping a lookout for majestic elephants, graceful deer , and even the elusive crocodiles as we journey to the mesmerizing Panama Lake. <br> <br>
+                                        Later, step into the heart of Panama village and connect with a local family, who will delight you with their warm hospitality. Sip on a refreshing "AayuBowan" welcome drink and dive into an interactive cooking lesson. Learn the art of preparing traditional Sri Lankan dishes using farm-fresh vegetables, and indulge in the flavors of an authentic homemade lunch. <br> <br>
 
-                                        Prepare to be transported back in time at the mystical Kudumbigala Monastery, where ancient relics and stories of Sri Lanka's rich Buddhist heritage come alive. <br> <br>
+                                        As the afternoon unfolds, we'll take you on a mesmerizing journey to Panama Lake, where you'll have the rare opportunity to encounter crocodiles, spot vibrant birds, and witness elephants amidst the breathtaking flora and fauna. <br> <br>
 
-                                        Our adventure doesn't stop there. We'll take you on a cultural odyssey to the enchanting Okanda Sri Murugan Hindu Temple. Here, you'll be enchanted by the vivid colors and intricate carvings, and you might even make a new furry friend - the friendly sambar deer. <br> <br>
-
-                                        Throughout our journey, you'll witness the natural wonders of Sri Lanka, from lush jungles to serene rivers, making unforgettable memories. As the sun sets over the jungle, we'll head back to Arugambay, ending the day with another round of enchantment and relaxation. <br> <br>
-
-                                        Join us on this incredible adventure, where nature, culture, and wildlife come together in perfect harmony. Your Sri Lankan story awaits! <br> <br>
+                                        Return to Arugambay, cherishing the memories of a day filled with cultural immersion, mouthwatering cuisine, and captivating wildlife encounters.Join us for an adventure that delights all your senses and leaves you with cherished memories of Sri Lanka's enchanting beauty. <br> <br>
                                     </div>
                                 </div>
                             </div>
@@ -224,21 +210,9 @@ include('assets/php/formvalidation.php')
                                     <div class="accordion-body">
                                         <div class="col-lg-5">
                                             <ul class="check-list">
-                                                <u>What to bring</u>
-                                                <li><i class="fas fa-badge-check"></i>Change of clothes</li>
-                                                <li><i class="fas fa-badge-check"></i>Biodegradable sunscreen</li>
-                                                <li><i class="fas fa-badge-check"></i>Beachwear</li>
-                                                <li><i class="fas fa-badge-check"></i>Long pants</li>
-                                                <li><i class="fas fa-badge-check"></i>Long-sleeved shirt</li>
-
                                                 <u>Not allowed</u>
-                                                <li><i class="fas fa-badge-check"></i>Sleeveless shirts</li>
-                                                <li><i class="fas fa-badge-check"></i>Alcohol and drugs Shorts</li>
-
-                                                <u>Know before you go</u>
-                                                <li><i class="fas fa-badge-check"></i>The monastery has been established on and around the Kudumbigala rock which is 119 m in height. You will climb to that peak (If prefer).</li>
-                                                <li><i class="fas fa-badge-check"></i>There’s no elevator.</li>
-
+                                                <li><i class="fas fa-badge-check"></i>Alcohol and drugs</li>
+                                                <li><i class="fas fa-badge-check"></i>Weapons or sharp objects</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -255,8 +229,8 @@ include('assets/php/formvalidation.php')
                                     <div class="accordion-body">
                                         <div class="col-lg-5">
                                             <ul class="check-list">
-                                                <li><i class="fas fa-badge-check"></i>People with mobility impairments</li>
-                                                <li><i class="fas fa-badge-check"></i>Pregnant women</li>
+                                                <li><i class="fas fa-badge-check"></i>People with food allergies.</li>
+                                                <li><i class="fas fa-badge-check"></i>People with mobility impairments.</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -470,15 +444,15 @@ include('assets/php/formvalidation.php')
                                 <!--=== Single Place Item ===-->
                                 <div class="single-place-item mb-60 wow fadeInUp">
                                     <div class="place-img">
-                                        <img src="assets/images/must See/Tuk Tuk Sightseeing.jpg" alt="Place Image" height="280px">
+                                        <img src="assets/images/must See/Cultural excursion.jpg" alt="Place Image" height="280px">
                                     </div>
                                     <div class="place-content">
                                         <div class="info">
-                                            <h4 class="title"><a href="must_see_package2.php">
-                                                    Tuk Tuk Sightseeing and Cooking Class
+                                            <h4 class="title"><a href="cultural_excursion_and_ancient_visit.php">
+                                                    Cultural Excursion and Ancient Visit
                                                 </a></h4>
                                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
-                                                    $</span>35.00</p>
+                                                    $</span>55.00</p>
                                         </div>
                                     </div>
                                 </div>
@@ -490,7 +464,7 @@ include('assets/php/formvalidation.php')
                                     </div>
                                     <div class="place-content">
                                         <div class="info">
-                                            <h4 class="title"><a href="must_see_package3.php">
+                                            <h4 class="title"><a href="cooking_class_srilankan_tradition.php">
                                                     Cooking Class: Srilankan Tradition
                                                 </a></h4>
                                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
@@ -502,15 +476,15 @@ include('assets/php/formvalidation.php')
                                 <!--=== Single Place Item ===-->
                                 <div class="single-place-item mb-60 wow fadeInUp">
                                     <div class="place-img">
-                                        <img src="assets/images/must See/Tuk Tuk Sightseeing.jpg" alt="Place Image" height="280px">
+                                        <img src="assets/images/must See/Cultural excursion.jpg" alt="Place Image" height="280px">
                                     </div>
                                     <div class="place-content">
                                         <div class="info">
-                                            <h4 class="title"><a href="must_see_package2.php">
-                                                    Tuk Tuk Sightseeing and Cooking Class
+                                            <h4 class="title"><a href="cultural_excursion_and_ancient_visit.php">
+                                                    Cultural Excursion and Ancient Visit
                                                 </a></h4>
                                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
-                                                    $</span>35.00</p>
+                                                    $</span>55.00</p>
                                         </div>
                                     </div>
                                 </div>
@@ -522,7 +496,7 @@ include('assets/php/formvalidation.php')
                                     </div>
                                     <div class="place-content">
                                         <div class="info">
-                                            <h4 class="title"><a href="must_see_package3.php">
+                                            <h4 class="title"><a href="cooking_class_srilankan_tradition.php">
                                                     Cooking Class: Srilankan Tradition
                                                 </a></h4>
                                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
@@ -660,7 +634,6 @@ include('assets/php/formvalidation.php')
     <!--====== Back To Top  ======-->
     <!-- <a href="#" class="back-to-top"><i class="far fa-angle-up"></i></a> -->
     <a href="https://wa.me/message/L2MV5OGPQV2RH1" class="back-to-top"><i class="fab fa-whatsapp"></i></a>
-
     <script>
         var total1 = 0;
         var total2 = 0;
@@ -680,34 +653,34 @@ include('assets/php/formvalidation.php')
                     unitprice = 0;
                     break;
                 case 1:
-                    unitprice = 97.75;
+                    unitprice = 58.06;
                     break;
                 case 2:
-                    unitprice = 60.39;
+                    unitprice = 38.71;
                     break;
                 case 3:
-                    unitprice = 47.94;
+                    unitprice = 32.26;
                     break;
                 case 4:
-                    unitprice = 60.39;
+                    unitprice = 38.71;
                     break;
                 case 5:
-                    unitprice = 52.92;
+                    unitprice = 34.84;
                     break;
                 case 6:
-                    unitprice = 47.94;
+                    unitprice = 32.26;
                     break;
                 case 7:
-                    unitprice = 55.05;
+                    unitprice = 35.94;
                     break;
                 case 8:
-                    unitprice = 51.05;
+                    unitprice = 33.87;
                     break;
                 case 9:
-                    unitprice = 47.94;
+                    unitprice = 32.26;
                     break;
                 case 10:
-                    unitprice = 52.92;
+                    unitprice = 34.84;
                     break;
                 default:
                     nonselected = "more";
@@ -740,34 +713,34 @@ include('assets/php/formvalidation.php')
                     unitprice = 0;
                     break;
                 case 1:
-                    unitprice = 48.87;
+                    unitprice = 29.03;
                     break;
                 case 2:
-                    unitprice = 30.20;
+                    unitprice = 19.35;
                     break;
                 case 3:
-                    unitprice = 23.97;
+                    unitprice = 16.13;
                     break;
                 case 4:
-                    unitprice = 30.20;
+                    unitprice = 19.35;
                     break;
                 case 5:
-                    unitprice = 26.46;
+                    unitprice = 17.42;
                     break;
                 case 6:
-                    unitprice = 23.97;
+                    unitprice = 16.13;
                     break;
                 case 7:
-                    unitprice = 27.53;
+                    unitprice = 17.97;
                     break;
                 case 8:
-                    unitprice = 25.53;
+                    unitprice = 16.94;
                     break;
                 case 9:
-                    unitprice = 23.97;
+                    unitprice = 16.13;
                     break;
                 case 10:
-                    unitprice = 26.46;
+                    unitprice = 17.42;
                     break;
                 default:
                     nonselected = "more";
@@ -794,12 +767,10 @@ include('assets/php/formvalidation.php')
         }
     </script>
 
-</body>
-
-<?php
-session_start(); // Start the session
-if (isset($_SESSION['message'])) {
-    echo "<script> 
+    <?php
+    session_start(); // Start the session
+    if (isset($_SESSION['message'])) {
+        echo "<script> 
             Swal.fire({
                 title: '" . ($_SESSION['message'] == 'Data Added successfully' ? 'Success' : 'Error') . "',
                 text: '" . ($_SESSION['message'] == 'Data Added successfully' ? 'Your booking has been taken successfully.' : 'Your booking could not be added. Please try again later.') . "',
@@ -807,8 +778,9 @@ if (isset($_SESSION['message'])) {
                 confirmButtonText: 'OK'
             });
           </script>";
-    unset($_SESSION['message']); // Remove the message from session after displaying
-}
-?>
+        unset($_SESSION['message']); // Remove the message from session after displaying
+    }
+    ?>
+</body>
 
 </html>

@@ -37,14 +37,14 @@
                             </div>
                             <div class="place-content">
                                 <div class="info">
-                                    <h4 class="title"><a href="surfing_package_WaveRise.php">
+                                    <h4 class="title"><a href="waverise_beginner_surf_experience_surf_lesson.php">
                                         WaveRise: Beginner Surf Experience
                                     </a></h4>  
                                     <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>30.00</p>
                                     <div class="meta">
                                         <span><i class="far fa-clock"></i>1 hour 30 min</span>
                                         <span><i class="far fa-user"></i>21</span>
-                                        <span><a href="surfing_package_WaveRise.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                        <span><a href="waverise_beginner_surf_experience_surf_lesson.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                                     </div>
                                 </div>
                             </div>

@@ -476,7 +476,7 @@ include('assets/php/formvalidation.php')
                                     </div>
                                     <div class="place-content">
                                         <div class="info">
-                                            <h4 class="title"><a href="Experiential_package1.php">Day Trip to Sigiriya
+                                            <h4 class="title"><a href="day_trip_to_sigirya.php">Day Trip to Sigiriya
                                                     <br> <br>
                                                 </a></h4>
                                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
@@ -492,7 +492,7 @@ include('assets/php/formvalidation.php')
                                     </div>
                                     <div class="place-content">
                                         <div class="info">
-                                            <h4 class="title"><a href="Experiential_package2.php">"Two Day in Highland" Tour <br> <br>
+                                            <h4 class="title"><a href="two_days_in_highland_our.php">"Two Day in Highland" Tour <br> <br>
                                                 </a></h4>
                                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
                                                     $</span>230.00</p>
@@ -507,7 +507,7 @@ include('assets/php/formvalidation.php')
                                     </div>
                                     <div class="place-content">
                                         <div class="info">
-                                            <h4 class="title"><a href="Experiential_package4.php">Colombo City Excursion with Srilankan Traditional Lunch
+                                            <h4 class="title"><a href="colombo_city_excursion.php">Colombo City Excursion with Srilankan Traditional Lunch
                                                 </a></h4>
                                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
                                                     $</span>55.00</p>

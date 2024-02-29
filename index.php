@@ -75,7 +75,7 @@ include('Header/header.php');
                                         <h4 class="title">
                                             Beginner Surf Lessons: ISA Certified
                                         </h4>
-                                        <a href="surfing_package_WaveRise.php" class="icon-btn"><i class="far fa-arrow-right"></i></a>
+                                        <a href="waverise_beginner_surf_experience_surf_lesson.php" class="icon-btn"><i class="far fa-arrow-right"></i></a>
                                     </div>
                                     <p> </p>
                                 </div>
@@ -96,7 +96,7 @@ include('Header/header.php');
                                         <h4 class="title">
                                             Mangrove watching in Pottuvil Lagoon
                                         </h4>
-                                        <a href="tour-details-package3.php" class="icon-btn"><i class="far fa-arrow-right"></i></a>
+                                        <a href="mangrove_watching_in_pottuvil.php" class="icon-btn"><i class="far fa-arrow-right"></i></a>
                                     </div>
                                     <p> </p>
                                 </div>
@@ -138,7 +138,7 @@ include('Header/header.php');
                                         <h4 class="title">
                                             Yala "Game Drive" with Hilux
                                         </h4>
-                                        <a href="tour-details-package8.php" class="icon-btn"><i class="far fa-arrow-right"></i></a>
+                                        <a href="half_day_wild_safari_in_yala_national_park.php" class="icon-btn"><i class="far fa-arrow-right"></i></a>
                                     </div>
                                     <p> </p>
                                 </div>
@@ -180,7 +180,7 @@ include('Header/header.php');
                                         <h4 class="title">
                                             Highland Adventures
                                         </h4>
-                                        <a href="Experiential_package2.php" class="icon-btn"><i class="far fa-arrow-right"></i></a>
+                                        <a href="two_days_in_highland_our.php" class="icon-btn"><i class="far fa-arrow-right"></i></a>
                                     </div>
                                     <p> </p>
                                 </div>
@@ -201,7 +201,7 @@ include('Header/header.php');
                                         <h4 class="title">
                                             Yala Leopard Encounters
                                         </h4>
-                                        <a href="tour-details-package4.php" class="icon-btn"><i class="far fa-arrow-right"></i></a>
+                                        <a href="arugambay_to_yala_wild_safari+Drop_off_flexibility.php" class="icon-btn"><i class="far fa-arrow-right"></i></a>
                                     </div>
                                     <p> </p>
                                 </div>
@@ -222,7 +222,7 @@ include('Header/header.php');
                                         <h4 class="title">
                                             Sigiriya, The Lion Rock Visit
                                         </h4>
-                                        <a href="Experiential_package1.php" class="icon-btn"><i class="far fa-arrow-right"></i></a>
+                                        <a href="day_trip_to_sigirya.php" class="icon-btn"><i class="far fa-arrow-right"></i></a>
                                     </div>
                                     <p> </p>
                                 </div>
@@ -243,7 +243,7 @@ include('Header/header.php');
                                         <h4 class="title">
                                             "Flying Ravana" Zip-lining
                                         </h4>
-                                        <a href="Experiential_package3.php" class="icon-btn"><i class="far fa-arrow-right"></i></a>
+                                        <a href="day_trip_to_ella.php" class="icon-btn"><i class="far fa-arrow-right"></i></a>
                                     </div>
                                     <p> </p>
                                 </div>
@@ -285,7 +285,7 @@ include('Header/header.php');
                                         <h4 class="title">
                                             Eagle Vista in Kumana
                                         </h4>
-                                        <a href="Experiential_package2.php" class="icon-btn"><i class="far fa-arrow-right"></i></a>
+                                        <a href="two_days_in_highland_our.php" class="icon-btn"><i class="far fa-arrow-right"></i></a>
                                     </div>
                                     <p> </p>
                                 </div>
@@ -306,7 +306,7 @@ include('Header/header.php');
                                         <h4 class="title">
                                             Kandy Monkey Magic
                                         </h4>
-                                        <a href="Experiential_package2.php" class="icon-btn"><i class="far fa-arrow-right"></i></a>
+                                        <a href="two_days_in_highland_our.php" class="icon-btn"><i class="far fa-arrow-right"></i></a>
                                     </div>
                                     <p> </p>
                                 </div>
@@ -327,7 +327,7 @@ include('Header/header.php');
                                         <h4 class="title">
                                             Mangrove Marvels in Pottuvil Lagoon
                                         </h4>
-                                        <a href="tour-details-package3.php" class="icon-btn"><i class="far fa-arrow-right"></i></a>
+                                        <a href="mangrove_watching_in_pottuvil.php" class="icon-btn"><i class="far fa-arrow-right"></i></a>
                                     </div>
                                     <p> </p>
                                 </div>
@@ -390,7 +390,7 @@ include('Header/header.php');
                                         <h4 class="title">
                                             Okand serenity
                                         </h4>
-                                        <a href="must_see_package1.php" class="icon-btn"><i class="far fa-arrow-right"></i></a>
+                                        <a href="cultural_excursion_and_ancient_visit.php" class="icon-btn"><i class="far fa-arrow-right"></i></a>
                                     </div>
                                     <p> </p>
                                 </div>
@@ -424,13 +424,13 @@ include('Header/header.php');
                         </div>
                         <div class="place-content">
                             <div class="info">
-                                <h4 class="title"><a href="tour-details-package1.php">Half-Day Wild Safari in Kumana
+                                <h4 class="title"><a href="half_day_wild_safari_in_kumana_national_park_sharing.php">Half-Day Wild Safari in Kumana
                                         National park (Sharing)</a></h4>
                                 <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>40.00</p>
                                 <div class="meta">
                                     <span><i class="far fa-clock"></i>06 hours</span>
                                     <span><i class="far fa-user"></i>21</span>
-                                    <span><a href="tour-details-package1.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                    <span><a href="half_day_wild_safari_in_kumana_national_park_sharing.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                                 </div>
                             </div>
                         </div>
@@ -443,14 +443,14 @@ include('Header/header.php');
                     </div>
                     <div class="place-content">
                         <div class="info">
-                            <h4 class="title"><a href="tour-details-package2.php">Wild Safari in Lahugala <br>
+                            <h4 class="title"><a href="wild_safari_in_lahugala_national_park.php">Wild Safari in Lahugala <br>
                                     National Park
                                 </a></h4>
                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>23.47</p>
                             <div class="meta">
                                 <span><i class="far fa-clock"></i>04 hours</span>
                                 <span><i class="far fa-user"></i>21</span>
-                                <span><a href="tour-details-package2.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                <span><a href="wild_safari_in_lahugala_national_park.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                             </div>
                         </div>
                     </div>
@@ -462,13 +462,13 @@ include('Header/header.php');
                     </div>
                     <div class="place-content">
                         <div class="info">
-                            <h4 class="title"><a href="tour-details-package3.php">Mangrove Watching in Pottuvil Lagoon
+                            <h4 class="title"><a href="mangrove_watching_in_pottuvil.php">Mangrove Watching in Pottuvil Lagoon
                                     (Lagoon Eco Tour)</a></h4>
                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>25.00</p>
                             <div class="meta">
                                 <span><i class="far fa-clock"></i>03 hours</span>
                                 <span><i class="far fa-user"></i>21</span>
-                                <span><a href="tour-details-package3.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                <span><a href="mangrove_watching_in_pottuvil.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                             </div>
                         </div>
                     </div>
@@ -480,13 +480,13 @@ include('Header/header.php');
                     </div>
                     <div class="place-content">
                         <div class="info">
-                            <h4 class="title"><a href="tour-details-package4.php">Arugambay to Yala: wild Safari +
+                            <h4 class="title"><a href="arugambay_to_yala_wild_safari+Drop_off_flexibility.php">Arugambay to Yala: wild Safari +
                                     Drop-off Flexibilty </a></h4>
                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>170.00</p>
                             <div class="meta">
                                 <span><i class="far fa-clock"></i>08 hours 30 mins</span>
                                 <span><i class="far fa-user"></i>21</span>
-                                <span><a href="tour-details-package4.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                <span><a href="arugambay_to_yala_wild_safari+Drop_off_flexibility.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                             </div>
                         </div>
                     </div>
@@ -498,14 +498,14 @@ include('Header/header.php');
                     </div>
                     <div class="place-content">
                         <div class="info">
-                            <h4 class="title"><a href="tour-details-package5.php">
+                            <h4 class="title"><a href="half_day_wild_safari_in_kumana_national_park_private.php">
                                     Half-Day Wild Safari in Kumana National Park (Private)
                                 </a></h4>
                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>75.00</p>
                             <div class="meta">
                                 <span><i class="far fa-clock"></i>06 hours</span>
                                 <span><i class="far fa-user"></i>21</span>
-                                <span><a href="tour-details-package5.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                <span><a href="half_day_wild_safari_in_kumana_national_park_private.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                             </div>
                         </div>
                     </div>
@@ -517,14 +517,16 @@ include('Header/header.php');
                     </div>
                     <div class="place-content">
                         <div class="info">
-                            <h4 class="title"><a href="tour-details-package6.php">
+                            <h4 class="title"><a href="full_day_wild_safari_in_kumana_national_park_private.php
+">
                                     Full-Day Wild Safari in Kumana National Park(Private)
                                 </a></h4>
                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>130.00</p>
                             <div class="meta">
                                 <span><i class="far fa-clock"></i>12 hours</span>
                                 <span><i class="far fa-user"></i>21</span>
-                                <span><a href="tour-details-package6.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                <span><a href="full_day_wild_safari_in_kumana_national_park_private.php
+">Explore<i class="far fa-long-arrow-right"></i></a></span>
                             </div>
                         </div>
                     </div>
@@ -536,13 +538,13 @@ include('Header/header.php');
                     </div>
                     <div class="place-content">
                         <div class="info">
-                            <h4 class="title"><a href="tour-details-package7.php">Full-Day Wild Safari in Yala
+                            <h4 class="title"><a href="full_day_wild_safari_in_yala_national_park.php">Full-Day Wild Safari in Yala
                                     National park</a></h4>
                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>140.00</p>
                             <div class="meta">
                                 <span><i class="far fa-clock"></i>12 hours</span>
                                 <span><i class="far fa-user"></i>21</span>
-                                <span><a href="tour-details-package7.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                <span><a href="full_day_wild_safari_in_yala_national_park.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                             </div>
                         </div>
                     </div>
@@ -554,14 +556,14 @@ include('Header/header.php');
                     </div>
                     <div class="place-content">
                         <div class="info">
-                            <h4 class="title"><a href="tour-details-package8.php">Half Day Wild Safari in
+                            <h4 class="title"><a href="half_day_wild_safari_in_yala_national_park.php">Half Day Wild Safari in
                                     Yala National Park
                                 </a></h4>
                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>85.00</p>
                             <div class="meta">
                                 <span><i class="far fa-clock"></i>12 hours</span>
                                 <span><i class="far fa-user"></i>21</span>
-                                <span><a href="tour-details-package8.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                <span><a href="half_day_wild_safari_in_yala_national_park.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                             </div>
                         </div>
                     </div>
@@ -590,14 +592,14 @@ include('Header/header.php');
                             </div>
                             <div class="place-content">
                                 <div class="info">
-                                    <h4 class="title"><a href="must_see_package1.php">
+                                    <h4 class="title"><a href="cultural_excursion_and_ancient_visit.php">
                                             Cultural Excursion and Ancient Visit
                                         </a></h4>
                                     <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>55.00</p>
                                     <div class="meta">
                                         <span><i class="far fa-clock"></i>7 hours</span>
                                         <span><i class="far fa-user"></i>21</span>
-                                        <span><a href="must_see_package1.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                        <span><a href="cultural_excursion_and_ancient_visit.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                                     </div>
                                 </div>
                             </div>
@@ -611,13 +613,13 @@ include('Header/header.php');
                     </div>
                     <div class="place-content">
                         <div class="info">
-                            <h4 class="title"><a href="must_see_package2.php">Tuk Tuk Sightseeing and Cooking Class
+                            <h4 class="title"><a href="tuk_tuk_sightseeing_and_cooking_class.php">Tuk Tuk Sightseeing and Cooking Class
                                 </a></h4>
                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>35.00</p>
                             <div class="meta">
                                 <span><i class="far fa-clock"></i>5 hours</span>
                                 <span><i class="far fa-user"></i>21</span>
-                                <span><a href="must_see_package2.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                <span><a href="tuk_tuk_sightseeing_and_cooking_class.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                             </div>
                         </div>
                     </div>
@@ -629,14 +631,14 @@ include('Header/header.php');
                     </div>
                     <div class="place-content">
                         <div class="info">
-                            <h4 class="title"><a href="must_see_package3.php">
+                            <h4 class="title"><a href="cooking_class_srilankan_tradition.php">
                                     Cooking Class: Sri Lankan Tradition
                                 </a></h4>
                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>35.00</p>
                             <div class="meta">
                                 <span><i class="far fa-clock"></i>1 hour 30 minutes</span>
                                 <span><i class="far fa-user"></i>21</span>
-                                <span><a href="must_see_package3.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                <span><a href="cooking_class_srilankan_tradition.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                             </div>
                         </div>
                     </div>
@@ -650,14 +652,14 @@ include('Header/header.php');
                             </div>
                             <div class="place-content">
                                 <div class="info">
-                                    <h4 class="title"><a href="must_see_package1.php">
+                                    <h4 class="title"><a href="cultural_excursion_and_ancient_visit.php">
                                             Cultural Excursion and Ancient Visit
                                         </a></h4>
                                     <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>55.00</p>
                                     <div class="meta">
                                         <span><i class="far fa-clock"></i>7 hours</span>
                                         <span><i class="far fa-user"></i>21</span>
-                                        <span><a href="must_see_package1.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                        <span><a href="cultural_excursion_and_ancient_visit.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                                     </div>
                                 </div>
                             </div>
@@ -671,13 +673,13 @@ include('Header/header.php');
                     </div>
                     <div class="place-content">
                         <div class="info">
-                            <h4 class="title"><a href="must_see_package2.php">Tuk Tuk Sightseeing and Cooking Class
+                            <h4 class="title"><a href="tuk_tuk_sightseeing_and_cooking_class.php">Tuk Tuk Sightseeing and Cooking Class
                                 </a></h4>
                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>35.00</p>
                             <div class="meta">
                                 <span><i class="far fa-clock"></i>5 hours</span>
                                 <span><i class="far fa-user"></i>21</span>
-                                <span><a href="must_see_package2.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                <span><a href="tuk_tuk_sightseeing_and_cooking_class.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                             </div>
                         </div>
                     </div>
@@ -689,14 +691,14 @@ include('Header/header.php');
                     </div>
                     <div class="place-content">
                         <div class="info">
-                            <h4 class="title"><a href="must_see_package3.php">
+                            <h4 class="title"><a href="cooking_class_srilankan_tradition.php">
                                     Cooking Class: Sri Lankan Tradition
                                 </a></h4>
                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>35.00</p>
                             <div class="meta">
                                 <span><i class="far fa-clock"></i>1 hour 30 minutes</span>
                                 <span><i class="far fa-user"></i>21</span>
-                                <span><a href="must_see_package3.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                <span><a href="cooking_class_srilankan_tradition.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                             </div>
                         </div>
                     </div>
@@ -723,14 +725,14 @@ include('Header/header.php');
                             </div>
                             <div class="place-content">
                                 <div class="info">
-                                    <h4 class="title"><a href="Experiential_package1.php">
+                                    <h4 class="title"><a href="day_trip_to_sigirya.php">
                                             Day Trip to Sigiriya <br> <br>
                                         </a></h4>
                                     <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>61.35</p>
                                     <div class="meta">
                                         <span><i class="far fa-clock"></i>1 day</span>
                                         <span><i class="far fa-user"></i>21</span>
-                                        <span><a href="Experiential_package1.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                        <span><a href="day_trip_to_sigirya.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                                     </div>
                                 </div>
                             </div>
@@ -744,13 +746,13 @@ include('Header/header.php');
                     </div>
                     <div class="place-content">
                         <div class="info">
-                            <h4 class="title"><a href="Experiential_package2.php">"Two Days in Highland" Tour
+                            <h4 class="title"><a href="two_days_in_highland_our.php">"Two Days in Highland" Tour
                                 </a></h4>
                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>230.00</p>
                             <div class="meta">
                                 <span><i class="far fa-clock"></i>2 days</span>
                                 <span><i class="far fa-user"></i>21</span>
-                                <span><a href="Experiential_package2.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                <span><a href="two_days_in_highland_our.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                             </div>
                         </div>
                     </div>
@@ -762,14 +764,14 @@ include('Header/header.php');
                     </div>
                     <div class="place-content">
                         <div class="info">
-                            <h4 class="title"><a href="Experiential_package3.php">
+                            <h4 class="title"><a href="day_trip_to_ella.php">
                                     Day Trip to Ella <br> <br>
                                 </a></h4>
                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>130.00</p>
                             <div class="meta">
                                 <span><i class="far fa-clock"></i>1 day</span>
                                 <span><i class="far fa-user"></i>21</span>
-                                <span><a href="Experiential_package3.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                <span><a href="day_trip_to_ella.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                             </div>
                         </div>
                     </div>
@@ -781,14 +783,14 @@ include('Header/header.php');
                     </div>
                     <div class="place-content">
                         <div class="info">
-                            <h4 class="title"><a href="Experiential_package4.php">
+                            <h4 class="title"><a href="colombo_city_excursion.php">
                                     Colombo City Excursion with Srilankan Lunch
                                 </a></h4>
                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>55.00</p>
                             <div class="meta">
                                 <span><i class="far fa-clock"></i>07 hours</span>
                                 <span><i class="far fa-user"></i>21</span>
-                                <span><a href="Experiential_package4.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
+                                <span><a href="colombo_city_excursion.php">Explore<i class="far fa-long-arrow-right"></i></a></span>
                             </div>
                         </div>
                     </div>
