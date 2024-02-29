@@ -4,7 +4,7 @@
         <?php include('Header/header.php');?>
 
         <!--====== Start Breadcrumb Section ======-->
-        <section class="page-banner overlay pt-170 pb-220 bg_cover" style="background-image: url(assets/images/bg/flying\ ravana\ \ in\ Ella.jpg);">
+        <section class="page-banner overlay pt-170 pb-220 bg_cover" style="background-image: url(assets/images/bg/flying\ ravana\ \ in\ Ella.jpg); height: 80px;">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-10">

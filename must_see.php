@@ -6,7 +6,7 @@
 
 
         <!--====== Start Breadcrumb Section ======-->
-        <section class="page-banner overlay pt-170 pb-220 bg_cover" style="background-image: url(assets/images/bg/Sri\ Lankan\ food\ customs\ and\ culture.jpg);">
+        <section class="page-banner overlay pt-170 pb-220 bg_cover" style="background-image: url(assets/images/bg/Sri\ Lankan\ food\ customs\ and\ culture.jpg); height: 80px;">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-10">

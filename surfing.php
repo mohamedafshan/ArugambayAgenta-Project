@@ -7,7 +7,7 @@
 
 
         <!--====== Start Breadcrumb Section ======-->
-        <section class="page-banner overlay pt-170 pb-220 bg_cover" style="background-image: url(assets/images/bg/Surfing\ and\ fun\ games\ in\ the\ sea.png);">
+        <section class="page-banner overlay pt-170 pb-220 bg_cover" style="background-image: url(assets/images/bg/Surfing\ and\ fun\ games\ in\ the\ sea.png); height: 80px;">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
@@ -38,7 +38,7 @@
                             <div class="place-content">
                                 <div class="info">
                                     <h4 class="title"><a href="surfing_package_WaveRise.php">
-                                        WaveRise: Beginner Surf Experience - Surf Lesson <br> <br>
+                                        WaveRise: Beginner Surf Experience
                                     </a></h4>  
                                     <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency"> $</span>30.00</p>
                                     <div class="meta">

@@ -1,5 +1,5 @@
 <?php
-    include('assets/php/formvalidation.php')
+include('assets/php/formvalidation.php')
 ?>
 
 <!DOCTYPE html>
@@ -260,68 +260,127 @@
                                 </div>
                             </div>
                         </div>
-
                         <br>
 
-                        <!--=== Releted Tour Place ===-->
-                        <div class="related-tour-place wow fadeInUp">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <div class="section-title mb-35">
-                                        <h3>Related Tours</h3>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="place-arrows mb-35"></div>
-                                </div>
-                            </div>
-                            <div class="recent-place-slider">
-                                <!--=== Single Place Item ===-->
-                                <div class="single-place-item mb-60 wow fadeInUp">
-                                    <div class="place-img">
-                                        <img src="assets/images/Experiential/sigiriya.jpg" alt="Place Image" height="280px">
-                                    </div>
-                                    <div class="place-content">
-                                        <div class="info">
-                                            <h4 class="title"><a href="Experiential_package1.php">Day Trip to Sigiriya
-                                                    <br> <br>
-                                                </a></h4>
-                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
-                                                    $</span>61.35</p>
+                        <div class="col-xl-8 col-lg-10 justify-content-center d-xxl-none d-xl-none">
+                            <!--=== Sidebar Widget Area ===-->
+                            <div class="sidebar-widget-area pt-60 pl-lg-30">
+                                <!--=== Booking Widget ===-->
+                                <div class="sidebar-widget booking-form-widget wow fadeInUp mb-40">
+                                    <h4 class="widget-title">Booking Now</h4>
+                                    <form class="sidebar-booking-form" action="" method="post">
+                                        <div class="booking-item mb-20">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="full_name" placeholder="Full Name" name="fullname">
+                                            </div>
                                         </div>
-                                    </div>
+                                        <div class="booking-item mb-20">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="email_for_form" placeholder="E-Mail Address" name="email_for_form">
+                                            </div>
+                                        </div>
+                                        <div class="booking-item mb-20">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="whatsapp_no" placeholder="WhatsApp Number" name="whatsapp_no">
+                                            </div>
+                                        </div>
+                                        <div class="booking-item mb-20">
+                                            <div class="bk-item">
+                                                <select class="" id="select_option" name="activity">
+                                                    <option value="">Select an option</option>
+                                                    <option value="Day trip to Ella">Day trip to Ella</option>
+                                                    <option value="Day trip to Sigirya">Day trip to Sigirya</option>
+                                                    <option value="Two days in Highland">Two days in Highland</option>
+                                                    <option value="Colombo city excursion with Srilankan traditional lunch">Colombo city excursion with Srilankan traditional lunch</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="booking-item mb-20">
+                                            <div class="bk-item booking-time">
+                                                <i class="far fa-calendar-alt"></i>
+                                                <input type="text" placeholder="Select Date" class="datepicker" name="date">
+                                            </div>
+                                        </div>
+
+                                        <div class="booking-item mb-20">
+                                            <div class="bk-item booking-date">
+                                                <i class="far fa-calendar-alt"></i>
+                                                <select class="wide" name="time">
+                                                    <option value="03.00 A.M">03.00 A.M</option>
+                                                    <option value="04.00 A.M">04.00 A.M</option>
+                                                    <option value="05.00 A.M">05.00 A.M</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="booking-item mb-20">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="no_adults" placeholder="Number of Adults" name="no_adults" onchange="calculate_adult_amount(this.value)">
+                                            </div>
+                                        </div>
+                                        <div class="booking-item mb-20">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="no_kids" placeholder="Number of Kids" name="no_kids" onchange="calculate_kid_amount(this.value)">
+                                            </div>
+                                        </div>
+                                        <div class="booking-item mb-20">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="Number_of_pax" placeholder="Departure location" name="departurelocation">
+                                            </div>
+                                        </div>
+                                        <div class="booking-item mb-20">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="Number_of_pax" placeholder="Need further assists? write us below" name="needassist">
+                                            </div>
+                                        </div>
+
+                                        <div class="booking-extra mb-15 wow fadeInUp">
+                                            <h6 class="mb-10">Price Info</h6>
+                                            <div class="extra">
+                                                <i class="fas fa-check-circle"></i>Adult<span><span class="currency" id="totalAmount_adult"></span></span>
+                                                <input type="hidden" id="totalAmountadult" name="adult_value">
+
+                                            </div>
+                                            <div class="extra">
+                                                <i class="fas fa-check-circle"></i>Kids <span><span class="currency" id="totalAmount_kids"></span></span>
+                                                <input type="hidden" id="totalAmountkids" name="kids_value">
+                                            </div>
+                                        </div>
+                                        <div class="booking-total mb-20">
+                                            <div class="total">
+                                                <label>Total</label>
+                                                <span class="price"><span class="currency" id="totalAmount"></span></span>
+                                                <input type="hidden" id="totalAmountText" name="total">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="booking-date-time mb-20">
+                                            <div class="submit-button">
+                                                <button class="main-btn primary-btn" name="submit">Booking Now<i class="far fa-paper-plane"></i></button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                                <!--=== Booking Info Widget ===-->
+                                <div class="sidebar-widget booking-info-widget wow fadeInUp mb-40">
+                                    <h4 class="widget-title">Tour Information</h4>
+                                    <ul class="info-list">
+                                        <li><span><i class="far fa-user-circle"></i>Max Guests<span>21</span></span></li>
+                                        <li><span><i class="far fa-globe"></i>Language<span>English</span></span></li>
+                                    </ul>
                                 </div>
 
-                                <!--=== Single Place Item ===-->
-                                <div class="single-place-item mb-60 wow fadeInUp">
-                                    <div class="place-img">
-                                        <img src="assets/images/Experiential/Travel buddies who traveled with us on Ella.jpg" alt="Place Image" height="280px">
-                                    </div>
-                                    <div class="place-content">
-                                        <div class="info">
-                                            <h4 class="title"><a href="Experiential_package2.php">"Two Day in Highland" Tour <br> <br>
-                                                </a></h4>
-                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
-                                                    $</span>230.00</p>
-                                        </div>
-                                    </div>
+                                <div class="sidebar-widget booking-info-widget wow fadeInUp mb-40">
+                                    <h4 class="widget-title">For More Details</h4>
+                                    <ul class="info-list">
+                                        <li><span><i class="far fa-user-circle"></i>Talk to <span>Mr.Hanas</span></span></li>
+                                        <li><span><i class="far fa-phone"></i> <span>+94 72 647 9635</span></span></li>
+                                        <li><span><i class="far fa-phone"></i><span>+94 76 689 9188</span></span></li>
+                                    </ul>
                                 </div>
-
-                                <!--=== Single Place Item ===-->
-                                <div class="single-place-item mb-60 wow fadeInUp">
-                                    <div class="place-img">
-                                        <img src="assets/images/Experiential/Travel to Colombo Statue Temple.jpg" alt="Place Image" height="280px">
-                                    </div>
-                                    <div class="place-content">
-                                        <div class="info">
-                                            <h4 class="title"><a href="Experiential_package4.php">Colombo City Excursion with Srilankan Traditional Lunch
-                                                </a></h4>
-                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
-                                                    $</span>55.00</p>
-                                        </div>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
 
@@ -396,9 +455,72 @@
                                 </div>
                             </form>
                         </div>
+
+                        <!--=== Releted Tour Place ===-->
+                        <div class="related-tour-place wow fadeInUp">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="section-title mb-35">
+                                        <h3>Related Tours</h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="place-arrows mb-35"></div>
+                                </div>
+                            </div>
+                            <div class="recent-place-slider">
+                                <!--=== Single Place Item ===-->
+                                <div class="single-place-item mb-60 wow fadeInUp">
+                                    <div class="place-img">
+                                        <img src="assets/images/Experiential/sigiriya.jpg" alt="Place Image" height="280px">
+                                    </div>
+                                    <div class="place-content">
+                                        <div class="info">
+                                            <h4 class="title"><a href="Experiential_package1.php">Day Trip to Sigiriya
+                                                    <br> <br>
+                                                </a></h4>
+                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
+                                                    $</span>61.35</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--=== Single Place Item ===-->
+                                <div class="single-place-item mb-60 wow fadeInUp">
+                                    <div class="place-img">
+                                        <img src="assets/images/Experiential/Travel buddies who traveled with us on Ella.jpg" alt="Place Image" height="280px">
+                                    </div>
+                                    <div class="place-content">
+                                        <div class="info">
+                                            <h4 class="title"><a href="Experiential_package2.php">"Two Day in Highland" Tour <br> <br>
+                                                </a></h4>
+                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
+                                                    $</span>230.00</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--=== Single Place Item ===-->
+                                <div class="single-place-item mb-60 wow fadeInUp">
+                                    <div class="place-img">
+                                        <img src="assets/images/Experiential/Travel to Colombo Statue Temple.jpg" alt="Place Image" height="280px">
+                                    </div>
+                                    <div class="place-content">
+                                        <div class="info">
+                                            <h4 class="title"><a href="Experiential_package4.php">Colombo City Excursion with Srilankan Traditional Lunch
+                                                </a></h4>
+                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
+                                                    $</span>55.00</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
                     </div>
 
-                    <div class="col-xl-4">
+                    <div class="col-xl-4 col-lg-10 justify-content-center d-none d-sm-none d-lg-none d-md-none d-xl-block d-xxl-block">
                         <!--=== Sidebar Widget Area ===-->
                         <div class="sidebar-widget-area pt-60 pl-lg-30">
                             <!--=== Booking Widget ===-->
@@ -474,20 +596,20 @@
                                     <div class="booking-extra mb-15 wow fadeInUp">
                                         <h6 class="mb-10">Price Info</h6>
                                         <div class="extra">
-                                            <i class="fas fa-check-circle"></i>Adult<span><span class="currency" id="totalAmount_adult"></span></span> 
+                                            <i class="fas fa-check-circle"></i>Adult<span><span class="currency" id="totalAmount_adult"></span></span>
                                             <input type="hidden" id="totalAmountadult" name="adult_value">
 
                                         </div>
                                         <div class="extra">
-                                            <i class="fas fa-check-circle"></i>Kids <span><span class="currency" id="totalAmount_kids"></span></span> 
+                                            <i class="fas fa-check-circle"></i>Kids <span><span class="currency" id="totalAmount_kids"></span></span>
                                             <input type="hidden" id="totalAmountkids" name="kids_value">
                                         </div>
                                     </div>
                                     <div class="booking-total mb-20">
                                         <div class="total">
                                             <label>Total</label>
-                                            <span class="price"><span class="currency" id="totalAmount"></span></span>  
-                                              <input type="hidden" id="totalAmountText" name="total">  
+                                            <span class="price"><span class="currency" id="totalAmount"></span></span>
+                                            <input type="hidden" id="totalAmountText" name="total">
                                         </div>
                                     </div>
 
@@ -592,7 +714,7 @@
                 document.getElementById('totalAmountadult').value = '$' + total1.toFixed(2);
                 updateTotalAmount();
             }
-            
+
         }
 
         function calculate_kid_amount(value2) {
@@ -653,7 +775,7 @@
                 document.getElementById('totalAmountkids').value = '$' + total2.toFixed(2);
                 updateTotalAmount();
             }
-            
+
         }
 
         function updateTotalAmount() {
@@ -662,11 +784,11 @@
             document.getElementById('totalAmountText').value = '$' + totalAmount.toFixed(2);
         }
     </script>
-    
-<?php
-session_start(); // Start the session
-if (isset($_SESSION['message'])) {
-    echo "<script> 
+
+    <?php
+    session_start(); // Start the session
+    if (isset($_SESSION['message'])) {
+        echo "<script> 
             Swal.fire({
                 title: '" . ($_SESSION['message'] == 'Data Added successfully' ? 'Success' : 'Error') . "',
                 text: '" . ($_SESSION['message'] == 'Data Added successfully' ? 'Your booking has been taken successfully.' : 'Your booking could not be added. Please try again later.') . "',
@@ -674,9 +796,9 @@ if (isset($_SESSION['message'])) {
                 confirmButtonText: 'OK'
             });
           </script>";
-    unset($_SESSION['message']); // Remove the message from session after displaying
-}
-?>
+        unset($_SESSION['message']); // Remove the message from session after displaying
+    }
+    ?>
 
 </body>
 

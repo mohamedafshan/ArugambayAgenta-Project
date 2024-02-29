@@ -1,5 +1,5 @@
 <?php
-    include('assets/php/formvalidation.php')
+include('assets/php/formvalidation.php')
 ?>
 
 <!DOCTYPE html>
@@ -272,8 +272,199 @@
                                 </div>
                             </div>
                         </div>
-
                         <br>
+
+                        <div class="col-xl-8 col-lg-10 justify-content-center d-xxl-none d-xl-none">
+                            <!--=== Sidebar Widget Area ===-->
+                            <div class="sidebar-widget-area pt-60 pl-lg-30">
+                                <!--=== Booking Widget ===-->
+                                <div class="sidebar-widget booking-form-widget wow fadeInUp mb-40">
+                                    <h4 class="widget-title">Booking Now</h4>
+                                    <form class="sidebar-booking-form" action="" method="post">
+                                        <div class="booking-item mb-20">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="full_name" placeholder="Full Name" name="fullname">
+                                            </div>
+                                        </div>
+                                        <div class="booking-item mb-20">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="email_for_form" placeholder="E-Mail Address" name="email_for_form">
+                                            </div>
+                                        </div>
+                                        <div class="booking-item mb-20">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="whatsapp_no" placeholder="WhatsApp Number" name="whatsapp_no">
+                                            </div>
+                                        </div>
+                                        <div class="booking-item mb-20">
+                                            <div class="bk-item">
+                                                <select class="" id="select_option" name="activity">
+                                                    <option value="">Select an option</option>
+                                                    <option value="Half-Day wild safari in Kumana National Park">Half-Day wild safari in Kumana National Park</option>
+                                                    <option value="Full-Day wild safari in Kumana National Park">Full-Day wild safari in Kumana National Park</option>
+                                                    <option value="Mangrove wathing in Pottuvil Lagoon - Lagoon eco tour">Mangrove wathing in Pottuvil Lagoon - Lagoon eco tour</option>
+                                                    <option value="Half-Day wild safari in yala National">Half-Day wild safari in yala National </option>
+                                                    <option value="Full-Day wild safari in yala National">Full-Day wild safari in yala National </option>
+                                                    <option value="arugambay to yala : wild safari + Drop of flexibilty">arugambay to yala : wild safari + Drop of flexibilty </option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="booking-item mb-20">
+                                            <div class="bk-item booking-time">
+                                                <i class="far fa-calendar-alt"></i>
+                                                <input type="text" placeholder="Select Date" class="datepicker" name="date">
+                                            </div>
+                                        </div>
+
+                                        <div class="booking-item mb-20">
+                                            <div class="bk-item booking-date">
+                                                <i class="far fa-calendar-alt"></i>
+                                                <select class="wide" name="time">
+                                                    <option value="04.30 A.M">04.30 A.M</option>
+                                                    <option value="02.00 P.M">02.00 P.M</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="booking-item mb-20">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="no_adults" placeholder="Number of Adults" name="no_adults" onchange="calculate_adult_amount(this.value)">
+                                            </div>
+                                        </div>
+                                        <div class="booking-item mb-20">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="no_kids" placeholder="Number of Kids" name="no_kids" onchange="calculate_kid_amount(this.value)">
+                                            </div>
+                                        </div>
+                                        <div class="booking-item mb-20">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="Number_of_pax" placeholder="Departure location" name="departurelocation">
+                                            </div>
+                                        </div>
+                                        <div class="booking-item mb-20">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="Number_of_pax" placeholder="Need further assists? write us below" name="needassist">
+                                            </div>
+                                        </div>
+                                        <div class="booking-extra mb-15 wow fadeInUp">
+                                            <h6 class="mb-10">Price Info</h6>
+                                            <div class="extra">
+                                                <i class="fas fa-check-circle"></i>Adult<span><span class="currency" id="totalAmount_adult"></span>
+                                                </span> <input type="hidden" id="totalAmountadult" name="adult_value">
+                                            </div>
+                                            <div class="extra">
+                                                <i class="fas fa-check-circle"></i>Kids <span><span class="currency" id="totalAmount_kids"></span></span>
+                                                <input type="hidden" id="totalAmountkids" name="kids_value">
+                                            </div>
+                                        </div>
+                                        <div class="booking-total mb-20">
+                                            <div class="total">
+                                                <label>Total</label>
+                                                <span class="price"><span class="currency" id="totalAmount"></span></span>
+                                                <input type="hidden" id="totalAmountText" name="total">
+                                            </div>
+                                        </div>
+
+                                        <div class="booking-date-time mb-20">
+                                            <div class="submit-button">
+                                                <button class="main-btn primary-btn" name="submit">Booking Now<i class="far fa-paper-plane"></i></button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                                <!--=== Booking Info Widget ===-->
+                                <div class="sidebar-widget booking-info-widget wow fadeInUp mb-40">
+                                    <h4 class="widget-title">Tour Information</h4>
+                                    <ul class="info-list">
+                                        <li><span><i class="far fa-user-circle"></i>Max Guests<span>21</span></span></li>
+                                        <li><span><i class="far fa-globe"></i>Language<span>English</span></span></li>
+                                    </ul>
+                                </div>
+
+                                <div class="sidebar-widget booking-info-widget wow fadeInUp mb-40">
+                                    <h4 class="widget-title">For More Details</h4>
+                                    <ul class="info-list">
+                                        <li><span><i class="far fa-user-circle"></i>Talk to <span>Mr.Hanas</span></span></li>
+                                        <li><span><i class="far fa-phone"></i> <span>+94 72 647 9635</span></span></li>
+                                        <li><span><i class="far fa-phone"></i><span>+94 76 689 9188</span></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--===  Comments Form  ===-->
+                        <div class="comments-respond mb-30 wow fadeInUp">
+                            <h3 class="comments-heading" style="margin-bottom: 15px;">Leave a Comments</h3>
+                            <ul class="comment-rating-ul mb-20">
+                                <li>
+                                    <span class="title">Quality</span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </li>
+                                <li>
+                                    <span class="title">Location</span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </li>
+                                <li>
+                                    <span class="title">Services</span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </li>
+                                <li>
+                                    <span class="title">Team</span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </li>
+                                <li>
+                                    <span class="title">Price</span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </li>
+                            </ul>
+                            <form class="comment-form">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form_group">
+                                            <input type="email" class="form_control" placeholder="Email Address" name="name" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form_group">
+                                            <input type="text" class="form_control" placeholder="Enter Name" name="email" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form_group">
+                                            <textarea name="message" class="form_control" rows="4" placeholder="Write Your Comments"></textarea>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="col-lg-12">
+                                        <div class="form_group">
+                                            <button class="main-btn primary-btn">Send comments<i class="fas fa-angle-double-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
 
                         <!--=== Releted Tour Place ===-->
                         <div class="related-tour-place wow fadeInUp">
@@ -397,79 +588,9 @@
                             </div>
                         </div>
 
-                        <!--===  Comments Form  ===-->
-                        <div class="comments-respond mb-30 wow fadeInUp">
-                            <h3 class="comments-heading" style="margin-bottom: 15px;">Leave a Comments</h3>
-                            <ul class="comment-rating-ul mb-20">
-                                <li>
-                                    <span class="title">Quality</span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                </li>
-                                <li>
-                                    <span class="title">Location</span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                </li>
-                                <li>
-                                    <span class="title">Services</span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                </li>
-                                <li>
-                                    <span class="title">Team</span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                </li>
-                                <li>
-                                    <span class="title">Price</span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                </li>
-                            </ul>
-                            <form class="comment-form">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form_group">
-                                            <input type="email" class="form_control" placeholder="Email Address" name="name" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form_group">
-                                            <input type="text" class="form_control" placeholder="Enter Name" name="email" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="form_group">
-                                            <textarea name="message" class="form_control" rows="4" placeholder="Write Your Comments"></textarea>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="col-lg-12">
-                                        <div class="form_group">
-                                            <button class="main-btn primary-btn">Send comments<i class="fas fa-angle-double-right"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
                     </div>
-                    <div class="col-xl-4">
+
+                    <div class="col-xl-4 col-lg-10 justify-content-center d-none d-sm-none d-lg-none d-md-none d-xl-block d-xxl-block">
                         <!--=== Sidebar Widget Area ===-->
                         <div class="sidebar-widget-area pt-60 pl-lg-30">
                             <!--=== Booking Widget ===-->
@@ -549,14 +670,14 @@
                                             </span> <input type="hidden" id="totalAmountadult" name="adult_value">
                                         </div>
                                         <div class="extra">
-                                            <i class="fas fa-check-circle"></i>Kids <span><span class="currency" id="totalAmount_kids"></span></span> 
+                                            <i class="fas fa-check-circle"></i>Kids <span><span class="currency" id="totalAmount_kids"></span></span>
                                             <input type="hidden" id="totalAmountkids" name="kids_value">
                                         </div>
                                     </div>
                                     <div class="booking-total mb-20">
                                         <div class="total">
                                             <label>Total</label>
-                                            <span class="price"><span class="currency" id="totalAmount"></span></span> 
+                                            <span class="price"><span class="currency" id="totalAmount"></span></span>
                                             <input type="hidden" id="totalAmountText" name="total">
                                         </div>
                                     </div>
@@ -618,28 +739,55 @@
                     unitprice = 0;
                     break;
                 case 1:
-                    unitprice = 193.55;
+                    unitprice = 115.95;
                     break;
                 case 2:
-                    unitprice = 112.90;
+                    unitprice = 84.50;
                     break;
                 case 3:
-                    unitprice = 96.77;
+                    unitprice = 74.02;
                     break;
                 case 4:
-                    unitprice = 90.32;
+                    unitprice = 68.77;
                     break;
                 case 5:
-                    unitprice = 80.65;
+                    unitprice = 65.63;
                     break;
                 case 6:
-                    unitprice = 74.19;
+                    unitprice = 63.53;
                     break;
                 case 7:
+                    unitprice = 62.03;
+                    break;
                 case 8:
+                    unitprice = 68.77;
+                    break;
                 case 9:
+                    unitprice = 67.03;
+                    break;
                 case 10:
-                    unitprice = 64.52;
+                    unitprice = 65.63;
+                    break;
+                case 11:
+                    unitprice = 64.49;
+                    break;
+                case 12:
+                    unitprice = 63.53;
+                    break;
+                case 13:
+                    unitprice = 62.73;
+                    break;
+                case 14:
+                    unitprice = 62.03;
+                    break;
+                case 15:
+                    unitprice = 65.63;
+                    break;
+                case 16:
+                    unitprice = 64.84;
+                    break;
+                case 17:
+                    unitprice = 64.15;
                     break;
                 default:
                     nonselected = "more";
@@ -647,7 +795,7 @@
             }
             if (nonselected == "more") {
                 total1 = unitprice * parseInt(value1); // float + integerr
-                document.getElementById('totalAmount_adult').innerText = "Not Allowed More than 10";
+                document.getElementById('totalAmount_adult').innerText = "Not Allowed More than 17";
                 updateTotalAmount();
             } else {
                 total1 = unitprice * parseInt(value1);
@@ -655,7 +803,7 @@
                 document.getElementById('totalAmountadult').value = '$' + total1.toFixed(2);
                 updateTotalAmount();
             }
-            
+
         }
 
         function calculate_kid_amount(value2) {
@@ -672,30 +820,55 @@
                     unitprice = 0;
                     break;
                 case 1:
-                    unitprice = 77.42;
+                    unitprice = 46.38;
                     break;
                 case 2:
-                    unitprice = 45.16;
+                    unitprice = 33.80;
                     break;
                 case 3:
-                    unitprice = 38.71;
+                    unitprice = 29.61;
                     break;
                 case 4:
-                    unitprice = 36.13;
+                    unitprice = 27.51;
                     break;
                 case 5:
-                    unitprice = 32.26;
+                    unitprice = 26.25;
                     break;
                 case 6:
-                    unitprice = 29.68;
+                    unitprice = 25.41;
                     break;
                 case 7:
-                    unitprice = 25.81;
+                    unitprice = 24.81;
                     break;
                 case 8:
+                    unitprice = 27.51;
+                    break;
                 case 9:
+                    unitprice = 26.81;
+                    break;
                 case 10:
-                    unitprice = 25.81;
+                    unitprice = 26.25;
+                    break;
+                case 11:
+                    unitprice = 25.79;
+                    break;
+                case 12:
+                    unitprice = 25.41;
+                    break;
+                case 13:
+                    unitprice = 25.09;
+                    break;
+                case 14:
+                    unitprice = 24.81;
+                    break;
+                case 15:
+                    unitprice = 26.25;
+                    break;
+                case 16:
+                    unitprice = 25.94;
+                    break;
+                case 17:
+                    unitprice = 25.66;
                     break;
                 default:
                     nonselected = "more";
@@ -704,7 +877,7 @@
 
             if (nonselected == "more") {
                 total2 = unitprice * parseInt(value2);
-                document.getElementById('totalAmount_kids').innerText = "Not Allowed More than 10";
+                document.getElementById('totalAmount_kids').innerText = "Not Allowed More than 17";
                 updateTotalAmount();
             } else {
                 total2 = unitprice * parseInt(value2);
@@ -712,7 +885,7 @@
                 document.getElementById('totalAmountkids').value = '$' + total2.toFixed(2);
                 updateTotalAmount();
             }
-            
+
         }
 
         function updateTotalAmount() {
@@ -722,7 +895,7 @@
         }
     </script>
 
-<?php
+    <?php
     session_start(); // Start the session
     if (isset($_SESSION['message'])) {
         echo "<script> 

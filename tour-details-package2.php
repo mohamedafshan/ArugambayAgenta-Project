@@ -1,5 +1,5 @@
 <?php
-    include('assets/php/formvalidation.php')
+//include('assets/php/formvalidation.php')
 ?>
 
 <!DOCTYPE html>
@@ -200,212 +200,18 @@
                                 </div>
                             </div>
                         </div>
-
                         <br>
 
-                        <!--=== Releted Tour Place ===-->
-                        <div class="related-tour-place wow fadeInUp">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <div class="section-title mb-35">
-                                        <h3>Related Tours</h3>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="place-arrows mb-35"></div>
-                                </div>
-                            </div>
-                            <div class="recent-place-slider">
-                                <!--=== Single Place Item ===-->
-                                <div class="single-place-item mb-60 wow fadeInUp">
-                                    <div class="place-img">
-                                        <img src="assets/images/wildlife_kumana_package/A waiting tiger in kumana.jpg" alt="Place Image" height="280px">
-                                    </div>
-                                    <div class="place-content">
-                                        <div class="info">
-                                            <h4 class="title"><a href="tour-details-package6.php">Full-Day Wild Safari in Kumana National park (Private)
-                                                </a></h4>
-                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
-                                                    $</span>130.00</p>
-                                        </div>
-                                    </div>
-                                </div>
+                        <!-- booking -->
 
-                                <!--=== Single Place Item ===-->
-                                <div class="single-place-item mb-60 wow fadeInUp">
-                                    <div class="place-img">
-                                        <img src="assets/images/wildlife&eco/Selfie photo with riding buddies with hanas.jpg" alt="Place Image" height="280px">
-                                    </div>
-                                    <div class="place-content">
-                                        <div class="info">
-                                            <h4 class="title"><a href="tour-details-package8.php">Half Day Wild Safari in Yala National park <br><br>
-                                                </a></h4>
-                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
-                                                    $</span>85.00</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--=== Single Place Item ===-->
-                                <div class="single-place-item mb-60 wow fadeInUp">
-                                    <div class="place-img">
-                                        <img src="assets/images/wildlife&eco/Tiger roars in yala.jpg" alt="Place Image">
-                                    </div>
-                                    <div class="place-content">
-                                        <div class="info">
-                                            <h4 class="title"><a href="tour-details-package7.php">Full-Day Wild Safari in Kumana National park (Private)
-                                                </a></h4>
-                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
-                                                    $</span>140.00</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--=== Single Place Item ===-->
-                                <div class="single-place-item mb-60 wow fadeInUp">
-                                    <div class="place-img">
-                                        <img src="assets/images/wildlife&eco/Boat trip with travel buddies.jpg" alt="Place Image" height="280px">
-                                    </div>
-                                    <div class="place-content">
-                                        <div class="info">
-                                            <h4 class="title"><a href="tour-details-package3.php">Full-Day Wild Safari in Yala National Park
-                                                    <br><br> </a></h4>
-                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
-                                                    $</span>25.00</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--=== Single Place Item ===-->
-                                <div class="single-place-item mb-60 wow fadeInUp">
-                                    <div class="place-img">
-                                        <img src="assets/images/wildlife&eco/Wild tigers can be seen in yala.jpg" alt="Place Image" height="280px">
-                                    </div>
-                                    <div class="place-content">
-                                        <div class="info">
-                                            <h4 class="title"><a href="tour-details-package4.php">Mangrove Watching in Pottuvil Lagoon (Lagoon Eco Tour)
-                                                </a></h4>
-                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
-                                                    $</span>170.00</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--=== Single Place Item ===-->
-                                <div class="single-place-item mb-60 wow fadeInUp">
-                                    <div class="place-img">
-                                        <img src="assets/images/wildlife&eco/Buffalo in Lahugala National Park.jpg" alt="Place Image" height="280px">
-                                    </div>
-                                    <div class="place-content">
-                                        <div class="info">
-                                            <h4 class="title"><a href="tour-details-package2.php">Arugambay to Yala: Wild Safari + Drop-off Flexibilty
-                                                </a></h4>
-                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
-                                                    <br>$</span>23.47</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--=== Single Place Item ===-->
-                                <div class="single-place-item mb-60 wow fadeInUp">
-                                    <div class="place-img">
-                                        <img src="assets/images/wildlife&eco/Visit of wild elephants.jpg" alt="Place Image" height="280px">
-                                    </div>
-                                    <div class="place-content">
-                                        <div class="info">
-                                            <h4 class="title"><a href="tour-details-package5.php">Wild Safari in Lahugala National Park
-                                                    <br><br></a></h4>
-                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
-                                                    $</span>75.00</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                        <!--===  Comments Form  ===-->
-                        <div class="comments-respond mb-30 wow fadeInUp">
-                            <h3 class="comments-heading" style="margin-bottom: 15px;">Leave a Comments</h3>
-                            <ul class="comment-rating-ul mb-20">
-                                <li>
-                                    <span class="title">Quality</span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                </li>
-                                <li>
-                                    <span class="title">Location</span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                </li>
-                                <li>
-                                    <span class="title">Services</span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                </li>
-                                <li>
-                                    <span class="title">Team</span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                </li>
-                                <li>
-                                    <span class="title">Price</span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                </li>
-                            </ul>
-                            <form class="comment-form">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form_group">
-                                            <input type="email" class="form_control" placeholder="Email Address" name="name" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form_group">
-                                            <input type="text" class="form_control" placeholder="Enter Name" name="email" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="form_group">
-                                            <textarea name="message" class="form_control" rows="4" placeholder="Write Your Comments"></textarea>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="col-lg-12">
-                                        <div class="form_group">
-                                            <button class="main-btn primary-btn">Send comments<i class="fas fa-angle-double-right"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-4">
-                        <!--=== Sidebar Widget Area ===-->
-                        <div class="sidebar-widget-area pt-60 pl-lg-30">
-                            <!--=== Booking Widget ===-->
-                            <div class="sidebar-widget booking-form-widget wow fadeInUp mb-40">
-                                <h4 class="widget-title">Booking Now</h4>
-                                <form class="sidebar-booking-form" action="" method="post">
-                                    <div class="booking-item mb-20">
+                        <div class="col-xl-8 col-lg-10 justify-content-center d-xxl-none d-xl-none">
+                            <!--=== Sidebar Widget Area ===-->
+                            <div class="sidebar-widget-area pt-60 pl-lg-30">
+                                <!--=== Booking Widget ===-->
+                                <div class="sidebar-widget booking-form-widget wow fadeInUp mb-40">
+                                    <h4 class="widget-title">Booking Now</h4>
+                                    <form class="sidebar-booking-form" action="" method="post">
+                                        <!-- <div class="booking-item mb-20">
                                         <div class="form-group">
                                             <input type="text" class="form-control" id="full_name" placeholder="Full Name" name="fullname">
                                         </div>
@@ -488,7 +294,324 @@
                                             <span class="price"><span class="currency" id="totalAmount"></span></span> 
                                             <input type="hidden" id="totalAmountText" name="total">
                                         </div>
+                                    </div> -->
+
+                                        <div class="booking-date-time mb-20">
+                                            <div class="submit-button">
+                                                <button class="main-btn primary-btn" name="submit">Booking Now<i class="far fa-paper-plane"></i></button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+
+                                <!--=== Booking Info Widget ===-->
+                                <div class="sidebar-widget booking-info-widget wow fadeInUp mb-40">
+                                    <h4 class="widget-title">Tour Information</h4>
+                                    <ul class="info-list">
+                                        <li><span><i class="far fa-user-circle"></i>Max Guests<span>21</span></span></li>
+                                        <li><span><i class="far fa-globe"></i>Language<span>English</span></span></li>
+                                    </ul>
+                                </div>
+
+                                <div class="sidebar-widget booking-info-widget wow fadeInUp mb-40">
+                                    <h4 class="widget-title">For More Details</h4>
+                                    <ul class="info-list">
+                                        <li><span><i class="far fa-user-circle"></i>Talk to <span>Mr.Hanas</span></span></li>
+                                        <li><span><i class="far fa-phone"></i> <span>+94 72 647 9635</span></span></li>
+                                        <li><span><i class="far fa-phone"></i><span>+94 76 689 9188</span></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                         <!--===  Comments Form  ===-->
+                        <div class="comments-respond mb-30 wow fadeInUp">
+                            <h3 class="comments-heading" style="margin-bottom: 15px;">Leave a Comments</h3>
+                            <ul class="comment-rating-ul mb-20">
+                                <li>
+                                    <span class="title">Quality</span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </li>
+                                <li>
+                                    <span class="title">Location</span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </li>
+                                <li>
+                                    <span class="title">Services</span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </li>
+                                <li>
+                                    <span class="title">Team</span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </li>
+                                <li>
+                                    <span class="title">Price</span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </li>
+                            </ul>
+                            <form class="comment-form">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form_group">
+                                            <input type="email" class="form_control" placeholder="Email Address" name="name" required>
+                                        </div>
                                     </div>
+                                    <div class="col-lg-6">
+                                        <div class="form_group">
+                                            <input type="text" class="form_control" placeholder="Enter Name" name="email" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form_group">
+                                            <textarea name="message" class="form_control" rows="4" placeholder="Write Your Comments"></textarea>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="col-lg-12">
+                                        <div class="form_group">
+                                            <button class="main-btn primary-btn">Send comments<i class="fas fa-angle-double-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!--=== Releted Tour Place ===-->
+                        <div class="related-tour-place wow fadeInUp">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="section-title mb-35">
+                                        <h3>Related Tours</h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="place-arrows mb-35"></div>
+                                </div>
+                            </div>
+                            <div class="recent-place-slider">
+                                <!--=== Single Place Item ===-->
+                                <div class="single-place-item mb-60 wow fadeInUp">
+                                    <div class="place-img">
+                                        <img src="assets/images/wildlife_kumana_package/A waiting tiger in kumana.jpg" alt="Place Image" height="280px">
+                                    </div>
+                                    <div class="place-content">
+                                        <div class="info">
+                                            <h4 class="title"><a href="tour-details-package6.php">Full-Day Wild Safari in Kumana National park (Private)
+                                                </a></h4>
+                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
+                                                    $</span>130.00</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--=== Single Place Item ===-->
+                                <div class="single-place-item mb-60 wow fadeInUp">
+                                    <div class="place-img">
+                                        <img src="assets/images/wildlife&eco/Selfie photo with riding buddies with hanas.jpg" alt="Place Image" height="280px">
+                                    </div>
+                                    <div class="place-content">
+                                        <div class="info">
+                                            <h4 class="title"><a href="tour-details-package8.php">Half Day Wild Safari in Yala National park <br><br>
+                                                </a></h4>
+                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
+                                                    $</span>85.00</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--=== Single Place Item ===-->
+                                <div class="single-place-item mb-60 wow fadeInUp">
+                                    <div class="place-img">
+                                        <img src="assets/images/wildlife&eco/Tiger roars in yala.jpg" alt="Place Image" height="280px">
+                                    </div>
+                                    <div class="place-content">
+                                        <div class="info">
+                                            <h4 class="title"><a href="tour-details-package7.php">Full-Day Wild Safari in Kumana National park (Private)
+                                                </a></h4>
+                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
+                                                    $</span>140.00</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--=== Single Place Item ===-->
+                                <div class="single-place-item mb-60 wow fadeInUp">
+                                    <div class="place-img">
+                                        <img src="assets/images/wildlife&eco/Boat trip with travel buddies.jpg" alt="Place Image" height="280px">
+                                    </div>
+                                    <div class="place-content">
+                                        <div class="info">
+                                            <h4 class="title"><a href="tour-details-package3.php">Full-Day Wild Safari in Yala National Park
+                                                    <br><br> </a></h4>
+                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
+                                                    $</span>25.00</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--=== Single Place Item ===-->
+                                <div class="single-place-item mb-60 wow fadeInUp">
+                                    <div class="place-img">
+                                        <img src="assets/images/wildlife&eco/Wild tigers can be seen in yala.jpg" alt="Place Image" height="280px">
+                                    </div>
+                                    <div class="place-content">
+                                        <div class="info">
+                                            <h4 class="title"><a href="tour-details-package4.php">Mangrove Watching in Pottuvil Lagoon (Lagoon Eco Tour)
+                                                </a></h4>
+                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
+                                                    $</span>170.00</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--=== Single Place Item ===-->
+                                <div class="single-place-item mb-60 wow fadeInUp">
+                                    <div class="place-img">
+                                        <img src="assets/images/wildlife&eco/Buffalo in Lahugala National Park.jpg" alt="Place Image" height="280px">
+                                    </div>
+                                    <div class="place-content">
+                                        <div class="info">
+                                            <h4 class="title"><a href="tour-details-package2.php">Arugambay to Yala: Wild Safari + Drop-off Flexibilty
+                                                </a></h4>
+                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
+                                                    <br>$</span>23.47</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--=== Single Place Item ===-->
+                                <div class="single-place-item mb-60 wow fadeInUp">
+                                    <div class="place-img">
+                                        <img src="assets/images/wildlife&eco/Visit of wild elephants.jpg" alt="Place Image" height="280px">
+                                    </div>
+                                    <div class="place-content">
+                                        <div class="info">
+                                            <h4 class="title"><a href="tour-details-package5.php">Wild Safari in Lahugala National Park
+                                                    <br><br></a></h4>
+                                            <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
+                                                    $</span>75.00</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-xl-4 col-lg-10 justify-content-center d-none d-sm-none d-lg-none d-md-none d-xl-block d-xxl-block">
+                        <!--=== Sidebar Widget Area ===-->
+                        <div class="sidebar-widget-area pt-60 pl-lg-30">
+                            <!--=== Booking Widget ===-->
+                            <div class="sidebar-widget booking-form-widget wow fadeInUp mb-40">
+                                <h4 class="widget-title">Booking Now</h4>
+                                <form class="sidebar-booking-form" action="" method="post">
+                                    <!-- <div class="booking-item mb-20">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="full_name" placeholder="Full Name" name="fullname">
+                                        </div>
+                                    </div>
+                                    <div class="booking-item mb-20">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="email_for_form" placeholder="E-Mail Address" name="email_for_form">
+                                        </div>
+                                    </div>
+                                    <div class="booking-item mb-20">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="whatsapp_no" placeholder="WhatsApp Number" name="whatsapp_no">
+                                        </div>
+                                    </div>
+                                    <div class="booking-item mb-20">
+                                        <div class="bk-item">
+                                            <select class="" id="select_option" name="activity">
+                                                <option value="">Select an option</option>
+                                                <option value="Half-Day wild safari in Kumana National Park">Half-Day wild safari in Kumana National Park</option>
+                                                <option value="Full-Day wild safari in Kumana National Park">Full-Day wild safari in Kumana National Park</option>
+                                                <option value="Mangrove wathing in Pottuvil Lagoon - Lagoon eco tour">Mangrove wathing in Pottuvil Lagoon - Lagoon eco tour</option>
+                                                <option value="Half-Day wild safari in yala National">Half-Day wild safari in yala National </option>
+                                                <option value="Full-Day wild safari in yala National">Full-Day wild safari in yala National </option>
+                                                <option value="arugambay to yala : wild safari + Drop of flexibilty">arugambay to yala : wild safari + Drop of flexibilty </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="booking-item mb-20">
+                                        <div class="bk-item booking-time">
+                                            <i class="far fa-calendar-alt"></i>
+                                            <input type="text" placeholder="Select Date" class="datepicker" name="date">
+                                        </div>
+                                    </div>
+
+                                    <div class="booking-item mb-20">
+                                        <div class="bk-item booking-date">
+                                            <i class="far fa-calendar-alt"></i>
+                                            <select class="wide" name="time">
+                                                <option value="06.00 A.M">06.00 A.M</option>
+                                                <option value="02.00 A.M">02.00 A.M</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="booking-item mb-20">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="no_adults" placeholder="Number of Adults" name="no_adults" onchange="calculate_adult_amount(this.value)">
+                                        </div>
+                                    </div>
+                                    <div class="booking-item mb-20">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="no_kids" placeholder="Number of Kids" name="no_kids" onchange="calculate_kid_amount(this.value)">
+                                        </div>
+                                    </div>
+                                    <div class="booking-item mb-20">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="Number_of_pax" placeholder="Departure location" name="departurelocation">
+                                        </div>
+                                    </div>
+                                    <div class="booking-item mb-20">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="Number_of_pax" placeholder="Need further assists? write us below" name="needassist">
+                                        </div>
+                                    </div>
+                                    <div class="booking-extra mb-15 wow fadeInUp">
+                                        <h6 class="mb-10">Price Info</h6>
+                                        <div class="extra">
+                                            <i class="fas fa-check-circle"></i>Adult<span><span class="currency" id="totalAmount_adult"></span>
+                                            </span> <input type="hidden" id="totalAmountadult" name="adult_value">
+                                        </div>
+                                        <div class="extra">
+                                            <i class="fas fa-check-circle"></i>Kids <span><span class="currency" id="totalAmount_kids"></span></span> 
+                                            <input type="hidden" id="totalAmountkids" name="kids_value">
+                                        </div>
+                                    </div>
+                                    <div class="booking-total mb-20">
+                                        <div class="total">
+                                            <label>Total</label>
+                                            <span class="price"><span class="currency" id="totalAmount"></span></span> 
+                                            <input type="hidden" id="totalAmountText" name="total">
+                                        </div>
+                                    </div> -->
 
                                     <div class="booking-date-time mb-20">
                                         <div class="submit-button">
@@ -585,7 +708,7 @@
                 document.getElementById('totalAmountadult').value = '$' + total1.toFixed(2);
                 updateTotalAmount();
             }
-            
+
         }
 
         function calculate_kid_amount(value2) {
@@ -642,7 +765,7 @@
                 document.getElementById('totalAmountkids').value = '$' + total2.toFixed(2);
                 updateTotalAmount();
             }
-            
+
         }
 
         function updateTotalAmount() {
@@ -652,10 +775,10 @@
         }
     </script>
 
-<?php
-session_start(); // Start the session
-if (isset($_SESSION['message'])) {
-    echo "<script> 
+    <?php
+    session_start(); // Start the session
+    if (isset($_SESSION['message'])) {
+        echo "<script> 
             Swal.fire({
                 title: '" . ($_SESSION['message'] == 'Data Added successfully' ? 'Success' : 'Error') . "',
                 text: '" . ($_SESSION['message'] == 'Data Added successfully' ? 'Your booking has been taken successfully.' : 'Your booking could not be added. Please try again later.') . "',
@@ -663,9 +786,9 @@ if (isset($_SESSION['message'])) {
                 confirmButtonText: 'OK'
             });
           </script>";
-    unset($_SESSION['message']); // Remove the message from session after displaying
-}
-?>
+        unset($_SESSION['message']); // Remove the message from session after displaying
+    }
+    ?>
 
 </body>
 

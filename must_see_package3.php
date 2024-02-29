@@ -1,5 +1,5 @@
 <?php
-    include('assets/php/formvalidation.php')
+include('assets/php/formvalidation.php')
 ?>
 
 <!DOCTYPE html>
@@ -185,6 +185,195 @@
                         </div>
                         <br>
 
+                        <div class="col-xl-8 col-lg-10 justify-content-center d-xxl-none d-xl-none">
+                            <!--=== Sidebar Widget Area ===-->
+                            <div class="sidebar-widget-area pt-60 pl-lg-30">
+                                <!--=== Booking Widget ===-->
+                                <div class="sidebar-widget booking-form-widget wow fadeInUp mb-40">
+                                    <h4 class="widget-title">Booking Now</h4>
+                                    <form class="sidebar-booking-form" action="" method="post">
+                                        <div class="booking-item mb-20">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="full_name" placeholder="Full Name" name="fullname">
+                                            </div>
+                                        </div>
+                                        <div class="booking-item mb-20">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="email_for_form" placeholder="E-Mail Address" name="email_for_form">
+                                            </div>
+                                        </div>
+                                        <div class="booking-item mb-20">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="whatsapp_no" placeholder="WhatsApp Number" name="whatsapp_no">
+                                            </div>
+                                        </div>
+                                        <div class="booking-item mb-20">
+                                            <div class="bk-item">
+                                                <select class="" id="select_option" name="activity">
+                                                    <option value="">Select an option</option>
+                                                    <option value="Cultural excursion and Ancient visit">Cultural excursion and Ancient visit</option>
+                                                    <option value="Tuktuk sightseeking and Cooking class">Tuktuk sightseeking and Cooking class</option>
+                                                    <option value="Cooking - Srilankan tradition">Cooking - Srilankan tradition</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="booking-item mb-20">
+                                            <div class="bk-item booking-time">
+                                                <i class="far fa-calendar-alt"></i>
+                                                <input type="text" placeholder="Select Date" class="datepicker" name="date">
+                                            </div>
+                                        </div>
+
+                                        <div class="booking-item mb-20">
+                                            <div class="bk-item booking-date">
+                                                <i class="far fa-calendar-alt"></i>
+                                                <select class="wide" name="time">
+                                                    <option value="11.30 A.M">11.30 A.M</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="booking-item mb-20">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="no_adults" placeholder="Number of Adults" name="no_adults" onchange="calculate_adult_amount(this.value)">
+                                            </div>
+                                        </div>
+                                        <div class="booking-item mb-20">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="no_kids" placeholder="Number of Kids" name="no_kids" onchange="calculate_kid_amount(this.value)">
+                                            </div>
+                                        </div>
+                                        <div class="booking-item mb-20">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="Number_of_pax" placeholder="Departure location" name="departurelocation">
+                                            </div>
+                                        </div>
+                                        <div class="booking-item mb-20">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="Number_of_pax" placeholder="Need further assists? write us below" name="needassist">
+                                            </div>
+                                        </div>
+                                        <div class="booking-extra mb-15 wow fadeInUp">
+                                            <h6 class="mb-10">Price Info</h6>
+                                            <div class="extra">
+                                                <i class="fas fa-check-circle"></i>Adult<span><span class="currency" id="totalAmount_adult"></span>
+                                                </span>
+                                                <input type="hidden" id="totalAmountadult" name="adult_value">
+                                            </div>
+                                            <div class="extra">
+                                                <i class="fas fa-check-circle"></i>Kids <span><span class="currency" id="totalAmount_kids"></span></span>
+                                                <input type="hidden" id="totalAmountkids" name="kids_value">
+                                            </div>
+                                        </div>
+                                        <div class="booking-total mb-20">
+                                            <div class="total">
+                                                <label>Total</label>
+                                                <span class="price"><span class="currency" id="totalAmount"></span></span>
+                                                <input type="hidden" id="totalAmountText" name="total">
+                                            </div>
+                                        </div>
+
+                                        <div class="booking-date-time mb-20">
+                                            <div class="submit-button">
+                                                <button class="main-btn primary-btn" name="submit">Booking Now<i class="far fa-paper-plane"></i></button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                                <!--=== Booking Info Widget ===-->
+                                <div class="sidebar-widget booking-info-widget wow fadeInUp mb-40">
+                                    <h4 class="widget-title">Tour Information</h4>
+                                    <ul class="info-list">
+                                        <li><span><i class="far fa-user-circle"></i>Max Guests<span>21</span></span></li>
+                                        <li><span><i class="far fa-globe"></i>Language<span>English</span></span></li>
+                                    </ul>
+                                </div>
+
+                                <div class="sidebar-widget booking-info-widget wow fadeInUp mb-40">
+                                    <h4 class="widget-title">For More Details</h4>
+                                    <ul class="info-list">
+                                        <li><span><i class="far fa-user-circle"></i>Talk to <span>Mr.Hanas</span></span></li>
+                                        <li><span><i class="far fa-phone"></i> <span>+94 72 647 9635</span></span></li>
+                                        <li><span><i class="far fa-phone"></i><span>+94 76 689 9188</span></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--===  Comments Form  ===-->
+                        <div class="comments-respond mb-30 wow fadeInUp">
+                            <h3 class="comments-heading" style="margin-bottom: 15px;">Leave a Comments</h3>
+                            <ul class="comment-rating-ul mb-20">
+                                <li>
+                                    <span class="title">Quality</span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </li>
+                                <li>
+                                    <span class="title">Location</span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </li>
+                                <li>
+                                    <span class="title">Services</span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </li>
+                                <li>
+                                    <span class="title">Team</span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </li>
+                                <li>
+                                    <span class="title">Price</span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </li>
+                            </ul>
+                            <form class="comment-form">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form_group">
+                                            <input type="email" class="form_control" placeholder="Email Address" name="name" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form_group">
+                                            <input type="text" class="form_control" placeholder="Enter Name" name="email" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form_group">
+                                            <textarea name="message" class="form_control" rows="4" placeholder="Write Your Comments"></textarea>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="col-lg-12">
+                                        <div class="form_group">
+                                            <button class="main-btn primary-btn">Send comments<i class="fas fa-angle-double-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
                         <!--=== Releted Tour Place ===-->
                         <div class="related-tour-place wow fadeInUp">
                             <div class="row">
@@ -265,79 +454,8 @@
                             </div>
                         </div>
 
-                        <!--===  Comments Form  ===-->
-                        <div class="comments-respond mb-30 wow fadeInUp">
-                            <h3 class="comments-heading" style="margin-bottom: 15px;">Leave a Comments</h3>
-                            <ul class="comment-rating-ul mb-20">
-                                <li>
-                                    <span class="title">Quality</span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                </li>
-                                <li>
-                                    <span class="title">Location</span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                </li>
-                                <li>
-                                    <span class="title">Services</span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                </li>
-                                <li>
-                                    <span class="title">Team</span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                </li>
-                                <li>
-                                    <span class="title">Price</span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                </li>
-                            </ul>
-                            <form class="comment-form">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form_group">
-                                            <input type="email" class="form_control" placeholder="Email Address" name="name" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form_group">
-                                            <input type="text" class="form_control" placeholder="Enter Name" name="email" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="form_group">
-                                            <textarea name="message" class="form_control" rows="4" placeholder="Write Your Comments"></textarea>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="col-lg-12">
-                                        <div class="form_group">
-                                            <button class="main-btn primary-btn">Send comments<i class="fas fa-angle-double-right"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
                     </div>
-                    <div class="col-xl-4">
+                    <div class="col-xl-4 col-lg-10 justify-content-center d-none d-sm-none d-lg-none d-md-none d-xl-block d-xxl-block">
                         <!--=== Sidebar Widget Area ===-->
                         <div class="sidebar-widget-area pt-60 pl-lg-30">
                             <!--=== Booking Widget ===-->
@@ -410,18 +528,18 @@
                                         <h6 class="mb-10">Price Info</h6>
                                         <div class="extra">
                                             <i class="fas fa-check-circle"></i>Adult<span><span class="currency" id="totalAmount_adult"></span>
-                                            </span> 
+                                            </span>
                                             <input type="hidden" id="totalAmountadult" name="adult_value">
                                         </div>
                                         <div class="extra">
-                                            <i class="fas fa-check-circle"></i>Kids <span><span class="currency" id="totalAmount_kids"></span></span> 
+                                            <i class="fas fa-check-circle"></i>Kids <span><span class="currency" id="totalAmount_kids"></span></span>
                                             <input type="hidden" id="totalAmountkids" name="kids_value">
                                         </div>
                                     </div>
                                     <div class="booking-total mb-20">
                                         <div class="total">
                                             <label>Total</label>
-                                            <span class="price"><span class="currency" id="totalAmount"></span></span> 
+                                            <span class="price"><span class="currency" id="totalAmount"></span></span>
                                             <input type="hidden" id="totalAmountText" name="total">
                                         </div>
                                     </div>
@@ -526,7 +644,7 @@
                 document.getElementById('totalAmountadult').value = '$' + total1.toFixed(2);
                 updateTotalAmount();
             }
-            
+
         }
 
         function calculate_kid_amount(value2) {
@@ -587,7 +705,7 @@
                 document.getElementById('totalAmountkids').value = '$' + total2.toFixed(2);
                 updateTotalAmount();
             }
-            
+
         }
 
         function updateTotalAmount() {
@@ -597,10 +715,10 @@
         }
     </script>
 
-<?php
-session_start(); // Start the session
-if (isset($_SESSION['message'])) {
-    echo "<script> 
+    <?php
+    session_start(); // Start the session
+    if (isset($_SESSION['message'])) {
+        echo "<script> 
             Swal.fire({
                 title: '" . ($_SESSION['message'] == 'Data Added successfully' ? 'Success' : 'Error') . "',
                 text: '" . ($_SESSION['message'] == 'Data Added successfully' ? 'Your booking has been taken successfully.' : 'Your booking could not be added. Please try again later.') . "',
@@ -608,10 +726,10 @@ if (isset($_SESSION['message'])) {
                 confirmButtonText: 'OK'
             });
           </script>";
-    unset($_SESSION['message']); // Remove the message from session after displaying
-}
-?>
-  
+        unset($_SESSION['message']); // Remove the message from session after displaying
+    }
+    ?>
+
 </body>
 
 </html>

@@ -1,10 +1,234 @@
 <?php
-include('assets/php/formvalidation.php')
+session_start();
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'phpEmail/PHPMailer/src/Exception.php';
+require 'phpEmail/PHPMailer/src/PHPMailer.php';
+require 'phpEmail/PHPMailer/src/SMTP.php';
+include "assets/php/connection.php";
+
+
+if (isset($_POST["submit"])) {
+
+    $errors = array();
+
+    // Validate Fullname
+    if (empty($_POST['fullname'])) {
+        $errors[] = "Fullname is required";
+    } else {
+        $fullname = $_POST['fullname'];
+    }
+
+    // Validate Email
+    if (empty($_POST['email_for_form'])) {
+        $errors[] = "Email is required";
+    } elseif (!filter_var($_POST['email_for_form'], FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "Invalid email format";
+    } else {
+        $email = $_POST['email_for_form'];
+    }
+
+    // Validate WhatsApp Number
+    if (empty($_POST['whatsapp_no'])) {
+        $errors[] = "WhatsApp number is required";
+    } elseif (!preg_match("/^\+[0-9]{1,3}[0-9]{9}$/", $_POST['whatsapp_no'])) {
+        $errors[] = "Invalid WhatsApp number format";
+    } else {
+        $whatsapp_no = $_POST['whatsapp_no'];
+    }
+
+
+    if (empty($_POST['activity'])) {
+        $errors[] = "activity is required";
+    } else {
+        $activity = $_POST['activity'];
+    }
+
+    if (empty($_POST['date'])) {
+        $errors[] = "date is required";
+    } else {
+        $date = $_POST['date'];
+    }
+
+    if (empty($_POST['time'])) {
+        $errors[] = "time is required";
+    } else {
+        $time = $_POST['time'];
+    }
+
+    if (empty($_POST['no_adults'])) {
+        $no_adults = 0;
+    } else {
+        $no_adults = $_POST['no_adults'];
+    }
+
+    if (empty($_POST['departurelocation'])) {
+        $errors[] = "Departurelocation is required";
+    } else {
+        $departurelocation = $_POST['departurelocation'];
+    }
+
+    if (empty($_POST['needassist'])) {
+        $needassist = "Nothing";
+    } else {
+        $needassist = $_POST['needassist'];
+    }
+
+    //no need validation
+    $no_kids = null;
+    $price_of_adults = $_POST['adult_value'];
+    $price_of_child = $_POST['kids_value'];
+    $price_of_total = $_POST['total'];
+
+    if (empty($errors)) {
+        $sql = "INSERT INTO `booking` (`o_id`, `full_name`, `e_mail`, `whatsapp_no`, `activity`, `date`, `time`, `no_adults`, `no_kids`, `departure_location`, `need_assist`, `price_of_adults`, `price_of_child`, `total_amount`) VALUES (NULL, '$fullname', '$email', '$whatsapp_no', '$activity', '$date', '$time', '$no_adults', '$no_kids', '$departurelocation', '$needassist', '$price_of_adults', '$price_of_child', '$price_of_total')";
+        $result = mysqli_query($conn, $sql);
+        if ($result) {
+            $author_email = 'afshan.marazin@gmail.com'; // author mail address
+            try {
+                $Mail = new PHPMailer(true);
+                $Mail->isSMTP();
+                $Mail->Host = 'smtp.gmail.com';
+                $Mail->SMTPAuth = true;
+                $Mail->Username = 'arugambayagenda@gmail.com';
+                $Mail->Password = 'epnt abvu suoq qxqh';
+                $Mail->SMTPSecure = 'ssl';
+                $Mail->Port = 465;
+
+
+                $Mail->setFrom('arugambayagenda@gmail.com');
+                $Mail->addAddress($_POST['email_for_form']);
+                $Mail->addAddress($author_email);
+                $Mail->isHTML(true);
+                $Mail->Subject = 'Welcome to Arugambay Agenda';
+                $Mail->Body = 'We received your booking successfully.' .
+                    '<br><br>' .
+                    'Full Name: ' . $fullname . '<br>' .
+                    'Email: ' . $email . '<br>' .
+                    'WhatsApp Number: ' . $whatsapp_no . '<br>' .
+                    'Activity: ' . $activity . '<br>' .
+                    'Date: ' . $date . '<br>' .
+                    'Time: ' . $time . '<br>' .
+                    'Number of Pax: ' . $no_adults . '<br>' .
+                    'Departure Location: ' . $departurelocation . '<br>' .
+                    'Need Assistance: ' . $needassist . '<br>' .
+                    'Total Amount: ' . $price_of_total;
+                $Mail->send();
+
+                $_SESSION['message'] = "Data Added successfully";
+            } catch (Exception $e) {
+                $_SESSION['message'] = "Data Not Added";
+                // echo "Email could not be sent. Mailer Error: {$Mail->ErrorInfo}";
+            }
+        } else {
+            $_SESSION['message'] = "Data Not Added";
+            // echo "Failed: " . mysqli_error($conn);
+
+        }
+    } else {
+        $_SESSION['message'] = "Data Not Added";
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
 
 <body>
+
+    <style>
+        span.next,
+        span.prev {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 14px;
+            color: #0097b2;
+            font-size: 24px;
+            font-weight: bold;
+            transition: 0.5s;
+            border-radius: 3px;
+            user-select: none;
+            cursor: pointer;
+            z-index: 1;
+            background-color: #eee;
+            opacity: 0.8;
+        }
+
+        span.next {
+            right: 20px;
+        }
+
+        span.prev {
+            left: 20px;
+        }
+
+        span.next:hover,
+        span.prev:hover {
+            background-color: #0097b2;
+            opacity: 0.8;
+            color: #F7921E;
+        }
+
+        @keyframes next1 {
+            from {
+                left: 0%
+            }
+
+            to {
+                left: -100%;
+            }
+        }
+
+        @keyframes next2 {
+            from {
+                left: 100%
+            }
+
+            to {
+                left: 0%;
+            }
+        }
+
+        @keyframes prev1 {
+            from {
+                left: 0%
+            }
+
+            to {
+                left: 100%;
+            }
+        }
+
+        @keyframes prev2 {
+            from {
+                left: -100%
+            }
+
+            to {
+                left: 0%;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+
+            span.next,
+            span.prev {
+                padding: 6px;
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+
+            span.next,
+            span.prev {
+                padding: 4px;
+                font-size: 14px;
+            }
+        }
+    </style>
 
     <header class="header-area header-one black-bg mt-1">
         <!--====== Header Navigation ======-->
@@ -93,6 +317,11 @@ include('assets/php/formvalidation.php')
                 </div>
             </div>
         </div>
+        <div class="buttons">
+            <span class="prev" onclick="prevSlide()">&#10094;</span>
+            <span class="next" onclick="nextSlide()">&#10095;</span>
+        </div>
+
 
         <div class="container">
             <!--=== Tour Details Wrapper ===-->
@@ -208,8 +437,197 @@ include('assets/php/formvalidation.php')
                                 </div>
                             </div>
                         </div>
-
                         <br>
+
+                        <!-- form booking -->
+                        <div class="col-xl-8 col-lg-10 justify-content-center d-xxl-none d-xl-none">
+                            <!--=== Sidebar Widget Area ===-->
+                            <div class="sidebar-widget-area pt-10 pl-lg-30">
+                                <!--=== Booking Widget ===-->
+                                <div class="sidebar-widget booking-form-widget wow fadeInUp mb-40">
+                                    <h4 class="widget-title">Booking Now</h4>
+                                    <form class="sidebar-booking-form" action="" method="post">
+                                        <div class="booking-item mb-20">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="full_name" placeholder="Full Name" name="fullname">
+                                            </div>
+                                        </div>
+                                        <div class="booking-item mb-20">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="email_for_form" placeholder="E-Mail Address" name="email_for_form">
+                                            </div>
+                                        </div>
+                                        <div class="booking-item mb-20">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="whatsapp_no" placeholder="WhatsApp Number" name="whatsapp_no">
+                                            </div>
+                                        </div>
+                                        <div class="booking-item mb-20">
+                                            <div class="bk-item">
+                                                <select class="" id="select_option" name="activity">
+                                                    <option value="">Select an option</option>
+                                                    <option value="Half-Day wild safari in Kumana National Park (Sharing)">Half-Day wild safari in Kumana National Park (Sharing)</option>
+                                                    <option value="Full-Day wild safari in Kumana National Park">Full-Day wild safari in Kumana National Park</option>
+                                                    <option value="Mangrove wathing in Pottuvil Lagoon - Lagoon eco tour">Mangrove wathing in Pottuvil Lagoon - Lagoon eco tour</option>
+                                                    <option value="Half-Day wild safari in yala National">Half-Day wild safari in yala National </option>
+                                                    <option value="Full-Day wild safari in yala National">Full-Day wild safari in yala National </option>
+                                                    <option value="arugambay to yala : wild safari + Drop of flexibilty">arugambay to yala : wild safari + Drop of flexibilty </option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="booking-item mb-20">
+                                            <div class="bk-item booking-time">
+                                                <i class="far fa-calendar-alt"></i>
+                                                <input type="text" placeholder="Select Date" class="datepicker" name="date">
+                                            </div>
+                                        </div>
+
+                                        <div class="booking-item mb-20">
+                                            <div class="bk-item booking-date">
+                                                <i class="far fa-calendar-alt"></i>
+                                                <select class="wide" name="time">
+                                                    <option value="05.00 A.M">05.00 A.M </option>
+                                                    <option value="01.00 P.M">01.00 P.M</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="booking-item mb-20">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="no_adults" placeholder="Number of Pax" name="no_adults" onchange="calculate_no_pax(this.value)">
+                                            </div>
+                                        </div>
+
+                                        <div class="booking-item mb-20">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="Number_of_pax" placeholder="Departure location" name="departurelocation">
+                                            </div>
+                                        </div>
+                                        <div class="booking-item mb-20">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="Number_of_pax" placeholder="Need further assists? write us below" name="needassist">
+                                            </div>
+                                        </div>
+                                        <div class="booking-extra mb-15 wow fadeInUp">
+                                            <h6 class="mb-10">Price Info</h6>
+                                            <div>
+                                                </span> <input type="hidden" id="totalAmountadult" name="adult_value">
+                                            </div>
+                                            <div>
+                                                <input type="hidden" id="totalAmountkids" name="kids_value">
+                                            </div>
+                                        </div>
+                                        <div class="booking-total mb-20">
+                                            <div class="total">
+                                                <label>Total</label>
+                                                <span class="price"><span class="currency" id="totalAmount"></span></span>
+                                                <input type="hidden" id="totalAmountText" name="total">
+                                            </div>
+                                        </div>
+
+                                        <div class="booking-date-time mb-20 col-lg-6 col-md-5 col-xl-12">
+                                            <div class="submit-button">
+                                                <button class="main-btn primary-btn" name="submit">Booking Now<i class="far fa-paper-plane"></i></button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                                <!--=== Booking Info Widget ===-->
+                                <div class="sidebar-widget booking-info-widget wow fadeInUp mb-40">
+                                    <h4 class="widget-title">Tour Information</h4>
+                                    <ul class="info-list">
+                                        <li><span><i class="far fa-user-circle"></i>Max Guests<span>21</span></span></li>
+                                        <li><span><i class="far fa-globe"></i>Language<span>English</span></span></li>
+                                    </ul>
+                                </div>
+
+                                <!-- more details -->
+                                <div class="sidebar-widget booking-info-widget wow fadeInUp mb-40">
+                                    <h4 class="widget-title">For More Details</h4>
+                                    <ul class="info-list">
+                                        <li><span><i class="far fa-user-circle"></i>Talk to <span>Mr.Hanas</span></span></li>
+                                        <li><span><i class="far fa-phone"></i> <span>+94 72 647 9635</span></span></li>
+                                        <li><span><i class="far fa-phone"></i><span>+94 76 689 9188</span></span></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!--===  Comments Form  ===-->
+                        <div class="comments-respond mb-30 wow fadeInUp">
+                            <h3 class="comments-heading" style="margin-bottom: 15px;">Leave a Comments</h3>
+                            <ul class="comment-rating-ul mb-20">
+                                <li>
+                                    <span class="title">Quality</span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </li>
+                                <li>
+                                    <span class="title">Location</span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </li>
+                                <li>
+                                    <span class="title">Services</span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </li>
+                                <li>
+                                    <span class="title">Team</span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </li>
+                                <li>
+                                    <span class="title">Price</span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </li>
+                            </ul>
+                            <form class="comment-form">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form_group">
+                                            <input type="email" class="form_control" placeholder="Email Address" name="name" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form_group">
+                                            <input type="text" class="form_control" placeholder="Enter Name" name="email" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form_group">
+                                            <textarea name="message" class="form_control" rows="4" placeholder="Write Your Comments"></textarea>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="col-lg-12">
+                                        <div class="form_group">
+                                            <button class="main-btn primary-btn">Send comments<i class="fas fa-angle-double-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
 
                         <!--=== Releted Tour Place ===-->
                         <div class="related-tour-place wow fadeInUp">
@@ -315,7 +733,7 @@ include('assets/php/formvalidation.php')
                                 </div>
 
                                 <!--=== Single Place Item ===-->
-                                <div class="single-place-item mb-60 wow fadeInUp">
+                                <div class="single-place-item mb-40 wow fadeInUp">
                                     <div class="place-img">
                                         <img src="assets/images/wildlife&eco/Visit of wild elephants.jpg" alt="Place Image" height="280px">
                                     </div>
@@ -333,84 +751,13 @@ include('assets/php/formvalidation.php')
                             </div>
                         </div>
 
-                        <!--===  Comments Form  ===-->
-                        <div class="comments-respond mb-30 wow fadeInUp">
-                            <h3 class="comments-heading" style="margin-bottom: 15px;">Leave a Comments</h3>
-                            <ul class="comment-rating-ul mb-20">
-                                <li>
-                                    <span class="title">Quality</span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                </li>
-                                <li>
-                                    <span class="title">Location</span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                </li>
-                                <li>
-                                    <span class="title">Services</span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                </li>
-                                <li>
-                                    <span class="title">Team</span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                </li>
-                                <li>
-                                    <span class="title">Price</span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                </li>
-                            </ul>
-                            <form class="comment-form">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form_group">
-                                            <input type="email" class="form_control" placeholder="Email Address" name="name" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form_group">
-                                            <input type="text" class="form_control" placeholder="Enter Name" name="email" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="form_group">
-                                            <textarea name="message" class="form_control" rows="4" placeholder="Write Your Comments"></textarea>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="col-lg-12">
-                                        <div class="form_group">
-                                            <button class="main-btn primary-btn">Send comments<i class="fas fa-angle-double-right"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
                     </div>
 
 
-
-                    <div class="col-xl-4">
+                    <!-- booking -->
+                    <div class="col-xl-4 col-lg-10 justify-content-center d-none d-sm-none d-lg-none d-md-none d-xl-block d-xxl-block">
                         <!--=== Sidebar Widget Area ===-->
-                        <div class="sidebar-widget-area pt-60 pl-lg-30">
+                        <div class="sidebar-widget-area pt-10 pl-lg-30">
                             <!--=== Booking Widget ===-->
                             <div class="sidebar-widget booking-form-widget wow fadeInUp mb-40">
                                 <h4 class="widget-title">Booking Now</h4>
@@ -434,7 +781,7 @@ include('assets/php/formvalidation.php')
                                         <div class="bk-item">
                                             <select class="" id="select_option" name="activity">
                                                 <option value="">Select an option</option>
-                                                <option value="Half-Day wild safari in Kumana National Park">Half-Day wild safari in Kumana National Park</option>
+                                                <option value="Half-Day wild safari in Kumana National Park (Sharing)">Half-Day wild safari in Kumana National Park (Sharing)</option>
                                                 <option value="Full-Day wild safari in Kumana National Park">Full-Day wild safari in Kumana National Park</option>
                                                 <option value="Mangrove wathing in Pottuvil Lagoon - Lagoon eco tour">Mangrove wathing in Pottuvil Lagoon - Lagoon eco tour</option>
                                                 <option value="Half-Day wild safari in yala National">Half-Day wild safari in yala National </option>
@@ -455,22 +802,18 @@ include('assets/php/formvalidation.php')
                                         <div class="bk-item booking-date">
                                             <i class="far fa-calendar-alt"></i>
                                             <select class="wide" name="time">
-                                                <option value="05.00 A.M - 11.00 A.M">05.00 A.M - 11.00 A.M</option>
-                                                <option value="01.00 A.M - 07.00 P.M">01.00 A.M - 07.00 P.M</option>
+                                                <option value="05.00 A.M">05.00 A.M </option>
+                                                <option value="01.00 P.M">01.00 P.M</option>
                                             </select>
                                         </div>
                                     </div>
 
                                     <div class="booking-item mb-20">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="no_adults" placeholder="Number of Adults" name="no_adults" onchange="calculate_adult_amount(this.value)">
+                                            <input type="text" class="form-control" id="no_adults" placeholder="Number of Pax" name="no_adults" onchange="calculate_no_pax(this.value)">
                                         </div>
                                     </div>
-                                    <div class="booking-item mb-20">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="no_kids" placeholder="Number of Kids" name="no_kids" onchange="calculate_kid_amount(this.value)">
-                                        </div>
-                                    </div>
+
                                     <div class="booking-item mb-20">
                                         <div class="form-group">
                                             <input type="text" class="form-control" id="Number_of_pax" placeholder="Departure location" name="departurelocation">
@@ -483,12 +826,10 @@ include('assets/php/formvalidation.php')
                                     </div>
                                     <div class="booking-extra mb-15 wow fadeInUp">
                                         <h6 class="mb-10">Price Info</h6>
-                                        <div class="extra">
-                                            <i class="fas fa-check-circle"></i>Adult<span><span class="currency" id="totalAmount_adult"></span>
+                                        <div>
                                             </span> <input type="hidden" id="totalAmountadult" name="adult_value">
                                         </div>
-                                        <div class="extra">
-                                            <i class="fas fa-check-circle"></i>Kids <span><span class="currency" id="totalAmount_kids"></span></span>
+                                        <div>
                                             <input type="hidden" id="totalAmountkids" name="kids_value">
                                         </div>
                                     </div>
@@ -500,7 +841,7 @@ include('assets/php/formvalidation.php')
                                         </div>
                                     </div>
 
-                                    <div class="booking-date-time mb-20">
+                                    <div class="booking-date-time mb-20 col-lg-6 col-md-5 col-xl-12">
                                         <div class="submit-button">
                                             <button class="main-btn primary-btn" name="submit">Booking Now<i class="far fa-paper-plane"></i></button>
                                         </div>
@@ -518,6 +859,7 @@ include('assets/php/formvalidation.php')
                                 </ul>
                             </div>
 
+                            <!-- more details -->
                             <div class="sidebar-widget booking-info-widget wow fadeInUp mb-40">
                                 <h4 class="widget-title">For More Details</h4>
                                 <ul class="info-list">
@@ -526,6 +868,7 @@ include('assets/php/formvalidation.php')
                                     <li><span><i class="far fa-phone"></i><span>+94 76 689 9188</span></span></li>
                                 </ul>
                             </div>
+
                         </div>
                     </div>
 
@@ -541,127 +884,31 @@ include('assets/php/formvalidation.php')
     <a href="https://wa.me/message/L2MV5OGPQV2RH1" class="back-to-top"><i class="fab fa-whatsapp"></i></a>
 
     <script>
-        var total1 = 0;
-        var total2 = 0;
-        var nonselected = "a";
-
-        function calculate_adult_amount(value1) {
-
+        function calculate_no_pax(value1) {
             if (value1 == "") {
                 value1 = 0;
             }
+            value1 = parseInt(value1);
 
-            value1 = parseInt(value1)
-            var unitprice = 0;
-
-            switch (value1) {
-                case 0:
-                    unitprice = 0;
-                    break;
-                case 1:
-                    unitprice = 193.55;
-                    break;
-                case 2:
-                    unitprice = 112.90;
-                    break;
-                case 3:
-                    unitprice = 96.77;
-                    break;
-                case 4:
-                    unitprice = 90.32;
-                    break;
-                case 5:
-                    unitprice = 80.65;
-                    break;
-                case 6:
-                    unitprice = 74.19;
-                    break;
-                case 7:
-                case 8:
-                case 9:
-                case 10:
-                    unitprice = 64.52;
-                    break;
-                default:
-                    nonselected = "more";
-                    unitprice = 0;
-            }
-            if (nonselected == "more") {
-                total1 = unitprice * parseInt(value1); // float + integerr
-                document.getElementById('totalAmount_adult').innerText = "Not Allowed More than 10";
-                updateTotalAmount();
-            } else {
-                total1 = unitprice * parseInt(value1);
-                document.getElementById('totalAmount_adult').innerText = '$' + total1.toFixed(2);
-                document.getElementById('totalAmountadult').value = '$' + total1.toFixed(2);
-                updateTotalAmount();
-            }
-
+            updateTotalAmount(value1);
         }
 
-        function calculate_kid_amount(value2) {
-
-            if (value2 == "") {
-                value2 = 0;
-            }
-
-            value2 = parseInt(value2);
-            var unitprice = 0;
-
-            switch (value2) {
-                case 0:
-                    unitprice = 0;
-                    break;
-                case 1:
-                    unitprice = 77.42;
-                    break;
-                case 2:
-                    unitprice = 45.16;
-                    break;
-                case 3:
-                    unitprice = 38.71;
-                    break;
-                case 4:
-                    unitprice = 36.13;
-                    break;
-                case 5:
-                    unitprice = 32.26;
-                    break;
-                case 6:
-                    unitprice = 29.68;
-                    break;
-                case 7:
-                    unitprice = 25.81;
-                    break;
-                case 8:
-                case 9:
-                case 10:
-                    unitprice = 25.81;
-                    break;
-                default:
-                    nonselected = "more";
-                    unitprice = 0;
-            }
-
-            if (nonselected == "more") {
-                total2 = unitprice * parseInt(value2);
-                document.getElementById('totalAmount_kids').innerText = "Not Allowed More than 10";
-                updateTotalAmount();
+        function updateTotalAmount(value1) {
+            var unitprice = 40; // Assuming a unit price of $10, you need to define it properly.
+            if (value1 >= 4) {
+                document.getElementById('totalAmount').style.color = "black";
+                var totalAmount = value1 * unitprice; //(Math.floor(value1 / 4)) * unitprice;
+                document.getElementById('totalAmount').innerText = '$' + totalAmount.toFixed(2);
+                document.getElementById('totalAmountText').value = '$' + totalAmount.toFixed(2);
+                document.getElementById('totalAmountadult').value = 0;
+                document.getElementById('totalAmountkids').value = 0;
             } else {
-                total2 = unitprice * parseInt(value2);
-                document.getElementById('totalAmount_kids').innerText = '$' + total2.toFixed(2);
-                document.getElementById('totalAmountkids').value = '$' + total2.toFixed(2);
-                updateTotalAmount();
+                document.getElementById('totalAmount').style.color = "red";
+                document.getElementById('totalAmount').innerText = 'Required Minimum 4 Pax';
             }
-
-        }
-
-        function updateTotalAmount() {
-            var totalAmount = total1 + total2;
-            document.getElementById('totalAmount').innerText = '$' + totalAmount.toFixed(2);
-            document.getElementById('totalAmountText').value = '$' + totalAmount.toFixed(2);
         }
     </script>
+
 
     <?php
     session_start(); // Start the session
@@ -678,6 +925,30 @@ include('assets/php/formvalidation.php')
     }
     ?>
 
+    <!-- <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.place-slider-item');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+            });
+            currentIndex = index;
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        // Show the first slide initially
+        showSlide(0);
+    </script> -->
 </body>
 
 </html>
