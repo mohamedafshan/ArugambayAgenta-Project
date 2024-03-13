@@ -91,7 +91,7 @@ if (isset($_POST["submit"])) {
         $sql = "INSERT INTO `booking` (`o_id`, `full_name`, `e_mail`, `whatsapp_no`, `activity`, `date`, `time`, `no_adults`, `no_kids`, `departure_location`, `need_assist`, `price_of_adults`, `price_of_child`, `total_amount`) VALUES (NULL, '$fullname', '$email', '$whatsapp_no', '$activity', '$date', '$time', '$no_adults', '$no_kids', '$departurelocation', '$needassist', '$price_of_adults', '$price_of_child', '$price_of_total')";
         $result = mysqli_query($conn, $sql);
         if ($result) {
-            $author_email = 'afshan.marazin@gmail.com'; // author mail address
+            $author_email = 'arugambayagenda@gmail.com'; // author mail address
             try {
                 $Mail = new PHPMailer(true);
                 $Mail->isSMTP();

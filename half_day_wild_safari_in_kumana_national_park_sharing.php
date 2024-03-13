@@ -495,7 +495,7 @@ if (isset($_POST["submit"])) {
 
                                         <div class="booking-item mb-20">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="no_adults" placeholder="Number of Pax" name="no_adults" onchange="calculate_no_pax(this.value)">
+                                                <input type="text" class="form-control" id="no_adults" placeholder="Number of Pax" name="no_adults" onchange="calculate_no_pax1(this.value)">
                                             </div>
                                         </div>
 
@@ -512,17 +512,17 @@ if (isset($_POST["submit"])) {
                                         <div class="booking-extra mb-15 wow fadeInUp">
                                             <h6 class="mb-10">Price Info</h6>
                                             <div>
-                                                </span> <input type="hidden" id="totalAmountadult" name="adult_value">
+                                                </span> <input type="hidden" id="totalAmountadult1" name="adult_value">
                                             </div>
                                             <div>
-                                                <input type="hidden" id="totalAmountkids" name="kids_value">
+                                                <input type="hidden" id="totalAmountkids1" name="kids_value">
                                             </div>
                                         </div>
                                         <div class="booking-total mb-20">
                                             <div class="total">
                                                 <label>Total</label>
-                                                <span class="price"><span class="currency" id="totalAmount"></span></span>
-                                                <input type="hidden" id="totalAmountText" name="total">
+                                                <span class="price"><span class="currency" id="totalAmount1"></span></span>
+                                                <input type="hidden" id="totalAmountText1" name="total">
                                             </div>
                                         </div>
 
@@ -811,7 +811,7 @@ if (isset($_POST["submit"])) {
 
                                     <div class="booking-item mb-20">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="no_adults" placeholder="Number of Pax" name="no_adults" onchange="calculate_no_pax(this.value)">
+                                            <input type="text" class="form-control" id="no_adults" placeholder="Number of Pax" name="no_adults" onchange="calculate_no_pax2(this.value)">
                                         </div>
                                     </div>
 
@@ -828,17 +828,17 @@ if (isset($_POST["submit"])) {
                                     <div class="booking-extra mb-15 wow fadeInUp">
                                         <h6 class="mb-10">Price Info</h6>
                                         <div>
-                                            </span> <input type="hidden" id="totalAmountadult" name="adult_value">
+                                            </span> <input type="hidden" id="totalAmountadult2" name="adult_value">
                                         </div>
                                         <div>
-                                            <input type="hidden" id="totalAmountkids" name="kids_value">
+                                            <input type="hidden" id="totalAmountkids2" name="kids_value">
                                         </div>
                                     </div>
                                     <div class="booking-total mb-20">
                                         <div class="total">
                                             <label>Total</label>
-                                            <span class="price"><span class="currency" id="totalAmount"></span></span>
-                                            <input type="hidden" id="totalAmountText" name="total">
+                                            <span class="price"><span class="currency" id="totalAmount2"></span></span>
+                                            <input type="hidden" id="totalAmountText2" name="total">
                                         </div>
                                     </div>
 
@@ -885,30 +885,73 @@ if (isset($_POST["submit"])) {
     <a href="https://wa.me/message/L2MV5OGPQV2RH1" class="back-to-top"><i class="fab fa-whatsapp"></i></a>
 
     <script>
-        function calculate_no_pax(value1) {
-            if (value1 == "") {
-                value1 = 0;
-            }
-            value1 = parseInt(value1);
+    let unitPrice1 = 40;
 
-            updateTotalAmount(value1);
+    function calculate_no_pax1(value1) {
+        if (value1 == "") {
+            value1 = 0;
         }
+        value1 = parseInt(value1);
 
-        function updateTotalAmount(value1) {
-            var unitprice = 40; // Assuming a unit price of $10, you need to define it properly.
-            if (value1 >= 4) {
-                document.getElementById('totalAmount').style.color = "black";
-                var totalAmount = value1 * unitprice; //(Math.floor(value1 / 4)) * unitprice;
-                document.getElementById('totalAmount').innerText = '$' + totalAmount.toFixed(2);
-                document.getElementById('totalAmountText').value = '$' + totalAmount.toFixed(2);
-                document.getElementById('totalAmountadult').value = 0;
-                document.getElementById('totalAmountkids').value = 0;
-            } else {
-                document.getElementById('totalAmount').style.color = "red";
-                document.getElementById('totalAmount').innerText = 'Required Minimum 4 Pax';
-            }
+        updateTotalAmount1(value1);
+    }
+
+    function updateTotalAmount1(value1) {
+        var totalAmountElement = document.getElementById('totalAmount1');
+        var totalAmountHiddenInput = document.getElementById('totalAmountText1');
+        var adultValueHiddenInput = document.getElementById('totalAmountadult1');
+        var kidsValueHiddenInput = document.getElementById('totalAmountkids1');
+
+        if (value1 >= 4) {
+            var totalAmount = value1 * unitPrice1;
+            totalAmountElement.style.color = "black";
+            totalAmountElement.innerText = '$' + totalAmount.toFixed(2);
+            totalAmountHiddenInput.value = '$' + totalAmount.toFixed(2);
+            adultValueHiddenInput.value = 0;
+            kidsValueHiddenInput.value = 0;
+        } else {
+            totalAmountElement.style.color = "red";
+            totalAmountElement.innerText = 'Required Minimum 4 Pax';
         }
-    </script>
+    }
+</script>
+
+<script>
+    let unitPrice2 = 40;
+
+    function calculate_no_pax2(value2) {
+        if (value2 == "") {
+            value2 = 0;
+        }
+        value2 = parseInt(value2);
+
+        updateTotalAmount2(value2);
+    }
+
+    function updateTotalAmount2(value2) {
+        var totalAmountElement = document.getElementById('totalAmount2');
+        var totalAmountHiddenInput = document.getElementById('totalAmountText2');
+        var adultValueHiddenInput = document.getElementById('totalAmountadult2');
+        var kidsValueHiddenInput = document.getElementById('totalAmountkids2');
+
+        if (value2 >= 4) {
+            var totalAmount = value2 * unitPrice2;
+            totalAmountElement.style.color = "black";
+            totalAmountElement.innerText = '$' + totalAmount.toFixed(2);
+            totalAmountHiddenInput.value = '$' + totalAmount.toFixed(2);
+            adultValueHiddenInput.value = 0;
+            kidsValueHiddenInput.value = 0;
+        } else {
+            totalAmountElement.style.color = "red";
+            totalAmountElement.innerText = 'Required Minimum 4 Pax';
+        }
+    }
+</script>
+
+
+
+
+
 
 
     <?php

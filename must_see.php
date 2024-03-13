@@ -137,86 +137,8 @@
                     </div>         
                 </div>
 
-                <!-- pagination -->
-                <!-- <div class="row">
-                    <div class="col-lg-12">
-                        === Gowilds Pagination ===
-                        <ul class="gowilds-pagination wow fadeInUp text-center">
-                            <li><a href="#"><i class="far fa-arrow-left"></i></a></li>
-                            <li><a href="#" class="active">01</a></li>
-                            <li><a href="#">02</a></li>
-                            <li><a href="#">03</a></li>
-                            <li><a href="#">04</a></li>
-                            <li><a href="#"><i class="far fa-arrow-right"></i></a></li>
-                        </ul>
-                    </div>
-                </div> -->
-
             </div>
             
-            <!-- footer slider -->
-        <!-- </section>====== End Places Section ======
-        ====== Start Gallery Section ======
-        <section class="gallery-section mbm-150">
-            <div class="container-fluid">
-                <div class="slider-active-5-item wow fadeInUp">
-                  
-                    <div class="single-gallery-item">
-                        <div class="gallery-img">
-                            <img src="assets/images/gallery/gl-1.jpg" alt="Gallery Image">
-                            <div class="hover-overlay">
-                                <a href="assets/images/gallery/gl-1.jpg" class="icon-btn img-popup"><i class="far fa-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="single-gallery-item">
-                        <div class="gallery-img">
-                            <img src="assets/images/gallery/gl-2.jpg" alt="Gallery Image">
-                            <div class="hover-overlay">
-                                <a href="assets/images/gallery/gl-2.jpg" class="icon-btn img-popup"><i class="far fa-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="single-gallery-item">
-                        <div class="gallery-img">
-                            <img src="assets/images/gallery/gl-3.jpg" alt="Gallery Image">
-                            <div class="hover-overlay">
-                                <a href="assets/images/gallery/gl-3.jpg" class="icon-btn img-popup"><i class="far fa-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-              
-                    <div class="single-gallery-item">
-                        <div class="gallery-img">
-                            <img src="assets/images/gallery/gl-4.jpg" alt="Gallery Image">
-                            <div class="hover-overlay">
-                                <a href="assets/images/gallery/gl-4.jpg" class="icon-btn img-popup"><i class="far fa-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                  
-                    <div class="single-gallery-item">
-                        <div class="gallery-img">
-                            <img src="assets/images/gallery/gl-5.jpg" alt="Gallery Image">
-                            <div class="hover-overlay">
-                                <a href="assets/images/gallery/gl-5.jpg" class="icon-btn img-popup"><i class="far fa-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-               
-                    <div class="single-gallery-item">
-                        <div class="gallery-img">
-                            <img src="assets/images/gallery/gl-3.jpg" alt="Gallery Image">
-                            <div class="hover-overlay">
-                                <a href="assets/images/gallery/gl-3.jpg" class="icon-btn img-popup"><i class="far fa-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>====== End Gallery Section ====== -->
         
             <?php include('Footer/footer.php')?>
 

@@ -334,59 +334,6 @@
                             </div>
                         </div>
 
-                        <!--=== Reviews Area ===-->
-                        <!-- <div class="reviews-wrapper mb-60 wow fadeInUp">
-                            <div class="reviews-inner-box">
-                                <div class="rating-value">
-                                    <h4>Clients Reviews</h4>
-                                    <div class="rate-score">4.9</div>
-                                    <ul class="ratings">
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><a href="#">(4.9)</a></li>
-                                    </ul>
-                                    <span class="reviews">3k Reviews</span>
-                                </div>
-                                <div class="reviews-progress">
-                                    <div class="single-progress-bar">
-                                        <div class="progress-title">
-                                            <h6>Quality <span class="rate">4.8</span></h6>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar wow slideInLeft" style="width: 85%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="single-progress-bar">
-                                        <div class="progress-title">
-                                            <h6>Team Member<span class="rate">4.6</span></h6>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar wow slideInLeft" style="width: 75%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="single-progress-bar">
-                                        <div class="progress-title">
-                                            <h6>Locations<span class="rate">4.7</span></h6>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar wow slideInLeft" style="width: 90%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="single-progress-bar">
-                                        <div class="progress-title">
-                                            <h6>Cost<span class="rate">4.9</span></h6>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar wow slideInLeft" style="width: 95%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-
                         <!--===  Comments Form  ===-->
                         <div class="comments-respond mb-30 wow fadeInUp">
                             <h3 class="comments-heading" style="margin-bottom: 15px;">Leave a Comments</h3>

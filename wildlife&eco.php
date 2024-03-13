@@ -210,19 +210,6 @@
 
 
                 </div>
-                <!-- <div class="row">
-                    <div class="col-lg-12">
-                        === Gowilds Pagination ===
-                        <ul class="gowilds-pagination wow fadeInUp text-center">
-                            <li><a href="#"><i class="far fa-arrow-left"></i></a></li>
-                            <li><a href="#" class="active">01</a></li>
-                            <li><a href="#">02</a></li>
-                            <li><a href="#">03</a></li>
-                            <li><a href="#">04</a></li>
-                            <li><a href="#"><i class="far fa-arrow-right"></i></a></li>
-                        </ul>
-                    </div>
-                </div> -->
             </div>
         </section><!--====== End Places Section ======-->
        

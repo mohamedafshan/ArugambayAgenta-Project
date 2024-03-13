@@ -6,23 +6,28 @@ include('Header/header.php');
 ?>
 
 <style>
-@media (min-width: 1000px) and (max-width: 1920.98px) {
-    .xxl-custom-col {
-        width: 20% !important;
+    @media (min-width: 1000px) and (max-width: 1920.98px) {
+        .xxl-custom-col {
+            width: 20% !important;
+        }
     }
-}
 
-@media (min-width: 992px) and (max-width: 1199.98px) {
-    .xxl-custom-col {
-        width: 25% !important;
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+        .xxl-custom-col {
+            width: 25% !important;
+        }
     }
-}
 
+    .message {
+        overflow: hidden;
+        max-height: 110px;
+        transition: max-height 0.3s ease;
+    }
 </style>
 
 <body>
     <!--====== Start Testimonial Section ======-->
-    <section class="page-banner overlay opacity-0.125 pt-150 pb-160 bg_cover" style="background-image: url(assets/images/Experiential/Railway\ and\ train\ in\ Ella.jpg);">         
+    <section class="page-banner overlay opacity-0.125 pt-150 pb-160 bg_cover" style="background-image: url(assets/images/Experiential/Railway\ and\ train\ in\ Ella.jpg);">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
@@ -38,12 +43,12 @@ include('Header/header.php');
             <!-- <div>
             <i class="far fa-arrow-left"></i>
             </div> -->
-            
+
             <div class="slider-active-3-item">
                 <!-- important -->
-    
-                   
-                
+
+
+
                 <div class="gw-testimonial-item">
                     <div class="testimonial-inner-content">
                         <!--=== Features Image Item ===-->
@@ -1006,169 +1011,70 @@ include('Header/header.php');
         </div>
     </section><!--====== End Fact Section ======-->
 
-    <section class="bg_cover pt-100 pb-100 mt-50" style="background-image: url(assets/images/bg/map-bg.jpg);">
+    <section class="testimonial-section bg_cover pt-100 pb-100 mt-50" style="background-image: url(assets/images/bg/map-bg.jpg);">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-7">
                     <div class="section-title text-center text-white mb-60">
                         <span class="sub-title">Our testimonials</span>
-                        <h2>What people say on about us</h2>
+                        <h2>What people say on us</h2>
                     </div>
                 </div>
             </div>
-            <div class='sk-ww-google-reviews' data-embed-id='25370954'></div><script src='https://widgets.sociablekit.com/google-reviews/widget.js' async defer></script>
-            <!-- <div class="gw-testimonial-item-two">
-                    <div class="testimonial-inner-content">
-                        <div class="author-thumb-title">
-                            <div class="author-thumb">
-                                <img src="assets/images/testimonial/author-1.jpg" alt="Author Image">
-                            </div>
-                            <div class="ratings-box">
-                                <h4>Michalina Zapiór</h4>
-                                <p>2024-01-15</p>
-                            </div>
-                        </div>
-                        <ul class="ratings">
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                        </ul>
-                        <p>To take a trivial example which of
-                            usev undertakes laborious physical
-                            exercise excepto obtain advantage
-                            from has any right to find fault with
-                            man.</p>
-                        <button class="btn btn-transparent">readmore</button>
-                    </div>
-                </div>
 
-                <div class="gw-testimonial-item-two">
-                    <div class="testimonial-inner-content">
-                        <div class="author-thumb-title">
-                            <div class="author-thumb">
-                                <img src="assets/images/testimonial/author-1.jpg" alt="Author Image">
-                            </div>
-                            <div class="ratings-box">
-                                <h4>Michalina Zapiór</h4>
-                                <p>2024-01-15</p>
-                            </div>
-                        </div>
-                        <ul class="ratings">
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                        </ul>
-                        <p>We booked trip with Hanas from Arugam Bay to Yala National Park. It was an excellent experience!
-                            We had a chance to see all amazing animals including leopards,
-                            <button class="btn btn-transparent">readmore</button>
-                    </div>
-                </div>
+            <div class="slider-active-3-item">
+                <?php
+                // PHP code for fetching and displaying testimonials goes here
+                // Replace 'YOUR_API_KEY' with your actual API key
+                $apiKey = 'AIzaSyD79OdY0NRuExk5iuTo3P89p4Krr59DbrI';
+                $placeId = 'ChIJ3amQ6tS95ToRTq5ApQS6EXA'; // The ID of the place you want reviews for
+                $url = 'https://maps.googleapis.com/maps/api/place/details/json?place_id=' . $placeId . '&fields=name,reviews&key=' . $apiKey;
+                $response = file_get_contents($url);
 
-                <div class="gw-testimonial-item-two">
-                    <div class="testimonial-inner-content">
-                        <div class="author-thumb-title">
-                            <div class="author-thumb">
-                                <img src="assets/images/testimonial/author-1.jpg" alt="Author Image">
+                if ($response !== false) {
+                    $data = json_decode($response, true);
+                    if (isset($data['result']['reviews'])) {
+                        $reviews = $data['result']['reviews'];
+                        foreach ($reviews as $review) {
+                            $authorName = $review['author_name'];
+                            $profilePhotoUrl = $review['profile_photo_url'];
+                            $rating = $review['rating'];
+                            $relativeTimeDescription = $review['relative_time_description'];
+                            $text = $review['text'];
+                ?>
+                            <div class="gw-testimonial-item-two">
+                                <div class="testimonial-inner-content">
+                                    <div class="author-thumb-title">
+                                        <div class="author-thumb">
+                                            <img src="<?php echo $profilePhotoUrl; ?>" alt="Author Image">
+                                        </div>
+                                        <div class="ratings-box">
+                                            <h4><?php echo $authorName; ?></h4>
+                                            <p><?php echo $relativeTimeDescription; ?></p>
+                                        </div>
+                                    </div>
+                                    <ul class="ratings">
+                                        <?php for ($i = 0; $i < $rating; $i++) { ?>
+                                            <li><i class="fas fa-star"></i></li>
+                                        <?php } ?>
+                                    </ul>
+                                    <p class="message"><?php echo $text; ?></p>
+                                    <button class="btn btn-transparent read-more-btn">read more</button>
+                                </div>
                             </div>
-                            <div class="ratings-box">
-                                <h4>Martyna Pac</h4>
-                                <p>2024-01-15</p>
-                            </div>
-                        </div>
-                        <ul class="ratings">
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                        </ul>
-                        <p>It was a really good safari in the district 6 of the Yala National Park.
-                            Few elephants and two leopards spotted! It felt really safe all the time.
-                           
-                        </p>
-                        <button class="btn btn-transparent">readmore</button>
-                    </div>
-                </div>
-
-                <div class="gw-testimonial-item-two">
-                    <div class="testimonial-inner-content">
-                        <div class="author-thumb-title">
-                            <div class="author-thumb">
-                                <img src="assets/images/testimonial/author-1.jpg" alt="Author Image">
-                            </div>
-                            <div class="ratings-box">
-                                <h4>Rinash Mhmd (Eyeview)</h4>
-                                <p>2023-12-23</p>
-                            </div>
-                        </div>
-                        <ul class="ratings">
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                        </ul>
-                        <p>An unforgettable day in my life with guide Hanas. Went on a safari in 4x4 Hilux,
-                            A super comfy vehicle. left Arugambay in the afternoon to Kumana National Park.
-                          
-                        </p>
-                        <button class="btn btn-transparent">readmore</button>
-                    </div>
-                </div>
-
-                <div class="gw-testimonial-item-two">
-                    <div class="testimonial-inner-content">
-                        <div class="author-thumb-title">
-                            <div class="author-thumb">
-                                <img src="assets/images/testimonial/author-1.jpg" alt="Author Image">
-                            </div>
-                            <div class="ratings-box">
-                                <h4>Jurriaan Janssen</h4>
-                                <p>2023-11-28</p>
-                            </div>
-                        </div>
-                        <ul class="ratings">
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                        </ul>
-                        <p>Went on a jeep safari to Kamana National Park with Hanas from Arugambay Agenda. A very likeable and knowledgable guide! We were happy to see elephants, a sloth bear and a leopard! Recommend!</p>
-                        <button class="btn btn-transparent">readmore</button>
-                    </div>
-                </div>
-
-                <div class="gw-testimonial-item-two">
-                    <div class="testimonial-inner-content">
-                        <div class="author-thumb-title">
-                            <div class="author-thumb">
-                                <img src="assets/images/testimonial/author-1.jpg" alt="Author Image">
-                            </div>
-                            <div class="ratings-box">
-                                <h4>Thomas Steininger</h4>
-                                <p>2023-11-08</p>
-                            </div>
-                        </div>
-                        <ul class="ratings">
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                        </ul>
-                        <p>Wir hatten gestern eine wundervolle Fahrt durch die Mangroven. Störche, Pelikane, Krokodile und Elefanten waren zu sehen. Herzlichen Dank nochmal an Hanas & seine Crew für den informativen und lustigen Nachmittag .</p>
-                        <button class="btn btn-transparent">readmore</button>
-                    </div>
-                </div>
-
-            </div> -->
+                <?php
+                        }
+                    } else {
+                        echo '<p>No reviews found.</p>';
+                    }
+                } else {
+                    echo '<p>Error fetching data from Google Places API.</p>';
+                }
+                ?>
+            </div>
         </div>
-    </section><!--====== End Testimonial Section ======-->
+    </section>
+
 
     <!--====== Start Team Section ======-->
     <section class="team-section pt-100 pb-70">
@@ -1366,6 +1272,27 @@ include('Header/header.php');
     <a href="https://wa.me/message/L2MV5OGPQV2RH1" class="back-to-top"><i class="fab fa-whatsapp"></i></a>
 
     <?php include('Footer/footer.php'); ?>
+
+    <script>
+        document.querySelectorAll('.read-more-btn').forEach(function(button) {
+            button.addEventListener('click', function() {
+                var content = this.previousElementSibling; // Get the paragraph element
+                if (content.classList.contains('expanded')) {
+                    // If already expanded, collapse the message
+                    content.classList.remove('expanded');
+                    content.style.maxHeight = '110px'; // Show only a few lines
+                    this.textContent = 'Read More'; // Change button text
+                } else {
+                    // If not expanded, expand the message
+                    content.classList.add('expanded');
+                    content.style.maxHeight = content.scrollHeight + 'px'; // Show full message
+                    this.textContent = 'Read Less'; // Change button text
+                }
+            });
+        });
+    </script>
+
+
 </body>
 
 </html>

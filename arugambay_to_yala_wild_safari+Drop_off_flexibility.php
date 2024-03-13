@@ -298,12 +298,12 @@ include('assets/php/formvalidation.php')
 
                                         <div class="booking-item mb-20">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="no_adults" placeholder="Number of Adults" name="no_adults" onchange="calculate_adult_amount(this.value)">
+                                                <input type="text" class="form-control" id="no_adults" placeholder="Number of Adults" name="no_adults" onchange="calculate_adult_amount1(this.value)">
                                             </div>
                                         </div>
                                         <div class="booking-item mb-20">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="no_kids" placeholder="Number of Kids" name="no_kids" onchange="calculate_kid_amount(this.value)">
+                                                <input type="text" class="form-control" id="no_kids" placeholder="Number of Kids" name="no_kids" onchange="calculate_kid_amount1(this.value)">
                                             </div>
                                         </div>
                                         <div class="booking-item mb-20">
@@ -319,18 +319,18 @@ include('assets/php/formvalidation.php')
                                         <div class="booking-extra mb-15 wow fadeInUp">
                                             <h6 class="mb-10">Price Info</h6>
                                             <div class="extra">
-                                                <i class="fas fa-check-circle"></i>Adult<span><span class="currency" id="totalAmount_adult"></span>
-                                                </span> <input type="hidden" id="totalAmountadult" name="adult_value">
+                                                <i class="fas fa-check-circle"></i>Adult<span><span class="currency" id="totalAmount_adult1"></span>
+                                                </span> <input type="hidden" id="totalAmountadult1" name="adult_value">
                                             </div>
                                             <div class="extra">
-                                                <i class="fas fa-check-circle"></i>Kids <span><span class="currency" id="totalAmount_kids"></span></span>
-                                                <input type="hidden" id="totalAmountkids" name="kids_value">
+                                                <i class="fas fa-check-circle"></i>Kids <span><span class="currency" id="totalAmount_kids1"></span></span>
+                                                <input type="hidden" id="totalAmountkids1" name="kids_value">
                                             </div>
                                         </div>
                                         <div class="booking-total mb-20">
                                             <div class="total">
                                                 <label>Total</label>
-                                                <span class="price"><span class="currency" id="totalAmount"></span></span> <input type="hidden" id="totalAmountText" name="total">
+                                                <span class="price"><span class="currency" id="totalAmount1"></span></span> <input type="hidden" id="totalAmountText1" name="total">
                                             </div>
                                         </div>
 
@@ -632,12 +632,12 @@ include('assets/php/formvalidation.php')
 
                                     <div class="booking-item mb-20">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="no_adults" placeholder="Number of Adults" name="no_adults" onchange="calculate_adult_amount(this.value)">
+                                            <input type="text" class="form-control" id="no_adults" placeholder="Number of Adults" name="no_adults" onchange="calculate_adult_amount2(this.value)">
                                         </div>
                                     </div>
                                     <div class="booking-item mb-20">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="no_kids" placeholder="Number of Kids" name="no_kids" onchange="calculate_kid_amount(this.value)">
+                                            <input type="text" class="form-control" id="no_kids" placeholder="Number of Kids" name="no_kids" onchange="calculate_kid_amount2(this.value)">
                                         </div>
                                     </div>
                                     <div class="booking-item mb-20">
@@ -653,18 +653,19 @@ include('assets/php/formvalidation.php')
                                     <div class="booking-extra mb-15 wow fadeInUp">
                                         <h6 class="mb-10">Price Info</h6>
                                         <div class="extra">
-                                            <i class="fas fa-check-circle"></i>Adult<span><span class="currency" id="totalAmount_adult"></span>
-                                            </span> <input type="hidden" id="totalAmountadult" name="adult_value">
+                                            <i class="fas fa-check-circle"></i>Adult<span><span class="currency" id="totalAmount_adult2"></span>
+                                            </span> <input type="hidden" id="totalAmountadult2" name="adult_value">
                                         </div>
                                         <div class="extra">
-                                            <i class="fas fa-check-circle"></i>Kids <span><span class="currency" id="totalAmount_kids"></span></span>
-                                            <input type="hidden" id="totalAmountkids" name="kids_value">
+                                            <i class="fas fa-check-circle"></i>Kids <span><span class="currency" id="totalAmount_kids2"></span></span>
+                                            <input type="hidden" id="totalAmountkids2" name="kids_value">
                                         </div>
                                     </div>
                                     <div class="booking-total mb-20">
                                         <div class="total">
                                             <label>Total</label>
-                                            <span class="price"><span class="currency" id="totalAmount"></span></span> <input type="hidden" id="totalAmountText" name="total">
+                                            <span class="price"><span class="currency" id="totalAmount2"></span></span>
+                                            <input type="hidden" id="totalAmountText2" name="total">
                                         </div>
                                     </div>
 
@@ -709,9 +710,123 @@ include('assets/php/formvalidation.php')
     <script>
         var total1 = 0;
         var total2 = 0;
+
+        function calculate_adult_amount1(value1) {
+
+            if (value1 == "") {
+                value1 = 0;
+            }
+
+            value1 = parseInt(value1)
+            var unitprice = 0;
+
+            switch (value1) {
+                case 0:
+                    unitprice = 0;
+                    break;
+                case 1:
+                    unitprice = 304.66;
+                    break;
+                case 2:
+                    unitprice = 178.85;
+                    break;
+                case 3:
+                    unitprice = 136.92;
+                    break;
+                case 4:
+                    unitprice = 115.95;
+                    break;
+                case 5:
+                    unitprice = 103.37;
+                    break;
+                case 6:
+                    unitprice = 94.98;
+                    break;
+                case 7:
+                    unitprice = 88.99;
+                    break;
+                default:
+                    unitprice = 0;
+            }
+
+            if (value1 > 7) {
+                document.getElementById('totalAmount_adult1').style.color = "red";
+                document.getElementById('totalAmount_adult1').innerText = "Not Allowed More than 7";
+                return;
+            }
+
+            total1 = unitprice * parseInt(value1);
+            document.getElementById('totalAmount_adult1').style.color = "black";
+            document.getElementById('totalAmount_adult1').innerText = '$' + total1.toFixed(2);
+            document.getElementById('totalAmountadult1').value = '$' + total1.toFixed(2);
+            updateTotalAmount1();
+        }
+
+        function calculate_kid_amount1(value2) {
+
+            if (value2 == "") {
+                value2 = 0;
+            }
+
+            value2 = parseInt(value2);
+            var unitprice = 0;
+
+            switch (value2) {
+                case 0:
+                    unitprice = 0;
+                    break;
+                case 1:
+                    unitprice = 121.86;
+                    break;
+                case 2:
+                    unitprice = 71.54;
+                    break;
+                case 3:
+                    unitprice = 54.77;
+                    break;
+                case 4:
+                    unitprice = 46.38;
+                    break;
+                case 5:
+                    unitprice = 41.35;
+                    break;
+                case 6:
+                    unitprice = 37.99;
+                    break;
+                case 7:
+                    unitprice = 35.60;
+                    break;
+                default:
+                    unitprice = 0;
+            }
+
+            if (value2 > 7) {
+                document.getElementById('totalAmount_kids1').style.color = "red";
+                document.getElementById('totalAmount_kids1').innerText = "Not Allowed More than 7";
+                return;
+            }
+
+            total2 = unitprice * parseInt(value2);
+            document.getElementById('totalAmount_kids1').style.color = "black";
+            document.getElementById('totalAmount_kids1').innerText = '$' + total2.toFixed(2);
+            document.getElementById('totalAmountkids1').value = '$' + total2.toFixed(2);
+            updateTotalAmount1();
+        }
+
+        function updateTotalAmount1() {
+            var totalAmount = total1 + total2;
+            document.getElementById('totalAmount1').innerText = '$' + totalAmount.toFixed(2);
+            document.getElementById('totalAmountText1').value = '$' + totalAmount.toFixed(2);
+        }
+    </script>
+
+
+    <script>
+        var total1 = 0;
+        var total2 = 0;
         var nonselected = "a";
 
-        function calculate_adult_amount(value1) {
+        function calculate_adult_amount2(value1) {
 
             if (value1 == "") {
                 value1 = 0;
@@ -751,18 +866,19 @@ include('assets/php/formvalidation.php')
             }
             if (nonselected == "more") {
                 total1 = unitprice * parseInt(value1); // float + integerr
-                document.getElementById('totalAmount_adult').innerText = "Not Allowed More than 7";
-                updateTotalAmount();
+                document().getElementById('totalAmount_adult2').style.color = "red";
+                document.getElementById('totalAmount_adult2').innerText = "Not Allowed More than 7";
+                updateTotalAmount2();
             } else {
                 total1 = unitprice * parseInt(value1);
-                document.getElementById('totalAmount_adult').innerText = '$' + total1.toFixed(2);
-                document.getElementById('totalAmountadult').value = '$' + total1.toFixed(2);
-                updateTotalAmount();
+                document.getElementById('totalAmount_adult2').innerText = '$' + total1.toFixed(2);
+                document.getElementById('totalAmountadult2').value = '$' + total1.toFixed(2);
+                updateTotalAmount2();
             }
 
         }
 
-        function calculate_kid_amount(value2) {
+        function calculate_kid_amount2(value2) {
 
             if (value2 == "") {
                 value2 = 0;
@@ -803,21 +919,21 @@ include('assets/php/formvalidation.php')
 
             if (nonselected == "more") {
                 total2 = unitprice * parseInt(value2);
-                document.getElementById('totalAmount_kids').innerText = "Not Allowed More than 7";
-                updateTotalAmount();
+                document.getElementById('totalAmount_kids2').innerText = "Not Allowed More than 7";
+                updateTotalAmount2();
             } else {
                 total2 = unitprice * parseInt(value2);
-                document.getElementById('totalAmount_kids').innerText = '$' + total2.toFixed(2);
-                document.getElementById('totalAmountkids').value = '$' + total2.toFixed(2);
-                updateTotalAmount();
+                document.getElementById('totalAmount_kids2').innerText = '$' + total2.toFixed(2);
+                document.getElementById('totalAmountkids2').value = '$' + total2.toFixed(2);
+                updateTotalAmount2();
             }
 
         }
 
-        function updateTotalAmount() {
+        function updateTotalAmount2() {
             var totalAmount = total1 + total2;
-            document.getElementById('totalAmount').innerText = '$' + totalAmount.toFixed(2);
-            document.getElementById('totalAmountText').value = '$' + totalAmount.toFixed(2);
+            document.getElementById('totalAmount2').innerText = '$' + totalAmount.toFixed(2);
+            document.getElementById('totalAmountText2').value = '$' + totalAmount.toFixed(2);
         }
     </script>
 
