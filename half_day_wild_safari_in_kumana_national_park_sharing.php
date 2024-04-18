@@ -1,5 +1,8 @@
 <?php
-session_start();
+if(session_status() == PHP_SESSION_NONE){
+    session_start();
+}
+
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -31,14 +34,21 @@ if (isset($_POST["submit"])) {
     }
 
     // Validate WhatsApp Number
-    if (empty($_POST['whatsapp_no'])) {
-        $errors[] = "WhatsApp number is required";
-    } elseif (!preg_match("/^\+[0-9]{1,3}[0-9]{9}$/", $_POST['whatsapp_no'])) {
-        $errors[] = "Invalid WhatsApp number format";
-    } else {
-        $whatsapp_no = $_POST['whatsapp_no'];
-    }
+    // if (empty($_POST['whatsapp_no'])) {
+    //     $errors[] = "WhatsApp number is required";
+    // } elseif (!preg_match("/^\+[0-9]{1,3}[0-9]{9}$/", $_POST['whatsapp_no'])) {
+    //     $errors[] = "Invalid WhatsApp number format";
+    // } else {
+    //     $whatsapp_no = $_POST['whatsapp_no'];
+    // }
 
+       // Validate WhatsApp Number
+       if (empty($_POST['whatsapp_no'])) {
+        $errors[] = "WhatsApp number is required";
+        }
+        else {
+            $whatsapp_no = $_POST['whatsapp_no'];
+        }
 
     if (empty($_POST['activity'])) {
         $errors[] = "activity is required";
@@ -77,28 +87,27 @@ if (isset($_POST["submit"])) {
     }
 
     //no need validation
-    $no_kids = null;
     $price_of_adults = $_POST['adult_value'];
-    $price_of_child = $_POST['kids_value'];
+    $no_kids = isset($_POST['no_kids']) ? intval($_POST['no_kids']) : 0;
     $price_of_total = $_POST['total'];
 
     if (empty($errors)) {
-        $sql = "INSERT INTO `booking` (`o_id`, `full_name`, `e_mail`, `whatsapp_no`, `activity`, `date`, `time`, `no_adults`, `no_kids`, `departure_location`, `need_assist`, `price_of_adults`, `price_of_child`, `total_amount`) VALUES (NULL, '$fullname', '$email', '$whatsapp_no', '$activity', '$date', '$time', '$no_adults', '$no_kids', '$departurelocation', '$needassist', '$price_of_adults', '$price_of_child', '$price_of_total')";
+        $sql = "INSERT INTO `booking` (`o_id`, `full_name`, `e_mail`, `whatsapp_no`, `activity`, `date`, `time`, `no_adults`, `no_kids`, `departure_location`, `need_assist`, `price_of_adults`, `price_of_child`, `total_amount`) VALUES (NULL, '$fullname', '$email', '$whatsapp_no', '$activity', '$date', '$time', '$no_adults', '$no_kids', '$departurelocation', '$needassist', '$price_of_adults', '$no_kids', '$price_of_total')";
         $result = mysqli_query($conn, $sql);
         if ($result) {
-            $author_email = 'afshan.marazin@gmail.com'; // author mail address
+            $author_email = 'bookings.arugambayagenda@gmail.com'; // author mail address
             try {
                 $Mail = new PHPMailer(true);
                 $Mail->isSMTP();
                 $Mail->Host = 'smtp.gmail.com';
                 $Mail->SMTPAuth = true;
-                $Mail->Username = 'arugambayagenda@gmail.com';
-                $Mail->Password = 'epnt abvu suoq qxqh';
+                $Mail->Username = 'bookings.arugambayagenda@gmail.com';
+                $Mail->Password = 'tyjc pogf swgw ndmv';
                 $Mail->SMTPSecure = 'ssl';
                 $Mail->Port = 465;
 
 
-                $Mail->setFrom('arugambayagenda@gmail.com');
+                $Mail->setFrom('bookings.arugambayagenda@gmail.com');
                 $Mail->addAddress($_POST['email_for_form']);
                 $Mail->addAddress($author_email);
                 $Mail->isHTML(true);
@@ -511,6 +520,12 @@ if (isset($_POST["submit"])) {
                                         </div>
                                         <div class="booking-extra mb-15 wow fadeInUp">
                                             <h6 class="mb-10">Price Info</h6>
+                                            <div class="booking-total mb-20">
+                                            <div class="total">
+                                                <label>Note</label>
+                                                <span class="price"><span class="currency">(Required Minimum 4 Pax)</span></span>
+                                            </div>
+                                        </div>
                                             <div>
                                                 </span> <input type="hidden" id="totalAmountadult1" name="adult_value">
                                             </div>
@@ -649,8 +664,8 @@ if (isset($_POST["submit"])) {
                                     </div>
                                     <div class="place-content">
                                         <div class="info">
-                                            <h4 class="title"><a href="full_day_wild_safari_in_kumana_national_park_private.php
-">Full-Day Wild Safari in Kumana National park (Private)
+                                            <h4 class="title"><a href="full_day_wild_safari_in_kumana_national_park_private.php">
+                                                Full-Day Wild Safari in Kumana National park (Private)
                                                 </a></h4>
                                             <p class="price"><i class="fas fa-usd-circle"></i>From <span class="currency">
                                                     $</span>130.00</p>
@@ -827,6 +842,12 @@ if (isset($_POST["submit"])) {
                                     </div>
                                     <div class="booking-extra mb-15 wow fadeInUp">
                                         <h6 class="mb-10">Price Info</h6>
+                                        <div class="booking-total mb-20">
+                                            <div class="total">
+                                                <label>Note</label>
+                                                <span class="price"><span class="currency">(Required Minimum 4 Pax)</span></span>
+                                            </div>
+                                        </div>
                                         <div>
                                             </span> <input type="hidden" id="totalAmountadult2" name="adult_value">
                                         </div>
@@ -885,77 +906,178 @@ if (isset($_POST["submit"])) {
     <a href="https://wa.me/message/L2MV5OGPQV2RH1" class="back-to-top"><i class="fab fa-whatsapp"></i></a>
 
     <script>
-    let unitPrice1 = 40;
+        let unitPrice2 = 40;
 
-    function calculate_no_pax1(value1) {
-        if (value1 == "") {
-            value1 = 0;
+        function calculate_no_pax2(value2) {
+
+            if (value2 == "") {
+                value2 = 0;
+            }
+            value2 = parseInt(value2);
+
+            updateTotalAmount2(value2);
         }
-        value1 = parseInt(value1);
 
-        updateTotalAmount1(value1);
-    }
+        function updateTotalAmount2(value2) {
+            var totalAmountElement = document.getElementById('totalAmount2');
+            var totalAmountHiddenInput = document.getElementById('totalAmountText2');
+            var adultValueHiddenInput = document.getElementById('totalAmountadult2');
+            var kidsValueHiddenInput = document.getElementById('totalAmountkids2');
+            var totalAmount = 0;
+            var selection = 'a';
 
-    function updateTotalAmount1(value1) {
-        var totalAmountElement = document.getElementById('totalAmount1');
-        var totalAmountHiddenInput = document.getElementById('totalAmountText1');
-        var adultValueHiddenInput = document.getElementById('totalAmountadult1');
-        var kidsValueHiddenInput = document.getElementById('totalAmountkids1');
+            switch (value2) {
+                case 0: {
+                    totalAmount = 0;
+                    break;
+                }
+                case 1: {
+                    totalAmount = value2 * unitPrice2;
+                    break;
+                }
+                case 2: {
+                    totalAmount = value2 * unitPrice2;
+                    break;
+                }
+                case 3: {
+                    totalAmount = value2 * unitPrice2;
+                    break;
+                }
+                case 4: {
+                    totalAmount = value2 * unitPrice2;
+                    break;
+                }
+                case 5: {
+                    totalAmount = value2 * unitPrice2;
+                    break;
+                }
+                case 6: {
+                    totalAmount = value2 * unitPrice2;
+                    break;
+                }
+                case 7: {
+                    totalAmount = value2 * unitPrice2;
+                    break;
+                }
+                case 8: {
+                    totalAmount = value2 * unitPrice2;
+                    break;
+                }
+                case 9: {
+                    totalAmount = value2 * unitPrice2;
+                    break;
+                }
+                case 10: {
+                    totalAmount = value2 * unitPrice2;
+                    break;
+                }
+                default: {
+                    selection = 'more';
+                }
 
-        if (value1 >= 4) {
-            var totalAmount = value1 * unitPrice1;
-            totalAmountElement.style.color = "black";
-            totalAmountElement.innerText = '$' + totalAmount.toFixed(2);
-            totalAmountHiddenInput.value = '$' + totalAmount.toFixed(2);
-            adultValueHiddenInput.value = 0;
-            kidsValueHiddenInput.value = 0;
-        } else {
-            totalAmountElement.style.color = "red";
-            totalAmountElement.innerText = 'Required Minimum 4 Pax';
+            }
+
+            if (selection == 'more') {
+                totalAmountElement.style.color = "red";
+                totalAmountElement.innerText = 'Not Allowed More than 10';
+                totalAmountHiddenInput.value = null;
+            } else {
+                totalAmountElement.style.color = "black";
+                totalAmountElement.innerText = '$' + totalAmount.toFixed(2);
+                totalAmountHiddenInput.value = '$' + totalAmount.toFixed(2);
+
+            }
         }
-    }
-</script>
+    </script>
 
 <script>
-    let unitPrice2 = 40;
+        let unitPrice1 = 40;
 
-    function calculate_no_pax2(value2) {
-        if (value2 == "") {
-            value2 = 0;
+        function calculate_no_pax1(value1) {
+
+            if (value1 == "") {
+                value1 = 0;
+            }
+            value1 = parseInt(value1);
+
+            updateTotalAmount1(value1);
         }
-        value2 = parseInt(value2);
 
-        updateTotalAmount2(value2);
-    }
+        function updateTotalAmount1(value1) {
+            var totalAmountElement = document.getElementById('totalAmount1');
+            var totalAmountHiddenInput = document.getElementById('totalAmountText1');
+            var adultValueHiddenInput = document.getElementById('totalAmountadult1');
+            var kidsValueHiddenInput = document.getElementById('totalAmountkids1');
+            var totalAmount = 0;
+            var selection = 'a';
 
-    function updateTotalAmount2(value2) {
-        var totalAmountElement = document.getElementById('totalAmount2');
-        var totalAmountHiddenInput = document.getElementById('totalAmountText2');
-        var adultValueHiddenInput = document.getElementById('totalAmountadult2');
-        var kidsValueHiddenInput = document.getElementById('totalAmountkids2');
+            switch (value1) {
+                case 0: {
+                    totalAmount = 0;
+                    break;
+                }
+                case 1: {
+                    totalAmount = value1 * unitPrice1;
+                    break;
+                }
+                case 2: {
+                    totalAmount = value1 * unitPrice1;
+                    break;
+                }
+                case 3: {
+                    totalAmount = value1 * unitPrice1;
+                    break;
+                }
+                case 4: {
+                    totalAmount = value1 * unitPrice1;
+                    break;
+                }
+                case 5: {
+                    totalAmount = value1 * unitPrice1;
+                    break;
+                }
+                case 6: {
+                    totalAmount = value1 * unitPrice1;
+                    break;
+                }
+                case 7: {
+                    totalAmount = value1 * unitPrice1;
+                    break;
+                }
+                case 8: {
+                    totalAmount = value1 * unitPrice1;
+                    break;
+                }
+                case 9: {
+                    totalAmount = value1 * unitPrice1;
+                    break;
+                }
+                case 10: {
+                    totalAmount = value1 * unitPrice1;
+                    break;
+                }
+                default: {
+                    selection = 'more';
+                }
 
-        if (value2 >= 4) {
-            var totalAmount = value2 * unitPrice2;
-            totalAmountElement.style.color = "black";
-            totalAmountElement.innerText = '$' + totalAmount.toFixed(2);
-            totalAmountHiddenInput.value = '$' + totalAmount.toFixed(2);
-            adultValueHiddenInput.value = 0;
-            kidsValueHiddenInput.value = 0;
-        } else {
-            totalAmountElement.style.color = "red";
-            totalAmountElement.innerText = 'Required Minimum 4 Pax';
+            }
+
+            if (selection == 'more') {
+                totalAmountElement.style.color = "red";
+                totalAmountElement.innerText = 'Not Allowed More than 10';
+                totalAmountHiddenInput.value = null;
+            } else {
+                totalAmountElement.style.color = "black";
+                totalAmountElement.innerText = '$' + totalAmount.toFixed(2);
+                totalAmountHiddenInput.value = '$' + totalAmount.toFixed(2);
+
+            }
         }
-    }
-</script>
-
-
-
-
-
+    </script>
 
 
     <?php
-    session_start(); // Start the session
+    // session_start(); // Start the session
     if (isset($_SESSION['message'])) {
         echo "<script> 
             Swal.fire({

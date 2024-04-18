@@ -1,6 +1,8 @@
 
 <?php
-session_start();
+if(session_status() == PHP_SESSION_NONE){
+    session_start();
+}
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -33,9 +35,11 @@ if (isset($_POST["submit"])) {
     // Validate WhatsApp Number
     if (empty($_POST['whatsapp_no'])) {
         $errors[] = "WhatsApp number is required";
-    } elseif (!preg_match("/^\+[0-9]{1,3}[0-9]{9}$/", $_POST['whatsapp_no'])) {
-        $errors[] = "Invalid WhatsApp number format";
-    } else {
+    }
+    //  elseif (!preg_match("/^\+[0-9]{1,3}[0-9]{9}$/", $_POST['whatsapp_no'])) {
+    //     $errors[] = "Invalid WhatsApp number format";
+    // }
+     else {
         $whatsapp_no = $_POST['whatsapp_no'];
     }
     
@@ -91,19 +95,19 @@ if (isset($_POST["submit"])) {
         $sql = "INSERT INTO `booking` (`o_id`, `full_name`, `e_mail`, `whatsapp_no`, `activity`, `date`, `time`, `no_adults`, `no_kids`, `departure_location`, `need_assist`, `price_of_adults`, `price_of_child`, `total_amount`) VALUES (NULL, '$fullname', '$email', '$whatsapp_no', '$activity', '$date', '$time', '$no_adults', '$no_kids', '$departurelocation', '$needassist', '$price_of_adults', '$price_of_child', '$price_of_total')";
         $result = mysqli_query($conn, $sql);
         if ($result) {
-            $author_email = 'arugambayagenda@gmail.com'; // author mail address
+            $author_email = 'bookings.arugambayagenda@gmail.com'; // author mail address
             try {
                 $Mail = new PHPMailer(true);
                 $Mail->isSMTP();
                 $Mail->Host = 'smtp.gmail.com';
                 $Mail->SMTPAuth = true;
-                $Mail->Username = 'arugambayagenda@gmail.com';
-                $Mail->Password = 'epnt abvu suoq qxqh';
+                $Mail->Username = 'bookings.arugambayagenda@gmail.com';
+                $Mail->Password = 'tyjc pogf swgw ndmv';
                 $Mail->SMTPSecure = 'ssl';
                 $Mail->Port = 465;
 
 
-                $Mail->setFrom('arugambayagenda@gmail.com');
+                $Mail->setFrom('bookings.arugambayagenda@gmail.com');
                 $Mail->addAddress($_POST['email_for_form']);
                 $Mail->addAddress($author_email);
                 $Mail->isHTML(true);

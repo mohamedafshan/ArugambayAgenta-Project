@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="assets/fonts/flaticon/flaticon_gowilds.css">
         <!--====== FontAwesome css ======-->
         <link rel="stylesheet" href="assets/fonts/fontawesome/css/all.min.css">
+
         <!--====== Bootstrap css ======-->
         <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
         <!--====== magnific-popup css ======-->
@@ -48,7 +49,7 @@
                 <div class="primary-menu">
                         <!--====== Site Branding ======-->
                         <div class="site-branding mt-20 ml-md-55 ml-xl-10 ml-xs-10 ml-lg-2 ml-sm-2">
-                            <a href="index.php" class="brand-logo"><img src="assets/images/logo/Arugabay_agenda_logo_menu1 1.png"alt="Site Logo" ></a>
+                            <a href="index.php" class="brand-logo"><img src="assets/images/logo/Aa_logo_white.svg"alt="Site Logo" ></a>
                         </div>
                         <!--====== Nav Menu ======-->
                         <div class="nav-menu">

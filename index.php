@@ -23,6 +23,12 @@ include('Header/header.php');
         max-height: 110px;
         transition: max-height 0.3s ease;
     }
+
+    .radius-top-left-right-288 {
+        border-radius: 50% !important;
+        height: 400px;
+        width: 400px;
+    }
 </style>
 
 <body>
@@ -855,7 +861,8 @@ include('Header/header.php');
                                         <i class="fas fa-badge-check"></i>
                                     </div>
                                     <div class="icon">
-                                        <i class="flaticon-hiking"></i>
+                                        <!-- <i class="flaticon-hiking"></i> -->
+                                        <img src="assets/images/icons/men.svg" />
                                     </div>
                                 </div>
                                 <div class="content">
@@ -870,7 +877,8 @@ include('Header/header.php');
                                         <i class="fas fa-badge-check"></i>
                                     </div>
                                     <div class="icon">
-                                        <i class="flaticon-reviews"></i>
+                                        <!-- <i class="flaticon-reviews"></i> -->
+                                        <img src="assets/images/icons/hiking.svg" />
                                     </div>
                                 </div>
                                 <div class="content">
@@ -887,7 +895,8 @@ include('Header/header.php');
                                         <i class="fas fa-badge-check"></i>
                                     </div>
                                     <div class="icon">
-                                        <i class="flaticon-travel"></i>
+                                        <!-- <i class="flaticon-travel"></i> -->
+                                        <img src="assets/images/icons/map.svg" />
                                     </div>
                                 </div>
                                 <div class="content">
@@ -905,7 +914,8 @@ include('Header/header.php');
                                         <i class="fas fa-badge-check"></i>
                                     </div>
                                     <div class="icon">
-                                        <i class="flaticon-camping"></i>
+                                        <!-- <i class="flaticon-camping"></i> -->
+                                        <img src="assets/images/icons/capturing.svg" />
                                     </div>
                                 </div>
                                 <div class="content">
@@ -922,7 +932,8 @@ include('Header/header.php');
                                         <i class="fas fa-badge-check"></i>
                                     </div>
                                     <div class="icon">
-                                        <i class="flaticon-helmet"></i>
+                                        <!-- <i class="flaticon-helmet"></i> -->
+                                        <img src="assets/images/icons/visit.svg" />
                                     </div>
                                 </div>
                                 <div class="content">
@@ -960,7 +971,7 @@ include('Header/header.php');
                     <!--=== Counter Item ===-->
                     <div class="single-counter-item text-center mb-40 wow fadeInUp">
                         <div class="icon">
-                            <i class="flaticon-firewood"></i>
+                            <img src="assets/images/icons/puma.svg" />
                         </div>
                         <h2 class="number"><span class="count">200</span>+</h2>
                         <p>Half day wild safaris</p>
@@ -970,7 +981,7 @@ include('Header/header.php');
                     <!--=== Counter Item ===-->
                     <div class="single-counter-item text-center mb-40 wow fadeInDown">
                         <div class="icon">
-                            <i class="flaticon-tent-1"></i>
+                            <img src="assets/images/icons/compass.svg" />
                         </div>
                         <h2 class="number"><span class="count">100</span>+</h2>
                         <p>Full day wild safaris</p>
@@ -980,7 +991,7 @@ include('Header/header.php');
                     <!--=== Counter Item ===-->
                     <div class="single-counter-item text-center mb-40 wow fadeInUp">
                         <div class="icon">
-                            <i class="flaticon-reviews"></i>
+                            <img src="assets/images/icons/cooking.svg" />
                         </div>
                         <h2 class="number"><span class="count">50</span>+</h2>
                         <p>Cooking class</p>
@@ -990,7 +1001,7 @@ include('Header/header.php');
                 <div class="col-lg-3 col-sm-6 xxl-custom-col">
                     <div class="single-counter-item text-center mb-40 wow fadeInDown">
                         <div class="icon">
-                            <i class="flaticon-cable-car"></i>
+                            <img src="assets/images/icons/religion.svg" />
                         </div>
                         <h2 class="number"><span class="count">30</span>+</h2>
                         <p>Day trips</p>
@@ -1001,7 +1012,7 @@ include('Header/header.php');
                     <!--=== Counter Item ===-->
                     <div class="single-counter-item text-center mb-40 wow fadeInDown">
                         <div class="icon">
-                            <i class="flaticon-camping"></i>
+                            <img src="assets/images/icons/trip.svg" />
                         </div>
                         <h2 class="number"><span class="count">100</span>+</h2>
                         <p>Cultural & Anciant visits</p>
@@ -1024,10 +1035,8 @@ include('Header/header.php');
 
             <div class="slider-active-3-item">
                 <?php
-                // PHP code for fetching and displaying testimonials goes here
-                // Replace 'YOUR_API_KEY' with your actual API key
                 $apiKey = 'AIzaSyD79OdY0NRuExk5iuTo3P89p4Krr59DbrI';
-                $placeId = 'ChIJ3amQ6tS95ToRTq5ApQS6EXA'; // The ID of the place you want reviews for
+                $placeId = 'ChIJ3amQ6tS95ToRTq5ApQS6EXA';
                 $url = 'https://maps.googleapis.com/maps/api/place/details/json?place_id=' . $placeId . '&fields=name,reviews&key=' . $apiKey;
                 $response = file_get_contents($url);
 
@@ -1078,10 +1087,11 @@ include('Header/header.php');
 
     <!--====== Start Team Section ======-->
     <section class="team-section pt-100 pb-70">
+
         <div class="container">
-            <div class="row justify-content-center">
+            <!-- <div class="row justify-content-center">
                 <div class="col-xl-8">
-                    <!--====== Section Title ======-->
+    
                     <div class="section-title text-center mb-50 wow fadeInDown">
                         <span class="sub-title">Our Team</span>
                         <h2>Meet Hanas</h2>
@@ -1094,7 +1104,32 @@ include('Header/header.php');
                         </div>
                     </div>
                 </div>
+            </div> -->
+
+            <div class="row align-items-xl-start">
+                <div class="col-lg-6">
+                    <div class="contact-area contact-form wow fadeInUp ">
+                        <div class="we-image-box text-center text-xl-left pr-lg-30 mb-50 wow fadeInLeft">
+                            <img src="assets/images/wildlife&eco/Wild Safari in Kumana with hanas.jpg" class="radius-top-left-right-288" alt="What We Image">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-flex justify-content-center mt-2">
+                    <div class="booking-content-box wow fadeInLeft text-left md-text-center ">
+                        <div class="section-title mb-50">
+                            <span class="sub-title">Meet Hanas</span>
+                            <h2>Meet Hanas</h2>
+                            <h4 class="mt-2">Your Host and Arugambay Aficionado</h4>
+                            <p class="mt-15 px-20">
+                                Hey there, I’m Hanas, the heart and soul behind Arugambay Agenda. As the founder of this venture, I’m on a mission to share the enchantment of my beloved hometown, Arugambay, with the world. I’m a true Arugambay native, born and raised on the East Coast of Sri Lanka. Picture me as the youngest member of a lively family, nestled among the sounds of the ocean and the warmth of a tight-knit clan.
+                            </p>
+                            <a href="aboutus.php"><button class="main-btn primary-btn mt-3">Discover More<i class="fas fa-arrow-right"></i></button></a>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+
             <div class="row">
                 <div class="col-xl-4 col-md-6 col-sm-12">
                     <!--====== Single Team Item ======-->

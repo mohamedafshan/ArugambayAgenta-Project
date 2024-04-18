@@ -99,7 +99,7 @@ if (isset($_POST["submit"])) {
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-lg-10">
+            <div class="col-lg-6">
                 <div class="contact-area contact-form wow fadeInUp">
                     <form id="" class="contactForm" action="" name="contactForm" method="post">
                         <!-- contactForm this important for validation  -->
@@ -164,6 +164,9 @@ if (isset($_POST["submit"])) {
                         </div>
                     </form>
                 </div>
+            </div>
+            <div class="col-6">
+                <img src="assets/images/ride_with_us_image/tuk tuk.svg" />
             </div>
         </div>
     </div>

@@ -1,5 +1,5 @@
  <!--====== Start Footer ======-->
- <footer class="main-footer black-bg">
+ <footer class="main-footer black-bg"class>
             <div class="container">
                 <!--=== Footer Top ===-->
                 <div class="footer-top pt-40 wow fadeInUp">
@@ -48,10 +48,15 @@
                             <!--=== Social Box ===-->
                             <div class="social-box mb-40 float-lg-end">
                                 <ul class="social-link">
-                                    <li><a href="https://www.facebook.com/profile.php?id=100092304975049&mibextid=LQQJ4d"><i class="fab fa-facebook-f"></i></a></li>
+                                    <!-- <li><a href="https://www.facebook.com/profile.php?id=100092304975049&mibextid=LQQJ4d"><i class="fab fa-facebook-f"></i></a></li>
                                     <li><a href="https://instagram.com/arugambayagenda?igshid=MzMyNGUyNmU2YQ%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a></li>
                                     <li><a href="https://www.threads.net/@arugambayagenda"><i class="fas-brands fa-square-threads"></i></a></li>
-                                    <li><a href="info.arugambayagenda.com"><i class="fas fa-envelope"></i></a></li>
+                                    <li><a href="info.arugambayagenda.com"><i class="fas fa-envelope"></i></a></li> -->
+
+                                    <li><a href="https://www.facebook.com/profile.php?id=100092304975049&mibextid=LQQJ4d"><img src="assets/images/icons/facebook.svg"/> </a></li>
+                                    <li><a href="https://instagram.com/arugambayagenda?igshid=MzMyNGUyNmU2YQ%3D%3D&utm_source=qr"><img src="assets/images/icons/intstagram.svg"/></a></li>
+                                    <li><a href="https://www.threads.net/@arugambayagenda"><img src="assets/images/icons/threads.svg"/></a></li>
+                                    <li><a href="info.arugambayagenda.com"><img src="assets/images/icons/mail.svg"/></a></li>
                                     <!-- threat fa-brands fa-threads -->
                                 </ul>
                             </div>
@@ -98,10 +103,14 @@
                         <div class="col-lg-4 col-md-6">
                             <!--=== Footer Widget ===-->
                             <div class="footer-widget footer-newsletter-widget mb-40 pl-lg-100 wow fadeInUp">
-                                <h4 class="widget-title">Newsletter</h4>
+                                <h4 class="widget-title">Crafting Dream Gateways</h4>
                                 <div class="footer-content">
-                                    <p>Stay updated on exclusive offers and travel 
-                                        insights with our newsletter subscription.</p>
+                                     <a href="https://www.tripadvisor.com/Attraction_Review-g3348959-d25775340-Reviews-Arugambay_Agenda-Arugam_Bay_Eastern_Province.html">
+                                        <img src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_lockup_horizontal_secondary_registered.svg"/></a>
+                                    <br><br>
+                                    <a href="https://www.getyourguide.com/arugambay-agenda-s304885/">
+                                        <img src="https://cdn.getyourguide.com/tf/assets/static/logos/gyg-logo.svg" width="100px"/></a>    
+                                    <br><br>
                                     <form>
                                         <div class="form_group">
                                             <label><i class="far fa-paper-plane"></i></label>

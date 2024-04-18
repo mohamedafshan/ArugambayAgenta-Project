@@ -3,7 +3,9 @@
 <style>
     .radius-top-left-right-288 {
         border-radius: 170px 170px 170px 170px !important;
-    }
+        height: 500px;
+        width: 500px;
+    }   
 </style>
 
 <body>
@@ -40,9 +42,9 @@
         <div class="container">
             <div class="row align-items-xl-start">
                 <div class="col-lg-6">
-                    <div class="contact-area contact-form wow fadeInUp mt-40">
+                    <div class="contact-area contact-form wow fadeInUp mt-80">
                         <div class="we-image-box text-center text-xl-left pr-lg-30 mb-50 wow fadeInLeft">
-                            <img src="assets/images/Staff/we-6.jpg" class="radius-top-left-right-288" alt="What We Image">
+                            <img src="assets/images/wildlife&eco/Wild Safari in Kumana with hanas.jpg" class="radius-top-left-right-288" alt="What We Image">
                         </div>
                     </div>
                 </div>

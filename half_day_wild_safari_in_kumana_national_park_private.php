@@ -948,7 +948,7 @@ include('assets/php/formvalidation.php')
         }
     </script>
     <?php
-    session_start(); // Start the session
+    // session_start(); // Start the session
     if (isset($_SESSION['message'])) {
         echo "<script> 
             Swal.fire({
